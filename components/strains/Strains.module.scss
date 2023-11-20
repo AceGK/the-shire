@@ -1,0 +1,31 @@
+.strains {
+  list-style-type: none;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 1rem;
+  & > * {
+    scroll-snap-align: start;
+  }
+
+  .card {
+    min-width:320px;
+    padding:1rem;
+    list-style: none;
+    span {
+      display:block;
+    }
+  }
+}
+
+.name {
+  font-weight:600;
+  font-size:1.5rem;
+}
+
+.hybrid {
+  background:green;
+}

@@ -1,8 +1,9 @@
+import AsSeenIn from "@/components/as-seen-in";
 import Strains from "@/components/strains";
 
 export default function Home() {
   return (
-    <main>
+    <main className="container">
       <h1>The Shire</h1>
       <p>The Finest Weed in the Southfarthing</p>
 
@@ -43,32 +44,9 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <div>
-        <h2>As Seen in</h2>
-        <ul>
-          {/* new york times */}
-          <li>The Middle-Earth Messenger</li>
-          {/* the village voice */}
-          <li>The Valinor Voice</li>
-          {/* the Boston Hearld */}
-          <li>Hobbiton Herald</li>
-          {/* similar to the gazette */}
-          <li>Gondor Gazette</li>
-          {/* The San Francisco Chronicle */}
-          <li>The Erebor Chronicle</li>
-          {/* The Hollywood Reporter */}
-          <li>The Rivendell Reporter</li>
-          {/* BBC news */}
-          <li>Númenor News</li>
-          {/*  */}
-          <li>The Rohan Report</li>
-          {/*  */}
-          <li>The Mordor Monitor</li>
-          {/*  */}
-          <li>The Bree Bugle</li>
-          {/*  */}
-        </ul>
-      </div>
+
+      <AsSeenIn />
+
       <div>
         <h2>Visit Us</h2>
         <p>

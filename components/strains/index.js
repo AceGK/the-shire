@@ -1,6 +1,7 @@
 
-export default function Strains() {
+import styles from './Strains.module.scss'
 
+export default function Strains() {
 
   const strains = [
     {
@@ -19,7 +20,7 @@ export default function Strains() {
       "name": "Southern Star",
       "type": "Hybrid",
       "lineage": "Kingsfoil Kush x Sweet Galenas",
-      "description": ""
+      "description": "Southern Star is a harmonious blend that mirrors the beauty and allure of the Southlands. It's celebrated for its balanced effects, offering a burst of creativity and a gentle relaxation. Its aroma is a delightful mix of earthy and sweet notes, making it ideal for both reflective evenings and inspired gatherings."
     },
     {
       "name": "Tookies",
@@ -31,7 +32,7 @@ export default function Strains() {
       "name": "Bag End Blend",
       "type": "Hybrid",
       "lineage": "White Wizard x Rivendell Runtz",
-      "description": ""
+      "description": "Bag End Blend is a tribute to the heart of the Shire, offering a soothing yet uplifting experience. Its flavor profile combines hints of herbal and fruity undertones, reminiscent of Bilbo's own garden. This strain is perfect for those seeking a peaceful retreat into their thoughts or a joyful social experience."
     },
     {
       "name": "Brandybuck Blend",
@@ -55,21 +56,26 @@ export default function Strains() {
       "name": "Gardner’s Gift",
       "type": "Sativa",
       "lineage": "Sam's Sage x Lembas Bread",
-      "description": ""
+      "description": "Gardner’s Gift, named in honor of Samwise Gamgee's gardening prowess. It is revered for its energizing effects and a flavor that hints at fresh earth and a touch of sweetness. Ideal for outdoor activities or tackling tasks with a renewed sense of vigor and focus."
+    },
+    {
+      "name": "Precious OG",
+      "type": "Hybrid",
+      "lineage": "Gollum Grape x Smeagol Skunk",
+      "description": "Precious OG is as captivating as the One Ring itself. This hybrid strain is known for its deeply relaxing effects, enveloping the senses much like the depths of the Misty Mountains. Its rich and fruit aroma offers a uniquely profound experience, guiding users to a state of serene introspection and repose."
     },
   ]
 
   return (
-    <div>
-
+    <ul className={styles.strains}>
       {strains.map((strain, id) => (
-        <div key={id} style={{ display: 'flex', flexDirection: 'column', gap: '1px', padding: '1rem' }}>
-          <h3>{strain.name}</h3>
-          <div>{strain.type}</div>
-          <div>{strain.lineage}</div>
+        <li key={id} className={styles.card}>
+          <span className={styles.name}>{strain.name}</span>
+          <span className={styles[strain.type]}>{strain.type}</span>
+          <span>{strain.lineage}</span>
           <p>{strain.description}</p>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

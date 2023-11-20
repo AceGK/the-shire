@@ -1,4 +1,14 @@
 body {
-  background-color: rgb(24, 24, 24);
-  color:rgb(220, 220, 220);
+  // background-color: rgb(24, 24, 24);
+  // color:rgb(220, 220, 220);
 }
+
+.container {
+  max-width:1400px;
+  margin:auto;
+  padding:0rem 1rem;
+  & > div {
+    padding:19rem 0rem;
+  }
+}
+

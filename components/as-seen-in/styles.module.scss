@@ -1,0 +1,18 @@
+.logos {
+  list-style-type: none;
+  padding:1rem;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+  gap:3rem;
+
+  img {
+    max-width: 300px;
+    max-height: 150px;
+  }
+
+  span {
+    display:none;
+  }
+}
