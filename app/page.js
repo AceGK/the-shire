@@ -29,18 +29,13 @@ export default function Home() {
         <h2>Our Packaging</h2>
         <ul>
           <li>
-            <strong>Reclaimed Wood Boxes:</strong> Durable and reusable, these
-            boxes are crafted from reclaimed wood, embodying the essence of
-            nature.
+            <strong>Mallorn Leaf Bags:</strong> Made from the resilient leaves of Mallorn trees, our organic bags naturally decompose leaving no environmental trace.
           </li>
           <li>
-            <strong>Biodegradable Cloth Bags:</strong> Made from organic
-            materials, these bags decompose naturally, leaving no trace behind.
+            <strong>Dwraven Crafted Barrels</strong> Our barrels are the same used for the finest dwarven ales. They are sturdy and reusable, perfect for storing your pipe-weed or other herbs.
           </li>
           <li>
-            <strong>Recycled Paper Wrappings:</strong> Utilizing recycled paper
-            for packaging, printed with soy-based inks, reducing environmental
-            impact.
+            <strong>Elven Crafted Jars</strong> Masterfully crafted by Elves, our jars embody the elegance and precision of Rivendell's finest artisans. Made with ethereal yet durable materials, they ensure the freshness and purity of their contents, much like the lasting beauty of Lothlórien.
           </li>
         </ul>
       </div>

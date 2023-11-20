@@ -20,19 +20,19 @@ export default function Strains() {
       "name": "Southern Star",
       "type": "hybrid",
       "lineage": "Kingsfoil Kush x Sweet Galenas",
-      "description": "Southern Star is a harmonious blend that mirrors the beauty and allure of the Southlands. It's celebrated for its balanced effects, offering a burst of creativity and a gentle relaxation. Its aroma is a delightful mix of earthy and sweet notes, making it ideal for both reflective evenings and inspired gatherings."
+      "description": "Southern Star is a harmonious blend that mirrors the beauty and allure of the Southlands. It's celebrated for its balanced effects, offering a burst of creativity and a gentle relaxation."
     },
     {
       "name": "Tookies",
       "type": "indica",
       "lineage": "Tuckborough Tangie x Belladonna Cookies",
-      "description": "Tookies, a blend of Bilbo's Bud and Shire Skunk OG, encapsulates the essence of a Hobbit's day, from elevenses to supper, with its sweet aroma and earthy undertones. This strain promises deep relaxation, evoking the serene tranquility of a leisurely afternoon in the Shire."
+      "description": "Tookies  encapsulates the essence of a Hobbit's day, from elevenses to supper, with its sweet aroma and earthy undertones. This strain promises deep relaxation, evoking the serene tranquility of a leisurely afternoon in the Shire."
     },
     {
       "name": "Bag End Blend",
       "type": "hybrid",
       "lineage": "White Wizard x Rivendell Runtz",
-      "description": "Bag End Blend is a tribute to the heart of the Shire, offering a soothing yet uplifting experience. Its flavor profile combines hints of herbal and fruity undertones, reminiscent of Bilbo's own garden. This strain is perfect for those seeking a peaceful retreat into their thoughts or a joyful social experience."
+      "description": "Bag End Blend is a tribute to adventurers, offering a soothing yet uplifting experience. Its flavor profile combines hints of herbal and fruity undertones, reminiscent of Bilbo's own garden. This strain is perfect for those seeking a peaceful retreat into their thoughts or a joyful social experience."
     },
     {
       "name": "Brandybuck Blend",
