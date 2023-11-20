@@ -48,6 +48,22 @@ const logos = [
   {
       "logo": "/logos/goblin-stank.svg",
       "name": "Goblin Stank"
+  },
+  {
+      "logo": "/logos/erutube.svg",
+      "name": "Erutube"
+  },
+  {
+      "logo": "/logos/breefeed.svg",
+      "name": "breefeed"
+  },
+  {
+      "logo": "/logos/elendil.svg",
+      "name": "elendil"
+  },
+  {
+      "logo": "/logos/urukhai-radio.svg",
+      "name": "urukhai radio"
   }
 ]
 
@@ -68,6 +84,8 @@ function AsSeenIn() {
           {/* <li>The Mordor Monitor</li> */}
           {/* <li>The Middle Earth Times</li> */}
           {/* <li>The Bree Bugle</li> */}
+          {/* The Gondorian */}
+          {/*  */}
         </ul>
       </div>
   );
