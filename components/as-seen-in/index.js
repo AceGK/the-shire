@@ -39,7 +39,15 @@ const logos = [
   },
   {
       "logo": "/logos/eye-of-sauron.svg",
-      "name": "Eye oof Sauron"
+      "name": "Eye of Sauron"
+  },
+  {
+      "logo": "/logos/elfpost.svg",
+      "name": "Elf Post"
+  },
+  {
+      "logo": "/logos/goblin-stank.svg",
+      "name": "Goblin Stank"
   }
 ]
 

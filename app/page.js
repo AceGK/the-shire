@@ -16,7 +16,7 @@ export default function Home() {
       <p>Inspired by the lush greenery of the Shire, our farm is a bastion of sustainable practices. We use methods that are gentle on the land, ensuring that our footprint on Middle-Earth is as light as a Hobbit’s touch. </p>
 
       <h2>Tradition</h2>
-      <p>Inspired by 'Old Toby' Hornblower's pioneering spirit in Longbottom, our farm honors the deep-rooted traditions of the Shire. We blend time-honored techniques with modern insights, ensuring each strain, especially our beloved 'Old Toby,' reflects the tranquility and communal spirit of our lands.</p>
+      <p>Continuing the legacy of 'Old Toby' Hornblower's pioneering spirit in Longbottom, our farm upholds the deep-rooted traditions of the Shire. We harmoniously merge time-honored techniques with modern insights, ensuring that each strain, particularly our cherished 'Old Toby,' embodies the tranquility and communal spirit that are hallmarks of our lands.</p>
 
       <h2>Our Strains</h2>
       <p>

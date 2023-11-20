@@ -12,6 +12,9 @@
   }
 
   .card {
+    display:flex;
+    flex-direction: column;
+    gap:0.5rem;
     min-width:320px;
     padding:1rem;
     list-style: none;
@@ -21,11 +24,26 @@
   }
 }
 
+
 .name {
   font-weight:600;
   font-size:1.5rem;
 }
 
+
+.strain {
+  text-transform: capitalize;
+  width:fit-content;
+  padding:3px 6px;
+  border-radius:5px;
+  color:white;
+}
 .hybrid {
-  background:green;
+  background:rgb(28, 160, 103);
+}
+.sativa {
+  background:rgb(222, 122, 51);
+}
+.indica {
+  background:rgb(77, 41, 195);
 }
