@@ -5,27 +5,25 @@ export default function Home() {
     <main>
       <h1>The Shire</h1>
       <p>The Finest Weed in the Southfarthing</p>
-      <h2>About Our Green Haven</h2>
-      In the heart of a verdant valley lies The Shire, a quaint and charming
-      cannabis farm where the wonders of nature and the joys of simplicity
-      converge. Here, we live in harmony with the earth, tending to our plants
-      with a gentle touch and a deep respect for the natural world.
-      <h2>Our Philosophy</h2>
-      In The Shire, we cherish the slow life, where every leaf and bud is
-      nurtured with patience and love. Our sustainable farming practices ensure
-      that we give back to the land as much as we take, maintaining a balance as
-      old as the hills that surround us.
+
+      <p>We cultivate strains as varied and enchanting as the landscapes of Middle-Earth. From the comforting 'Old Toby' to the adventurous 'Bag End Blend', each of our strains is a homage to the rich tapestry of our world. They are grown to bring a bit of our magical lands into the homes and hearts of those who partake.</p>
+
+      <h2>Quality</h2>
+      <p>Quality for us is as essential as a hearty meal. Each leaf and bud is inspected with care to ensure our strains are as pure and wholesome as a Hobbit’s pantry.  </p>
+
+      <h2>Sustanability</h2>
+      <p>Inspired by the lush greenery of the Shire, our farm is a bastion of sustainable practices. We use methods that are gentle on the land, ensuring that our footprint on Middle-Earth is as light as a Hobbit’s touch. </p>
+
+      <h2>Tradition</h2>
+      <p>Inspired by 'Old Toby' Hornblower's pioneering spirit in Longbottom, our farm honors the deep-rooted traditions of the Shire. We blend time-honored techniques with modern insights, ensuring each strain, especially our beloved 'Old Toby,' reflects the tranquility and communal spirit of our lands.</p>
+
       <h2>Our Strains</h2>
       <p>
         Discover our enchanting selection of strains, each carefully cultivated
         to offer a unique experience:
       </p>
       <Strains />
-      <p>
-        White Wizard: Inspired by the wise and powerful wizards, White Wizard is
-        a strain revered for its clarity-inducing and enlightening effects. It's
-        excellent for moments of deep thought or philosophical discussions.
-      </p>
+
       <div>
         <h2>Our Packaging</h2>
         <ul>

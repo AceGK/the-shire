@@ -4,27 +4,33 @@ export default function Strains() {
 
   const strains = [
     {
-      "name": "Old Toby",
-      "type": "Indica",
-      "lineage": "Hobbiton Haze x Bree Dream",
-      "description": "Named after the finest weed in the Southfarthing, Old Toby is a legendary strain known for its smooth, rich flavor and calming effects. It's perfect for a relaxing evening under the stars or a peaceful afternoon by the river."
-    },
-    {
       "name": "Longbottom Leaf",
       "type": "Sativa",
-      "lineage": "SF OG x ",
-      "description": "A tribute to the rare and valuable leaf from the Hobbiton, Longbottom Leaf is a strain celebrated for its uplifting and energizing qualities. Ideal for creative endeavors or social gatherings."
+      "lineage": "Southfarthing OG x Hobbiton Haze",
+      "description": "A tribute to the rare and valuable leaf from Hobbiton, Longbottom Leaf is a strain celebrated for its uplifting and energizing qualities. Ideal for creative endeavors or social gatherings."
+    },
+    {
+      "name": "Old Toby",
+      "type": "Indica",
+      "lineage": "Hornblower Diesel x Bree Dream",
+      "description": "Named after the finest weed in the Southfarthing, Old Toby is a legendary strain known for its smooth, rich flavor and calming effects. It's perfect for a relaxing evening under the stars or a peaceful afternoon by the river."
     },
     {
       "name": "Southern Star",
       "type": "Hybrid",
-      "lineage": "",
+      "lineage": "Kingsfoil Kush x Sweet Galenas",
       "description": ""
     },
     {
       "name": "Tookies",
+      "type": "Indica",
+      "lineage": "Tuckborough Tangie x Belladonna Cookies",
+      "description": "Tookies, a blend of Bilbo's Bud and Shire Skunk OG, encapsulates the essence of a Hobbit's day, from elevenses to supper, with its sweet aroma and earthy undertones. This strain promises deep relaxation, evoking the serene tranquility of a leisurely afternoon in the Shire."
+    },
+    {
+      "name": "Bag End Blend",
       "type": "Hybrid",
-      "lineage": "Bilbo's Bud x Shire Skunk OG",
+      "lineage": "White Wizard x Rivendell Runtz",
       "description": ""
     },
     {
@@ -35,8 +41,8 @@ export default function Strains() {
     },
     {
       "name": "Green Dragon",
-      "type": "Sativa",
-      "lineage": "Bywater Kush x ",
+      "type": "Hybrid",
+      "lineage": "Bywater Kush x Smaug's Fire",
       "description": "Named after the famous inn, the Green Dragon strain is for those seeking a truly potent experience. It promises a powerful, euphoric journey, much like a night spent in the bustling hobbit pub."
     },
     {
@@ -48,15 +54,9 @@ export default function Strains() {
     {
       "name": "Gardner’s Gift",
       "type": "Sativa",
-      "lineage": "Sam's Sage x Rosie's Raspberry",
+      "lineage": "Sam's Sage x Lembas Bread",
       "description": ""
     },
-    {
-      "name": "Southfarthing Sour",
-      "type": "Indica",
-      "lineage": "Pippin's Pineapple x Tuckborough Tangie",
-      "description": ""
-    }
   ]
 
   return (
