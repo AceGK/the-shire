@@ -30,9 +30,9 @@ export default function Strains() {
     },
     {
       "name": "Bag End Blend",
-      "type": "hybrid",
+      "type": "sativa",
       "lineage": "White Wizard x Rivendell Runtz",
-      "description": "Bag End Blend is a tribute to adventurers, offering a soothing yet uplifting experience. Its flavor profile combines hints of herbal and fruity undertones, reminiscent of Bilbo's own garden. This strain is perfect for those seeking a peaceful retreat into their thoughts or a joyful social experience."
+      "description": "Bag End Blend is a tribute to adventurerous spirits of the Shire, offering a soothing yet uplifting experience. Its flavor profile combines hints of herbal and fruity undertones. This strain is perfect for those seeking a peaceful retreat into their thoughts or going on an adventure."
     },
     {
       "name": "Brandybuck Blend",
@@ -70,6 +70,7 @@ export default function Strains() {
     <ul className={styles.strains}>
       {strains.map((strain, id) => (
         <li key={id} className={styles.card}>
+          <img src="/nugs/nug1.jpg" />
           <span className={styles.name}>{strain.name}</span>
           <span className={`${styles.strain} ${styles[strain.type]}`}>{strain.type}</span>
           <span>{strain.lineage}</span>
