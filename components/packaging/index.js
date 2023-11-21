@@ -2,7 +2,8 @@ export default function Packaging() {
   return ( 
     <div>
         <h2>Our Packaging</h2>
-        <img src="/images/mallorn-leaf.jpg" alt="The Shire" width="100%" />
+        <div className="split">
+        <img src="/images/mallorn-leaf.jpg" alt="The Shire" width="100%" height="100%"/>
         <ul>
           <li>
             <strong>Mallorn Leaf Bags:</strong> Made from the resilient leaves of Mallorn trees, our organic bags naturally decompose leaving no environmental trace.
@@ -14,6 +15,7 @@ export default function Packaging() {
             <strong>Dwraven Crafted Barrels</strong> Our barrels are the same used for the finest dwarven ales. They are sturdy and reusable, perfect for storing your pipe-weed or other herbs.
           </li>
         </ul>
+        </div>
       </div>
    );
 }

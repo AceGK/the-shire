@@ -1,0 +1,13 @@
+.nav {
+  list-style-type: none;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:1.5rem;
+  img {
+    width:280px;
+  }
+  li:has(img){
+    margin-right: auto;
+  }
+}
