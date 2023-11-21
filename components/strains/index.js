@@ -31,7 +31,7 @@ export default function Strains() {
     {
       "name": "Bag End Blend",
       "type": "sativa",
-      "lineage": "White Wizard x Rivendell Runtz",
+      "lineage": "Rivendell Runtz x Bud Of Lórien",
       "description": "Bag End Blend is a tribute to adventurerous spirits of the Shire, offering a soothing yet uplifting experience. Its flavor profile combines hints of herbal and fruity undertones. This strain is perfect for those seeking a peaceful retreat into their thoughts or going on an adventure."
     },
     {
@@ -64,19 +64,35 @@ export default function Strains() {
       "lineage": "Gollum Grape x Smeagol Skunk",
       "description": "Precious OG is as captivating as the One Ring itself. This hybrid strain is known for its deeply relaxing effects, enveloping the senses much like the depths of the Misty Mountains. Its rich and fruit aroma offers a uniquely profound experience, guiding users to a state of serene introspection and repose."
     },
+
+    // White Wizard
+    // Pippin's Puff
+    // Merry's Munchies
+    // Khazad-dûm Kush
+    // Bombadil Dream
+    // Shadowax 
+    // Mordor Moonrock
+    // 
   ]
 
   return (
-    <ul className={styles.strains}>
-      {strains.map((strain, id) => (
-        <li key={id} className={styles.card}>
-          <img src="/nugs/nug1.jpg" />
-          <span className={styles.name}>{strain.name}</span>
-          <span className={`${styles.strain} ${styles[strain.type]}`}>{strain.type}</span>
-          <span>{strain.lineage}</span>
-          <p>{strain.description}</p>
-        </li>
-      ))}
-    </ul>
+    <div>
+      <h2>Our Strains</h2>
+      <p>
+        Discover our enchanting selection of strains, each carefully cultivated
+        to offer a unique experience:
+      </p>
+      <ul className={styles.strains}>
+        {strains.map((strain, id) => (
+          <li key={id} className={styles.card}>
+            <img src="/nugs/nug1.jpg" />
+            <span className={styles.name}>{strain.name}</span>
+            <span className={`${styles.strain} ${styles[strain.type]}`}>{strain.type}</span>
+            <span>{strain.lineage}</span>
+            <p>{strain.description}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
