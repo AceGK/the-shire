@@ -1,9 +1,13 @@
+@import "@/app/variables.scss";
+@import "@/app/mixins.scss";
+
 .nav {
   list-style-type: none;
   display:flex;
   justify-content: center;
   align-items: center;
   gap:1.5rem;
+  padding:0px;
   img {
     width:280px;
   }

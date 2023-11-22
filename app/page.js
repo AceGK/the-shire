@@ -55,6 +55,14 @@ export default function Home() {
         <Visit />
       </section>
 
+<section>
+  Support our partners 
+  <ul>
+    <li>Merry's Munchies</li>
+    <li>Gimli's Grinders (one grinder to rule them all, and in the dankness bind them.)</li>
+    <li></li>
+  </ul>
+</section>
     </main>
   );
 }

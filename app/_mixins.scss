@@ -1,0 +1,23 @@
+$smallScreenValue: 900px;
+$tabletValue: 768px;
+$mobileValue: 480px;
+
+// You can add an offset to any of these
+// @include mediumScreen(30px) { ... }
+
+@mixin mobile($offset: 0px) {
+  @media (max-width: calc(#{$mobileValue} + #{$offset})) {
+      @content;
+  }
+}
+
+@mixin tablet($offset: 0px) {
+    @media (max-width: calc(#{$tabletValue} + #{$offset})) {
+        @content;
+    }
+}
+@mixin smallScreen($offset: 0px) {
+    @media (max-width: calc(#{$smallScreenValue} + #{$offset})) {
+        @content;
+    }
+}

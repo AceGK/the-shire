@@ -64,8 +64,14 @@ export default function Strains() {
       "lineage": "Gollum Grape x Smeagol Skunk",
       "description": "Precious OG is as captivating as the One Ring itself. This hybrid strain is known for its deeply relaxing effects, enveloping the senses much like the depths of the Misty Mountains. Its rich and fruit aroma offers a uniquely profound experience, guiding users to a state of serene introspection and repose."
     },
+    {
+      "name": "White Wizard",
+      "type": "hybrid",
+      "lineage": "Ggreendalf x Durin's Bud",
+      "description": ""
+    },
 
-    // White Wizard
+    // White Wizard (greendalf x durin's bud)
     // Pippin's Puff
     // Merry's Munchies
     // Khazad-dûm Kush
