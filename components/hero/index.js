@@ -18,7 +18,7 @@ export default function Hero() {
       <div className={styles.content}>
         {/* <img className="logo" src="/logos/the-shire.png" alt="The Shire Logo" /> */}
         <h1 className="visually-hidden">The Shire</h1>
-        <p>The Finest Pipe-Weed in the Southfarthing</p>
+        <p>Home to the Finest Pipe-Weed in the Southfarthing</p>
       </div>
     </div>
 

@@ -5,22 +5,28 @@ export default function Strains() {
 
   const strains = [
     {
-      "name": "Longbottom Leaf",
-      "type": "sativa",
-      "lineage": "Southfarthing OG x Hobbiton Haze",
-      "description": "A tribute to the rare and valuable leaf from Hobbiton, Longbottom Leaf is a strain celebrated for its uplifting and energizing qualities. Ideal for creative endeavors or social gatherings."
-    },
-    {
       "name": "Old Toby",
       "type": "indica",
-      "lineage": "Hornblower Diesel x Bree Dream",
-      "description": "Named after the finest weed in the Southfarthing, Old Toby is a legendary strain known for its smooth, rich flavor and calming effects. It's perfect for a relaxing evening under the stars or a peaceful afternoon by the river."
+      "lineage": "Hornblower Diesel x ",
+      "description": "The finest weed in the Southfarthing, Old Toby, named after our founder, is a legendary strain known for its smooth, rich flavor and calming effects. It's perfect for a relaxing evening under the stars or a peaceful afternoon by the river."
+    },
+    {
+      "name": "Longbottom Leaf",
+      "type": "sativa",
+      "lineage": "Southfarthing Sour x Hobbiton Haze",
+      "description": "A tribute to the rare and valuable leaf from Hobbiton, Longbottom Leaf is a strain celebrated for its uplifting and energizing qualities. Ideal for creative endeavors or social gatherings."
     },
     {
       "name": "Southern Star",
       "type": "hybrid",
       "lineage": "Kingsfoil Kush x Sweet Galenas",
       "description": "Southern Star is a harmonious blend that mirrors the beauty and allure of the Southlands. It's celebrated for its balanced effects, offering a burst of creativity and a gentle relaxation."
+    },
+    {
+      "name": "Southlinch",
+      "type": "hybrid",
+      "lineage": "Bree Dream x Southfarthing OG",
+      "description": "Southlinch is a tribute to the Southfarthing's most famous strain. It's known for its rich, earthy flavor and its ability to induce a sense of calm and tranquility, perfect for a relaxing evening or a peaceful afternoon in the Shire."
     },
     {
       "name": "Tookies",
@@ -31,8 +37,14 @@ export default function Strains() {
     {
       "name": "Bag End Blend",
       "type": "sativa",
-      "lineage": "Rivendell Runtz x Bud Of Lórien",
+      "lineage": "Hobbiton Haze x",
       "description": "Bag End Blend is a tribute to adventurerous spirits of the Shire, offering a soothing yet uplifting experience. Its flavor profile combines hints of herbal and fruity undertones. This strain is perfect for those seeking a peaceful retreat into their thoughts or going on an adventure."
+    },
+    {
+      "name": "Fellowship Fire",
+      "type": "sativa",
+      "lineage": "Rivendell Runtz x Bud Of Lórien",
+      "description": ""
     },
     {
       "name": "Brandybuck Blend",

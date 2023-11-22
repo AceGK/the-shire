@@ -16,11 +16,12 @@ export default function Home() {
         <div>
           {/* <img src="/images/hobbit-house.jpg" alt="The Shire" width="100%" /> */}
           image
+          {/* https://www.pexels.com/video/close-up-of-a-person-packing-a-tobacco-pipe-10397852/ */}
         </div>
 
 
         <div>
-          <p>We cultivate strains as varied and enchanting as the landscapes of Middle-Earth. From the comforting &apos;Old Toby&apos; to the adventurous &apos;Bag End Blend&apos;, each of our strains is a homage to the rich tapestry that is Arda. They are grown to bring a bit of our magical lands into the homes and hearts of those who partake.</p>
+          <p>We cultivate strains as varied and enchanting as the landscapes of Middle-Earth. From the comforting &apos;Old Toby&apos; to the adventurous &apos;Bag End Blend&apos;, each of our strains is a homage to the rich tapestry that is Arda. They are grown to bring a bit of our magical lands into the homes and hearts of those who partake. You don't need to go to Mordor and back to find such fine pipeweed.</p>
 
           <h2>Quality</h2>
           <p>Quality for us is as essential as a hearty meal. Each leaf and bud is inspected with care to ensure our strains are as pure and wholesome as a Hobbit&apos;s pantry.  </p>
@@ -55,6 +56,14 @@ export default function Home() {
         <Visit />
       </section>
 
+      <section>
+        <h2>Reviews</h2>
+        <div>Aragorn: "As a ranger, I've tasted many herbs, but nothing quite as regal as the pipe-weed from The Shire; truly fit for the King of Gondor."</div>
+
+        <div>Boromir: "One does not simply walk into The Shire without marveling at its rich tapestry of Hobbit-grown herbs, as deep and nuanced as Gondor's own lore."</div>
+
+        <div>Gandalf the Grey: "This farm, much like the Hobbits themselves, is unassuming yet full of surprises. Each plant is nurtured with a care that rivals even that of the Elves. </div>
+      </section>
       <section>
         <h2>Support our partners</h2>
         <ul>
