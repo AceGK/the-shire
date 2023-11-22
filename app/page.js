@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
 
 
-      <div className="split">
+      <div id="about" className="split">
         <div>
           {/* <img src="/images/hobbit-house.jpg" alt="The Shire" width="100%" /> */}
           image
@@ -35,7 +35,7 @@ export default function Home() {
 
 
 
-      <section>
+      <section id="strains">
         <Strains />
       </section>
 
@@ -47,11 +47,11 @@ export default function Home() {
         <AsSeenIn />
       </section>
 
-      <section>
+      <section id="buy">
         <Map />
       </section>
 
-      <section>
+      <section id="visit">
         <Visit />
       </section>
 
