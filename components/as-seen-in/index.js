@@ -23,7 +23,7 @@ const logos = [
   },
   {
       "logo": "/logos/ent-moot.svg",
-      "name": "Ent Moot"
+      "name": "ENT Moot"
   },
   {
       "logo": "/logos/the-numenor.svg",
@@ -55,15 +55,15 @@ const logos = [
   },
   {
       "logo": "/logos/breefeed.svg",
-      "name": "breefeed"
+      "name": "BreeFeed"
   },
   {
       "logo": "/logos/elendil.svg",
-      "name": "elendil"
+      "name": "Elendil!"
   },
   {
       "logo": "/logos/urukhai-radio.svg",
-      "name": "urukhai radio"
+      "name": "UrukHai Radio"
   }
 ]
 
@@ -75,7 +75,7 @@ function AsSeenIn() {
 
           {logos.map((logo, id) => (
             <li key={id}>
-              <img src={logo.logo} alt={logo.name} width="100%" />
+              <img src={logo.logo} alt={logo.name} title={logo.name} width="100%" />
               <span>{logo.name}</span>
             </li>
           ))}
