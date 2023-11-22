@@ -60,7 +60,9 @@ export default function Home() {
         <ul>
           <li>Merry&apos;s Munchies</li>
           <li>Gimli&apos;s Grinders</li>
-          <li></li>
+          <li>ENT Vapes</li>
+          <li>Treebeard&apos;s Tinctures</li>
+          <li>Galadriel's Glassworks</li>
         </ul>
       </section>
     </main>
