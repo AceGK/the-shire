@@ -67,7 +67,7 @@ export default function Strains() {
     {
       "name": "White Wizard",
       "type": "hybrid",
-      "lineage": "Ggreendalf x Durin's Bud",
+      "lineage": "Greendalf x Durin's Bud",
       "description": ""
     },
 
