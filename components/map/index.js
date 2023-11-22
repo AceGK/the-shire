@@ -4,6 +4,7 @@ export default function Map() {
   return (
     <div>
       <h2>Where to Buy</h2>
+      <div className="split">
       [map]
       <ul>
         <li>Misty Mountain Meds</li>
@@ -18,6 +19,7 @@ export default function Map() {
         <li>Argonath Apothecary</li>
         <li>Barad-dûr Buds</li>
       </ul>
+      </div>
 
     </div>
   );
