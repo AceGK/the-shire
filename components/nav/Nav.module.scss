@@ -2,16 +2,35 @@
 @import "@/app/mixins.scss";
 
 .nav {
-  list-style-type: none;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap:1.5rem;
-  padding:0px;
-  img {
-    width:280px;
+  gap: 1rem;
+  .logo {
+    max-width: 280px;
+    width: 100%;
   }
-  li:has(img){
-    margin-right: auto;
+  ul {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0px;
+    margin-left: auto;
+    list-style-type: none;
+    @include desktop() {
+      display: flex;
+    }
+  }
+  .hamburger {
+    margin-left: auto;
+    width: 42px;
+    height: 42px;
+    &:hover {
+      cursor: pointer;
+    }
+    @include desktop() {
+      display: none;
+    }
   }
 }

@@ -11,29 +11,29 @@ export default function Home() {
 
       <Hero />
 
-    
-        <div className="split">
-          <div>
-            {/* <img src="/images/hobbit-house.jpg" alt="The Shire" width="100%" /> */}
-            image
-          </div>
 
-
-          <div>
-            <p>We cultivate strains as varied and enchanting as the landscapes of Middle-Earth. From the comforting 'Old Toby' to the adventurous 'Bag End Blend', each of our strains is a homage to the rich tapestry that is Arda. They are grown to bring a bit of our magical lands into the homes and hearts of those who partake.</p>
-
-            <h2>Quality</h2>
-            <p>Quality for us is as essential as a hearty meal. Each leaf and bud is inspected with care to ensure our strains are as pure and wholesome as a Hobbit’s pantry.  </p>
-
-            <h2>Sustanability</h2>
-            <p>Inspired by the lush greenery of the Shire, our farm is a bastion of sustainable practices. We use methods that are gentle on the land, ensuring that our footprint on Middle-Earth is as light as a Hobbit’s touch. </p>
-
-            <h2>Tradition</h2>
-            <p>Continuing the legacy of 'Old Toby' Hornblower's pioneering spirit in Longbottom, our farm upholds the deep-rooted traditions of the Shire. We harmoniously merge time-honored techniques with modern insights, ensuring that each strain, particularly our cherished 'Old Toby', embodies the tranquility and communal spirit that are hallmarks of our lands.</p>
-          </div>
+      <div className="split">
+        <div>
+          {/* <img src="/images/hobbit-house.jpg" alt="The Shire" width="100%" /> */}
+          image
         </div>
 
-   
+
+        <div>
+          <p>We cultivate strains as varied and enchanting as the landscapes of Middle-Earth. From the comforting &apos;Old Toby&apos; to the adventurous &apos;Bag End Blend&apos;, each of our strains is a homage to the rich tapestry that is Arda. They are grown to bring a bit of our magical lands into the homes and hearts of those who partake.</p>
+
+          <h2>Quality</h2>
+          <p>Quality for us is as essential as a hearty meal. Each leaf and bud is inspected with care to ensure our strains are as pure and wholesome as a Hobbit&apos;s pantry.  </p>
+
+          <h2>Sustanability</h2>
+          <p>Inspired by the lush greenery of the Shire, our farm is a bastion of sustainable practices. We use methods that are gentle on the land, ensuring that our footprint on Middle-Earth is as light as a Hobbit&apos;s touch. </p>
+
+          <h2>Tradition</h2>
+          <p>Continuing the legacy of &apos;Old Toby&apos; Hornblower&apos;s pioneering spirit in Longbottom, our farm upholds the deep-rooted traditions of the Shire. We harmoniously merge time-honored techniques with modern insights, ensuring that each strain, particularly our cherished &apos;Old Toby&apos;, embodies the tranquility and communal spirit that are hallmarks of our lands.</p>
+        </div>
+      </div>
+
+
 
       <section>
         <Strains />
@@ -55,14 +55,14 @@ export default function Home() {
         <Visit />
       </section>
 
-<section>
-  Support our partners 
-  <ul>
-    <li>Merry's Munchies</li>
-    <li>Gimli's Grinders (one grinder to rule them all, and in the dankness bind them.)</li>
-    <li></li>
-  </ul>
-</section>
+      <section>
+        <h2>Support our partners</h2>
+        <ul>
+          <li>Merry&apos;s Munchies</li>
+          <li>Gimli&apos;s Grinders</li>
+          <li></li>
+        </ul>
+      </section>
     </main>
   );
 }

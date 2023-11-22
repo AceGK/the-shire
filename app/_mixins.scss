@@ -1,23 +1,16 @@
-$smallScreenValue: 900px;
-$tabletValue: 768px;
-$mobileValue: 480px;
+$desktopValue: 900px;
+$tabletValue: 500px;
 
 // You can add an offset to any of these
-// @include mediumScreen(30px) { ... }
+// @include tablet(30px) { ... }
 
-@mixin mobile($offset: 0px) {
-  @media (max-width: calc(#{$mobileValue} + #{$offset})) {
+@mixin tablet() {
+  @media (min-width:$tabletValue) {
       @content;
   }
 }
-
-@mixin tablet($offset: 0px) {
-    @media (max-width: calc(#{$tabletValue} + #{$offset})) {
-        @content;
-    }
-}
-@mixin smallScreen($offset: 0px) {
-    @media (max-width: calc(#{$smallScreenValue} + #{$offset})) {
-        @content;
-    }
+@mixin desktop() {
+  @media (min-width:$desktopValue) {
+      @content;
+  }
 }

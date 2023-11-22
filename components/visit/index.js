@@ -1,7 +1,7 @@
 export default function Visit() {
   return (
     <div className="split">
-      <img src="/images/hobbit-house.jpg" alt="The Shire" width="100%" />
+      
       <div>
         <h2>Visit Us</h2>
         <p>
