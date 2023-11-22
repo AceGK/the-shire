@@ -107,3 +107,29 @@ p {
     // }
   }
 }
+
+
+.bg-gradient {
+  background-color: #213229;
+  background:linear-gradient(0deg, #101c18 0%, #2e392d 100%);
+}
+.about {
+  color:rgb(233, 225, 209);
+  display:flex;
+  flex-wrap:wrap;
+  gap:2rem;
+  padding:3rem 0rem 15rem 0rem;
+  text-align: center;
+  & > div {
+    flex:1;
+    min-width:250px;
+    img {
+      border-radius: 50%;
+      // display:none;
+      width:100%;
+      height:fit-content;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+  }
+}

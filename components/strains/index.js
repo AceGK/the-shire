@@ -7,26 +7,20 @@ export default function Strains() {
     {
       "name": "Old Toby",
       "type": "indica",
-      "lineage": "Hornblower Diesel x ",
+      "lineage": "Hornblower Diesel x Bree Dream ",
       "description": "The finest weed in the Southfarthing, Old Toby, named after our founder, is a legendary strain known for its smooth, rich flavor and calming effects. It's perfect for a relaxing evening under the stars or a peaceful afternoon by the river."
     },
     {
       "name": "Longbottom Leaf",
       "type": "sativa",
-      "lineage": "Southfarthing Sour x Hobbiton Haze",
-      "description": "A tribute to the rare and valuable leaf from Hobbiton, Longbottom Leaf is a strain celebrated for its uplifting and energizing qualities. Ideal for creative endeavors or social gatherings."
+      "lineage": "Southfarthing OG x ",
+      "description": "A tribute to the rare and valuable leaf from Longbottom, Longbottom Leaf is a strain celebrated for its uplifting and energizing qualities. Ideal for creative endeavors or social gatherings."
     },
     {
       "name": "Southern Star",
       "type": "hybrid",
       "lineage": "Kingsfoil Kush x Sweet Galenas",
       "description": "Southern Star is a harmonious blend that mirrors the beauty and allure of the Southlands. It's celebrated for its balanced effects, offering a burst of creativity and a gentle relaxation."
-    },
-    {
-      "name": "Southlinch",
-      "type": "hybrid",
-      "lineage": "Bree Dream x Southfarthing OG",
-      "description": "Southlinch is a tribute to the Southfarthing's most famous strain. It's known for its rich, earthy flavor and its ability to induce a sense of calm and tranquility, perfect for a relaxing evening or a peaceful afternoon in the Shire."
     },
     {
       "name": "Tookies",
@@ -97,8 +91,7 @@ export default function Strains() {
     <div>
       <h2>Our Strains</h2>
       <p>
-        Discover our enchanting selection of strains, each carefully cultivated
-        to offer a unique experience:
+      From the comforting &apos;Old Toby&apos; to the adventurous &apos;Bag End Blend&apos;, each of our strains pay homage to the enchanting landscapes of Middle-Earth. They are grown to bring a bit of our magical lands into the homes and hearts of those who partake. You don't need to go to Mordor and back to find such fine pipeweed.
       </p>
       <ul className={styles.strains}>
         {strains.map((strain, id) => (
