@@ -17,7 +17,7 @@ export default function Hero() {
 
       <div className={styles.buffer} />
       
-      <div className="full-width bg-gradient">
+      <div className="full-width bg-gradient glass-border-top">
         <div className="blurb-container about">
           {/* <h1 className="">Finest Pipe-Weed in the Southfarthing</h1> */}
           <div className="blurb">

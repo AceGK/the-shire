@@ -5,7 +5,7 @@ import styles from './Nav.module.scss';
 export default function Nav() {
 
   return (
-    <nav className="content-grid nav">
+    <nav className="content-grid nav glass-border-bottom">
       <div className={styles.nav}>
       <Link href="/">
         <img className={styles.logo} src="/logos/the-shire-logo-light.png" alt="The Shire Logo" />
