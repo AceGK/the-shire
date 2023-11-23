@@ -11,47 +11,13 @@ export default function Home() {
 
       <Hero />
 
-
-      <section id="about" className="bg-gradient full-width">
-
-    <div className="about">
-          <div>
-            <img src="/images/hobbit-house.jpg" alt="The Shire" />
-            <h2>Quality</h2>
-            <p>Quality for us is as essential as a hearty meal. Each leaf and bud is inspected with care to ensure our strains are as pure and wholesome as a Hobbit&apos;s pantry.  </p>
-          </div>
-
-          <div>
-            <img src="/images/hobbit-house.jpg" alt="The Shire" />
-            <h2>Sustainable</h2>
-            <p>Inspired by the lush greenery of the Shire, our farm is a bastion of sustainable practices. We use methods that are gentle on the land, ensuring that our footprint on Middle-Earth is as light as a Hobbit&apos;s touch. </p>
-          </div>
-
-          <div>
-            <img src="/images/hobbit-house.jpg" alt="The Shire" />
-            <h2>Organic</h2>
-            <p>
-              We believe in the purity of nature, and our organic practices ensure that our strains are as natural as the rolling hills of the Shire. We use no pesticides or chemicals, and our plants are grown in the most natural way possible.
-            </p>
-          </div>
-
-          <div>
-            <img src="/images/hobbit-house.jpg" alt="The Shire" />
-            <h2>Tradition</h2>
-            <p>Continuing the legacy of &apos;Old Toby&apos; Hornblower&apos;s pioneering spirit in Longbottom,, our farm upholds the deep-rooted traditions of cultivating the finest Southfarthing leaf, renowned for its smooth, rich flavor.</p>
-          </div>
-          </div>
-      </section>
-
-
-
-      <section id="strains">
+      {/* <section id="strains">
         <Strains />
-      </section>
+      </section> */}
 
-      <section>
+      {/* <section>
         <Packaging />
-      </section>
+      </section> */}
 
       <section>
         <AsSeenIn />
