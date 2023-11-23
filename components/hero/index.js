@@ -5,10 +5,10 @@ export default function Hero() {
     <div
       className={`${styles.hero} full-width content-grid`}
       style={{
-        backgroundImage: `url("/images/the-shire-hero.jpg")`,
-        width: "100%",
+        backgroundImage: `url("/images/the-shire-hero-2.jpg")`,
+        // width: "100%",
         height: "100%",
-        backgroundPosition: "bottom-center",
+        backgroundPosition: "top-center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         textAlign: "center",

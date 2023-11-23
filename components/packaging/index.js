@@ -3,7 +3,7 @@ export default function Packaging() {
     <div>
         <h2>Our Packaging</h2>
         <div className="split">
-        <img src="/images/mallorn-leaf.jpg" alt="The Shire" width="100%" height="100%"/>
+        {/* <img src="/images/mallorn-leaf.jpg" alt="The Shire" width="100%" height="100%"/> */}
         <ul>
           <li>
             <strong>Mallorn Leaf Bags:</strong> Made from the resilient leaves of Mallorn trees, our organic bags naturally decompose leaving no environmental trace.

@@ -5,10 +5,10 @@ import styles from './Nav.module.scss';
 export default function Nav() {
 
   return (
-    <nav className="content-grid">
+    <nav className="content-grid nav">
       <div className={styles.nav}>
       <Link href="/">
-        <img className={styles.logo} src="/logos/the-shire-logo.png" alt="The Shire Logo" />
+        <img className={styles.logo} src="/logos/the-shire-logo-light.png" alt="The Shire Logo" />
       </Link>
       <span className="visually-hidden">The Shire</span>
       <ul>

@@ -11,13 +11,13 @@ export default function Home() {
 
       <Hero />
 
-      {/* <section id="strains">
+      <section id="strains">
         <Strains />
-      </section> */}
+      </section>
 
-      {/* <section>
+      <section>
         <Packaging />
-      </section> */}
+      </section>
 
       <section>
         <AsSeenIn />
