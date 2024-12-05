@@ -88,7 +88,7 @@ export default function Strains() {
   ]
 
   return (
-    <div>
+    <div className={styles.header}>
       <h2>Our Strains</h2>
       <p>
       From the comforting &apos;Old Toby&apos; to the adventurous &apos;Bag End Blend&apos;, each of our strains pay homage to the enchanting landscapes of Middle-Earth. They are grown to bring a bit of our magical lands into the homes and hearts of those who partake. You don't need to go to Mordor and back to find such fine pipeweed.

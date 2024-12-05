@@ -1,4 +1,4 @@
-import styles from './Hero.module.scss';
+import styles from './styles.module.scss';
 
 export default function Hero() {
   return (
@@ -43,7 +43,7 @@ export default function Hero() {
             <img src="/images/hobbit-house.jpg" alt="The Shire" />
             <div>
               <h2>Sustainable</h2>
-              <p>Inspired by the lush greenery of the Shire, our farm is a bastion of sustainable practices. We use methods that are gentle on the land, ensuring that our footprint is as light as a Hobbit&apos;s touch </p>
+              <p>Inspired by the lush greenery of the Shire, our farm is a bastion of sustainable practices. We ensure that our footprint is as light as a Hobbit&apos;s</p>
             </div>
           </div>
 

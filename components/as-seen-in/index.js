@@ -69,7 +69,7 @@ const logos = [
 
 function AsSeenIn() {
   return (
-      <div>
+      <div className={styles.asSeen}>
         <h2>As Seen in</h2>
         <ul className={styles.logos}>
 
