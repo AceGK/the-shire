@@ -8,7 +8,7 @@ export default function Hero() {
         backgroundImage: `url("/images/the-shire-hero-2.jpg")`,
         // width: "100%",
         height: "100%",
-        backgroundPosition: "top-center",
+        backgroundPosition: "top center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         textAlign: "center",
