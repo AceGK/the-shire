@@ -8,34 +8,34 @@ import Reviews from "@/components/reviews";
 
 export default function Home() {
   return (
-    <main className="content-grid">
+    <>
+    <Hero />
+    <main>
 
-      <Hero />
-
-      <section id="strains">
+      <section id="strains" className="content-grid bg-texture">
         <Strains />
       </section>
 
-      <section>
+      <section className="content-grid bg-color">
         <Packaging />
       </section>
 
-      <section>
+      <section className="content-grid bg-texture">
         <AsSeenIn />
       </section>
 
-      <section id="buy">
+      <section id="buy" className="content-grid bg-texture">
         <Map />
       </section>
 
-      <section id="visit">
+      <section id="visit" className="content-grid bg-texture">
         <Visit />
       </section>
 
-      <section>
+      <section className="content-grid bg-texture">
         <Reviews />
       </section>
-      <section>
+      <section className="content-grid bg-texture">
         <h2>Support our partners</h2>
         <ul>
           <li>Merry&apos;s Munchies</li>
@@ -46,5 +46,6 @@ export default function Home() {
         </ul>
       </section>
     </main>
+    </>
   );
 }

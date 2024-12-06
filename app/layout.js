@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
-import './reset.scss'
-import './globals.scss'
+import '@/app/styles/reset.scss'
+import '@/app/styles/globals.scss'
 import Footer from '@/components/footer'
 import Nav from 'components/nav'
 

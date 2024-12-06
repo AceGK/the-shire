@@ -1,5 +1,5 @@
 
-import styles from './Strains.module.scss'
+import styles from './styles.module.scss'
 
 export default function Strains() {
 
