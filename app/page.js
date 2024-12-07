@@ -26,18 +26,9 @@ export default function Home() {
         <Press />
       </section>
 
-      <section id="buy" className="content-grid bg-texture">
+      <section id="buy" className="content-grid bg-color">
         <Map />
-      </section>
-
-      <section id="visit" className="content-grid bg-texture">
         <Visit />
-      </section>
-
-      <section className="content-grid bg-texture">
-        <Reviews />
-      </section>
-      <section className="content-grid bg-texture">
         <h2>Support our partners</h2>
         <ul>
           <li>Merry&apos;s Munchies</li>
@@ -46,6 +37,11 @@ export default function Home() {
           <li>Treebeard&apos;s Tinctures</li>
           <li>Galadriel&apos;s Glassworks</li>
         </ul>
+      </section>
+
+    
+      <section id="press" className="content-grid bg-texture">
+        <Reviews />
       </section>
     </main>
     </>

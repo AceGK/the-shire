@@ -46,8 +46,8 @@ p {
 
 .content-grid {
   --padding-inline: 1rem;
-  --content-max-width: 1400px;
-  --breakout-max-width: 1400px;
+  --content-max-width: 1200px;
+  --breakout-max-width: 1200px;
 
   --breakout-size: calc(
     (var(--breakout-max-width) - var(--content-max-width)) / 2
@@ -136,6 +136,6 @@ main section {
   background-image: url("/images/bg-color.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  // background-attachment: fixed;
   background-position: center;
 }

@@ -5,12 +5,19 @@
   align-items: center;
   gap:1rem;
   padding:1rem;
+  color:white;
+  svg {
+    width:50px;
+    height: 50px;
+    color:white;
+  }
 }
 
 .icons {
   display:flex;
   flex-wrap:wrap;
   gap:1rem;
+  color:white;
   img {
     width:50px;
     height: 50px;
