@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
         </div>
 
-        Copywrite &copy; 2023 The Shire
+        &copy; 2025 The Shire
       </div>
     </footer>
   );

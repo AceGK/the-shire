@@ -5,8 +5,8 @@ import styles from './Nav.module.scss';
 export default function Nav() {
 
   return (
-    <nav className={styles.nav}>
-      <div className="content-grid">
+    <header className={styles.nav}>
+      <a href="#main-content" className="header-skip">Skip to content</a>
       <span className="visually-hidden">The Shire</span>
       <ul>
         <NavItem title="Home" link="#home" />
@@ -14,11 +14,9 @@ export default function Nav() {
         <NavItem title="About" link="#about" />
         <NavItem title="Press" link="#press" />
         <NavItem title="Where to Buy" link="#buy" />
-        <NavItem title="Visit" link="#visit" />
+        <NavItem title="Reviews" link="#reviews" />
       </ul>
-      <button className={styles.hamburger}><img src="/icons/menu.svg" /></button>
-    </div>
-    </nav>
+    </header>
   );
 }
 

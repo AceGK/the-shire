@@ -2,7 +2,7 @@
 @import "@/app/styles/mixins.scss";
 
 .nav {
-  position: sticky; 
+  position: fixed; 
   top: 0; 
   left: 0;
   z-index: 999999; 
@@ -10,15 +10,10 @@
   background: linear-gradient(0deg, #223329 0%, #2e392dec 100%);
   backdrop-filter: blur(10px); 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-  padding:2rem 0rem;
-  
-  a {
-    color: white;
-  }
-
+  padding: 2rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   gap: 1rem;
 
   .logo {
@@ -27,30 +22,35 @@
   }
 
   ul {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 0px;
-    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center list items horizontally */
+    align-items: center; /* Center list items vertically */
+    gap: 1rem 2rem;
+    padding: 0;
+    margin: 0;
     list-style-type: none;
 
     li a {
+      color: white;
+      text-transform: uppercase;
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1em;
+      letter-spacing: 0.15em;
       position: relative;
 
       &:hover {
         text-decoration: none;
+        color: $clr-secondary;
       }
 
       &::after {
         content: "";
         position: absolute;
         left: 0;
-        bottom: -2px;
+        bottom: -1px;
         width: 100%;
-        height: 2px;
+        height: 1px;
         background-color: currentColor;
         opacity: 0;
         transition: opacity 0.2s ease-in-out;
@@ -60,23 +60,6 @@
         opacity: 1;
       }
     }
-
-    @include desktop() {
-      display: flex;
-    }
-  }
-
-  .hamburger {
-    margin-left: auto;
-    width: 42px;
-    height: 42px;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    @include desktop() {
-      display: none;
-    }
   }
 }
+

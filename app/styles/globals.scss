@@ -44,6 +44,21 @@ p {
 //   line-height: 1;
 // }
 
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.header-skip {
+  height: 1px;
+  left: -1000px;
+  overflow: hidden;
+  position: absolute;
+  text-align: left;
+  top: -1000px;
+  width: 1px;
+}
+
 .content-grid {
   --padding-inline: 1rem;
   --content-max-width: 1200px;
@@ -139,3 +154,4 @@ main section {
   // background-attachment: fixed;
   background-position: center;
 }
+
