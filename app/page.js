@@ -1,4 +1,5 @@
-import AsSeenIn from "@/components/as-seen-in";
+import Press from "@/components/press";
+import About from "@/components/about";
 import Strains from "@/components/strains";
 import Map from "@/components/map";
 import Hero from "@/components/hero";
@@ -9,19 +10,20 @@ import Reviews from "@/components/reviews";
 export default function Home() {
   return (
     <>
-    <Hero />
+    <Hero id="home" />
     <main>
 
       <section id="strains" className="content-grid bg-texture">
         <Strains />
       </section>
 
-      <section className="content-grid bg-color">
+      <section id="about" className="content-grid bg-color">
+        <About />
         <Packaging />
       </section>
 
-      <section className="content-grid bg-texture">
-        <AsSeenIn />
+      <section id="press" className="content-grid bg-texture">
+        <Press />
       </section>
 
       <section id="buy" className="content-grid bg-texture">

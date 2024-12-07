@@ -21,7 +21,7 @@ export default function Packaging() {
         <div className={styles.item}>
           <div className={styles.card}>
 
-            <img src="/images/barrel.png" alt="Elven Crafted Jars" />
+            <img src="/images/jar.png" alt="Elven Crafted Jars" />
             <div className={styles.description}>
               Masterfully crafted by Elves, our jars embody the elegance and precision of Rivendell&apos;s finest artisans. Made with ethereal yet durable materials, they ensure the freshness and purity of their contents.
 

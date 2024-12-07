@@ -5,15 +5,14 @@ import styles from './Nav.module.scss';
 export default function Nav() {
 
   return (
-    <nav className="content-grid nav glass-border-bottom">
-      <div className={styles.nav}>
-      <Link href="/">
-        <img className={styles.logo} src="/logos/the-shire-logo-light.png" alt="The Shire Logo" />
-      </Link>
+    <nav className={styles.nav}>
+      <div className="content-grid">
       <span className="visually-hidden">The Shire</span>
       <ul>
-        <NavItem title="About" link="#about" />
+        <NavItem title="Home" link="#home" />
         <NavItem title="Strains" link="#strains" />
+        <NavItem title="About" link="#about" />
+        <NavItem title="Press" link="#press" />
         <NavItem title="Where to Buy" link="#buy" />
         <NavItem title="Visit" link="#visit" />
       </ul>

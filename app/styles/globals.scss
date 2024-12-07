@@ -89,18 +89,6 @@ p {
   width: 0;
 }
 
-.nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999999;
-  width: 100%;
-  background: linear-gradient(0deg, #223329 0%, #2e392dec 100%);
-  a {
-    color:white;
-  }
-}
-
 .split {
   display: flex;
   flex-direction: column;
