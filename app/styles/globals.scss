@@ -11,9 +11,17 @@ html {
   scroll-behavior: smooth;
 }
 
+p, span, a {
+  font-family: "Lustiana";
+}
+
+.script {
+  font-family: "Eagle Lake";
+}
+
 body {
   margin: 0px;
-
+  // font-family: "Lustiana";
   // font-family: var(--ff-primary);
   // font-weight: 400;
   // font-size: 1.3125rem;
@@ -35,14 +43,6 @@ p {
   margin: 1em 0em;
 }
 
-// h1,
-// h2,
-// h3 {
-//   color: var(--clr-primary-400);
-//   font-family: var(--ff-accent);
-//   font-weight: 900;
-//   line-height: 1;
-// }
 
 h2 {
   font-size: 2rem;

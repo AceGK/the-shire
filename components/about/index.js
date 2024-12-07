@@ -13,23 +13,23 @@ export default function Provenance() {
     {
       image: '/images/hobbit-house.jpg',
       alt: 'The Shire',
-      title: 'Quality',
+      title: 'The Shire',
       content:
-        "Quality for us is as essential as a hearty meal. Each leaf and bud is thoroughly inspected with care to ensure our strains are as pure and wholesome as a Hobbit's pantry.",
-    },
-    {
-      image: '/images/hobbit-farm-2.jpg',
-      alt: 'The Shire',
-      title: 'Organic',
-      content:
-        'Our organic practices ensure that our strains are as natural as the rolling hills of the Shire. We use no pesticides, chemicals, or magic to grow our plants.',
+        '...',
     },
     {
       image: '/images/hobbit-farm.jpg',
       alt: 'The Shire',
-      title: 'Sustainable',
+      title: '...',
       content:
-        "Inspired by the lush greenery of the Shire, our farm is a bastion of sustainable practices. We ensure that our footprint is as light as a Hobbit's.",
+        "...",
+    },
+    {
+      image: '/images/hobbit-farm-2.jpg',
+      alt: 'The Shire',
+      title: '...',
+      content:
+        "...",
     },
     {
       image: '/images/tradition.jpg',

@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className={styles.about}>
       <div className={styles.blurb}>
-        <img src="/images/hobbit-house.jpg" alt="The Shire" />
+        <img src="/images/hobbit-farm.jpg" alt="The Shire" />
         <div>
           <h2>Quality</h2>
           <p>

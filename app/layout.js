@@ -1,14 +1,20 @@
-import { Lusitana } from 'next/font/google'
+import { Lusitana, Eagle_Lake } from 'next/font/google';
 import '@/app/styles/reset.scss'
 import '@/app/styles/globals.scss'
 import '@/app/styles/swiper.scss'
 import Footer from '@/components/footer'
 import Nav from 'components/nav'
 
+const eagleLake = Eagle_Lake({
+  subsets: ['latin'],
+  weight: '400', 
+});
+
 const lusitana = Lusitana({
   subsets: ['latin'],
-  weight: ['400', '700'], // Specify the available weights
+  weight: ['400', '700'],
 });
+
 
 export const metadata = {
   title: 'The Shire',
@@ -18,7 +24,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={lusitana.className}>
+      <body className={`${eagleLake.className} ${lusitana.className} `}>
+        
         <Nav />
         {children}
         <Footer />
