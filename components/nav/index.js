@@ -10,11 +10,12 @@ export default function Nav() {
       <span className="visually-hidden">The Shire</span>
       <ul>
         <NavItem title="Home" link="#home" />
-        <NavItem title="Strains" link="#strains" />
         <NavItem title="About" link="#about" />
-        <NavItem title="Press" link="#press" />
+        <NavItem title="Process" link="#process" />
+        <NavItem title="Strains" link="#strains" />
+        <NavItem title="Visit" link="#visit" />
         <NavItem title="Where to Buy" link="#buy" />
-        <NavItem title="Reviews" link="#reviews" />
+        <NavItem title="Press" link="#press" />
       </ul>
     </header>
   );

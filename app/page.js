@@ -1,12 +1,12 @@
 import Press from "@/components/press";
-import About from "@/components/about";
+import Process from "@/components/process";
 import Strains from "@/components/strains";
 import Map from "@/components/map";
 import Hero from "@/components/hero";
 import Visit from "@/components/visit";
 import Packaging from "@/components/packaging";
 import Reviews from "@/components/reviews";
-import Provenance from "@/components/provenance";
+import About from "@/components/about";
 
 export default function Home() {
   return (
@@ -14,10 +14,12 @@ export default function Home() {
       <main id="main-content">
         <Hero id="home" />
 
-        <section id="provenance" className="content-grid bg-texture"><Provenance /></section>
-
-        <section id="about" className="content-grid bg-color">
+        <section id="about" className="content-grid bg-texture">
           <About />
+          </section>
+
+        <section id="process" className="content-grid bg-color">
+          <Process />
           <Packaging />
         </section>
 
@@ -25,13 +27,12 @@ export default function Home() {
           <Strains />
         </section>
 
-        <section id="press" className="content-grid bg-texture">
-          <Press />
+        <section id="visit" className="content-grid bg-color">
+          <Visit />
         </section>
 
         <section id="buy" className="content-grid bg-color">
           <Map />
-          <Visit />
           <h2>Support our partners</h2>
           <ul>
             <li>Merry&apos;s Munchies</li>
@@ -42,6 +43,9 @@ export default function Home() {
           </ul>
         </section>
 
+        <section id="press" className="content-grid bg-texture">
+          <Press />
+        </section>
 
         <section id="reviews" className="content-grid bg-texture">
           <Reviews />

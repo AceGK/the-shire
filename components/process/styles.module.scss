@@ -1,0 +1,54 @@
+@import "@/app/styles/_variables.scss";
+
+.about {
+  display: flex;
+  flex-direction: column; 
+  gap: 4rem;
+  padding: 4rem 0;
+  width: 100%;
+  text-align: left; 
+}
+
+.blurb {
+  display: flex;
+  align-items: center;
+  gap: 2rem; 
+  width: 100%;
+  text-align: center;
+
+  h2 {
+    font-weight:bold;
+    color:$clr-secondary;
+  }
+
+  p {
+    color:white;
+    line-height: 1.6;
+  }
+
+  img {
+    flex: 1; 
+    max-width: 50%; 
+    border-radius: 10px; 
+    object-fit: cover;
+    border: 5px solid #65422e;
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+  }
+
+  div {
+    flex: 1; 
+    padding: 1rem;
+  }
+
+}
+
+.blurb:nth-child(odd) {
+  flex-direction: row; 
+}
+
+.blurb:nth-child(even) {
+  flex-direction: row-reverse; 
+}
