@@ -3,6 +3,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-flip';
 import { Pagination, EffectFlip, Controller } from 'swiper/modules';
 import { useState } from 'react';
 import styles from './styles.module.scss';
@@ -44,8 +45,8 @@ export default function Provenance() {
 
   return (
     <div className="content-grid">
-      <div className={styles.provenanceSlider}>
-        <div className={styles.swipersContainer}>
+      <div className={styles.about}>
+
           {/* Image Swiper */}
           <Swiper
             modules={[EffectFlip, Controller]}
@@ -77,14 +78,14 @@ export default function Provenance() {
           >
             {blurbs.map((blurb, index) => (
               <SwiperSlide key={index}>
-                <div className={styles.content}>
+                <div className={styles.textSlide}>
                   <h2>{blurb.title}</h2>
                   <p>{blurb.content}</p>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+   
       </div>
     </div>
   );

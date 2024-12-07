@@ -1,4 +1,25 @@
+@import "./_variables.scss";
+@import "./mixins";
+
 .swiper-slide-shadow-left, .swiper-slide-shadow-flip, 
 .swiper-slide-shadow-right {
   background-image:none!important;
+}
+
+.swiper-pagination-bullet {
+  background: transparent!important;
+  border:1px solid $clr-primary!important;
+  opacity: 1!important;
+  height:10px!important;
+  width:10px!important;
+}
+
+.swiper-pagination-bullet-active {
+  background: $clr-primary!important;
+}
+
+.swiper-pagination {
+  display: flex;
+  gap:6px;
+  justify-content: center;
 }
