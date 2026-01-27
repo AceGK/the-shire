@@ -11,22 +11,22 @@ import styles from './styles.module.scss';
 export default function Provenance() {
   const blurbs = [
     {
-      image: '/images/hobbit-house.jpg',
+      image: '/images/the-shire.jpg',
       alt: 'The Shire',
       title: 'The Shire',
       content:
-        '...',
+        'Nestled in the rolling green hills of the Southfarthing, our family farm has been cultivating the finest pipe-weed since the days of the Old Took. Here, where the soil is rich and the pace of life is slow, we grow each plant with the patience and care only a Hobbit knows.',
     },
     {
-      image: '/images/hobbit-farm.jpg',
-      alt: 'The Shire',
-      title: '...',
+      image: '/images/hobbit-house-4.jpg',
+      alt: 'Cultivation',
+      title: 'Cultivation',
       content:
-        "...",
+        "Every leaf is tended by hand, from seed to harvest. We don't rush the growing season or cut corners—our methods are as unhurried as a second breakfast, ensuring each strain reaches its full potential.",
     },
     {
       image: '/images/tradition.jpg',
-      alt: 'The Shire',
+      alt: 'Tradition',
       title: 'Tradition',
       content:
         "Continuing the legacy of 'Old Toby' Hornblower's pioneering spirit in Longbottom, our farm upholds the deep-rooted traditions of cultivating the finest Southfarthing pipe-weed.",

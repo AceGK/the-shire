@@ -5,7 +5,7 @@ export default function About() {
     <div className={styles.about}>
       <div className={styles.blurb}>
         <div className={styles.imageFrame}>
-          <img src="/images/hobbit-farm.jpg" alt="The Shire" />
+          <img src="/images/hobbit-house-2.jpg" alt="The Shire" />
           <span className={styles.corner} data-pos="tl">❦</span>
           <span className={styles.corner} data-pos="tr">❦</span>
           <span className={styles.corner} data-pos="bl">❦</span>
@@ -26,7 +26,7 @@ export default function About() {
       </div>
       <div className={styles.blurb}>
         <div className={styles.imageFrame}>
-          <img src="/images/hobbit-farm-2.jpg" alt="The Shire" />
+          <img src="/images/hobbit-house-3.jpg" alt="The Shire" />
           <span className={styles.corner} data-pos="tl">❦</span>
           <span className={styles.corner} data-pos="tr">❦</span>
           <span className={styles.corner} data-pos="bl">❦</span>
@@ -47,7 +47,7 @@ export default function About() {
       </div>
       <div className={styles.blurb}>
         <div className={styles.imageFrame}>
-          <img src="/images/hobbit-farm.jpg" alt="The Shire" />
+          <img src="/images/the-shire-3.jpg" alt="The Shire" />
           <span className={styles.corner} data-pos="tl">❦</span>
           <span className={styles.corner} data-pos="tr">❦</span>
           <span className={styles.corner} data-pos="bl">❦</span>

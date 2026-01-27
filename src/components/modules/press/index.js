@@ -9,15 +9,17 @@ function AsSeenIn() {
       <ul className={styles.logos}>
         {logos.map((item, id) => (
           <li key={id} title={item.name}>
-            <Image
-              src={item.logo}
-              alt={item.name}
-              width={120}
-              height={50}
-              className={styles.logo}
-              unoptimized
-            />
-            <span>{item.name}</span>
+            <a href={item.url} target="_blank" rel="noopener noreferrer  nofollow">
+              <Image
+                src={item.logo}
+                alt={item.name}
+                width={120}
+                height={50}
+                className={styles.logo}
+                unoptimized
+              />
+              <span>{item.name}</span>
+            </a>
           </li>
         ))}
       </ul>

@@ -105,8 +105,8 @@
     .card {
       position: relative;
       aspect-ratio: 3/4;
-      background: $clr-cream url('/images/card-texture.png') center/cover;
-      border: 1px solid rgba($clr-accent, 0.2);
+      background: $clr-cream url('/images/bg-texture.png') center/cover;
+      // border: 1px solid rgba($clr-accent, 0.2);
       border-radius: 1rem;
       overflow: hidden;
       display: flex;
@@ -132,8 +132,8 @@
         align-items: center;
         justify-content: center;
         padding: 3rem;
-        background: rgba($clr-primary-dark, 0.95);
-        color: $clr-cream;
+        // background: rgba($clr-primary-dark, 0.95);
+        color: $clr-primary-dark;
         font-family: var(--ff-body);
         font-size: var(--fs-body);
         line-height: 1.75;
@@ -176,8 +176,8 @@
         border-color: $clr-accent;
 
         img {
-          opacity: 0;
-          transform: scale(0.9);
+          opacity: 0.25;
+          // transform: scale(0.9);
         }
 
         .description {

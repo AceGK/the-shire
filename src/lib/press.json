@@ -1,18 +1,82 @@
 [
-  { "logo": "/logos/southfarthing-chronicle.svg", "name": "The Southfarthing Chronicle" },
-  { "logo": "/logos/the-valinor-voice.svg", "name": "The Valinor Voice" },
-  { "logo": "/logos/hobbit-times.svg", "name": "Hobbit Times" },
-  { "logo": "/logos/the-gondor-gazette.svg", "name": "The Gondor Gazette" },
-  { "logo": "/logos/hobbiton-herald.svg", "name": "Hobbiton Herald" },
-  { "logo": "/logos/ent-moot.svg", "name": "ENT Moot" },
-  { "logo": "/logos/the-numenor.svg", "name": "The Númenor" },
-  { "logo": "/logos/the-orkland-tribune.svg", "name": "The Orkland Tribune" },
-  { "logo": "/logos/the-rivendell-reporter.svg", "name": "The Rivendell Reporter" },
-  { "logo": "/logos/eye-of-sauron.svg", "name": "Eye of Sauron" },
-  { "logo": "/logos/elfpost.svg", "name": "Elf Post" },
-  { "logo": "/logos/goblin-stank.svg", "name": "Goblin Stank" },
-  { "logo": "/logos/erutube.svg", "name": "Erutube" },
-  { "logo": "/logos/breefeed.svg", "name": "BreeFeed" },
-  { "logo": "/logos/elendil.svg", "name": "Elendil!" },
-  { "logo": "/logos/urukhai-radio.svg", "name": "UrukHai Radio" }
+  {
+    "logo": "/logos/southfarthing-chronicle.svg",
+    "name": "The Southfarthing Chronicle",
+    "url": "https://www.sfchronicle.com/"
+  },
+  {
+    "logo": "/logos/the-valinor-voice.svg",
+    "name": "The Valinor Voice",
+    "url": "https://www.villagevoice.com/"
+  },
+  {
+    "logo": "/logos/hobbit-times.svg",
+    "name": "Hobbit Times",
+    "url": "https://hightimes.com/"
+  },
+  {
+    "logo": "/logos/the-gondor-gazette.svg",
+    "name": "The Gondor Gazette",
+    "url": "https://www.thegazette.com/"
+  },
+  {
+    "logo": "/logos/hobbiton-herald.svg",
+    "name": "Hobbiton Herald",
+    "url": "https://www.bostonherald.com/"
+  },
+  {
+    "logo": "/logos/ent-moot.svg",
+    "name": "ENT Moot",
+    "url": "https://www.bbc.com/news"
+  },
+  {
+    "logo": "/logos/the-numenor.svg",
+    "name": "The Númenor",
+    "url": "https://www.newyorker.com/"
+  },
+  {
+    "logo": "/logos/the-orkland-tribune.svg",
+    "name": "The Orkland Tribune",
+    "url": "https://en.wikipedia.org/wiki/Oakland_Tribune"
+  },
+  {
+    "logo": "/logos/the-rivendell-reporter.svg",
+    "name": "The Rivendell Reporter",
+    "url": "https://www.hollywoodreporter.com/"
+  },
+  {
+    "logo": "/logos/eye-of-sauron.svg",
+    "name": "Eye of Sauron",
+    "url": "https://www.cbsnews.com/"
+  },
+  {
+    "logo": "/logos/elfpost.svg",
+    "name": "Elf Post",
+    "url": "https://www.huffpost.com/"
+  },
+  {
+    "logo": "/logos/goblin-stank.svg",
+    "name": "Goblin Stank",
+    "url": "https://abc.com/shows/shark-tank"
+  },
+  {
+    "logo": "/logos/erutube.svg",
+    "name": "Erutube",
+    "url": "https://www.youtube.com/"
+  },
+  {
+    "logo": "/logos/breefeed.svg",
+    "name": "BreeFeed",
+    "url": "https://www.buzzfeed.com/"
+  },
+  {
+    "logo": "/logos/elendil.svg",
+    "name": "Elendil!",
+    "url": "https://www.yahoo.com/"
+  },
+  {
+    "logo": "/logos/urukhai-radio.svg",
+    "name": "UrukHai Radio",
+    "url": "https://www.iheart.com/"
+  }
 ]

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styles from './Nav.module.scss';
 
@@ -17,6 +17,31 @@ const navItems = [
 
 export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Don't hide if hovering or at top of page
+      if (isHovered || currentScrollY < 100) {
+        setHidden(false);
+      } else if (currentScrollY > lastScrollY.current) {
+        // Scrolling down
+        setHidden(true);
+      } else {
+        // Scrolling up
+        setHidden(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isHovered]);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -28,7 +53,11 @@ export default function Nav() {
 
   return (
     <>
-      <header className={styles.nav}>
+      <header
+        className={`${styles.nav} ${hidden ? styles.hidden : ''}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <a href="#main-content" className="header-skip">Skip to content</a>
 
         <div className={styles.navInner}>

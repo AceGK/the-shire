@@ -15,7 +15,7 @@
 .backgroundImage {
   position: absolute;
   inset: 0;
-  background-image: url("/images/the-shire-hero.jpg");
+  background-image: url("/images/the-shire-2.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -76,12 +76,11 @@
 
 .tagline {
   font-family: var(--ff-heading);
-  font-size: clamp(1rem, 3vw, 1.375rem);
-  font-weight: 300;
+  font-size: clamp(1rem, 3vw, 2rem);
+  font-weight: 400;
   color: $clr-cream;
   letter-spacing: 0.03em;
   line-height: 1.6;
-  max-width: 480px;
   margin: 0;
   opacity: 0.9;
 }
@@ -89,6 +88,7 @@
 .subtitle {
   font-family: var(--ff-body);
   font-size: 0.6875rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: $clr-accent;
