@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
         </div>
 
-        &copy; 2025 The Shire
+        &copy; {new Date().getFullYear()} The Shire
       </div>
     </footer>
   );

@@ -15,7 +15,7 @@ export default function Hero() {
         <h1 className={styles.title}>The Shire</h1>
 
         <p className={styles.tagline}>
-          Southfarthing's Finest Pipe-weed
+          Southfarthing&apos;s Finest Pipe-weed
         </p>
 
         <span className={styles.subtitle}>
