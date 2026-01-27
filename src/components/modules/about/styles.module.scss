@@ -1,0 +1,147 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2rem 0;
+
+  @include tablet {
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  @include desktop {
+    gap: 5rem;
+  }
+}
+
+.imageSwiper {
+  flex: 1;
+  overflow: hidden !important;
+  max-width: 400px;
+  width: 100%;
+
+  @include tablet {
+    max-width: 420px;
+  }
+
+  @include desktop {
+    max-width: 480px;
+  }
+}
+
+.imageSlide {
+  width: 100%;
+}
+
+.imageContainer {
+  position: relative;
+
+  // Inner decorative frame
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid $clr-accent;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border: 1px solid $clr-border-light;
+  }
+}
+
+.textSwiper {
+  flex: 1;
+  text-align: center;
+  max-width: 500px;
+
+  @include tablet {
+    text-align: left;
+  }
+}
+
+.textSlide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem 0;
+
+  @include tablet {
+    padding: 2rem 0;
+  }
+
+  h2 {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-section-title);
+    font-weight: 300;
+    color: $clr-charcoal;
+    margin-bottom: 1.25rem;
+    position: relative;
+
+    // Decorative accent bar
+    &::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: $clr-accent;
+      margin-bottom: 1.5rem;
+
+      @include tablet {
+        margin-left: 0;
+      }
+    }
+
+    // Center the accent bar on mobile
+    @include max-tablet {
+      &::before {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  p {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    line-height: 1.8;
+    color: $clr-charcoal-light;
+    margin: 0;
+  }
+}
+
+// Custom pagination styling for this component
+.about:global(.swiper-pagination) {
+  margin-top: 1.5rem;
+  position: relative;
+  bottom: 0 !important;
+}
+
+.about:global(.swiper-pagination-bullet) {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+  border: 1px solid $clr-accent;
+  opacity: 1;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba($clr-accent, 0.3);
+  }
+}
+
+.about:global(.swiper-pagination-bullet-active) {
+  background: $clr-accent;
+  border-color: $clr-accent;
+}

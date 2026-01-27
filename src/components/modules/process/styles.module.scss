@@ -1,0 +1,122 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 2rem 0;
+  width: 100%;
+
+  @include tablet {
+    gap: 6rem;
+  }
+
+  @include desktop {
+    gap: 8rem;
+  }
+}
+
+.blurb {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  @include desktop {
+    gap: 5rem;
+  }
+
+  // Image styling
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border: none;
+    box-shadow: $shadow-xl;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    @include hover {
+      transform: scale(1.02);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  // Text container
+  div {
+    padding: 0;
+    text-align: center;
+
+    @include tablet {
+      padding: 1rem 0;
+      text-align: left;
+    }
+  }
+
+  h2 {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-subsection);
+    font-weight: 400;
+    color: $clr-cream;
+    margin-bottom: 1rem;
+    position: relative;
+
+    // Decorative underline
+    &::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: $clr-accent;
+      margin-top: 1rem;
+
+      @include max-tablet {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  p {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    line-height: 1.8;
+    color: rgba($clr-cream, 0.85);
+    margin: 0;
+  }
+}
+
+// Alternating layout for desktop
+.blurb:nth-child(odd) {
+  @include tablet {
+    img {
+      order: 1;
+    }
+    div {
+      order: 2;
+    }
+  }
+}
+
+.blurb:nth-child(even) {
+  @include tablet {
+    img {
+      order: 2;
+    }
+    div {
+      order: 1;
+      text-align: right;
+
+      h2::after {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+  }
+}

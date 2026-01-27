@@ -1,0 +1,18 @@
+[
+  { "logo": "/logos/southfarthing-chronicle.svg", "name": "The Southfarthing Chronicle" },
+  { "logo": "/logos/the-valinor-voice.svg", "name": "The Valinor Voice" },
+  { "logo": "/logos/hobbit-times.svg", "name": "Hobbit Times" },
+  { "logo": "/logos/the-gondor-gazette.svg", "name": "The Gondor Gazette" },
+  { "logo": "/logos/hobbiton-herald.svg", "name": "Hobbiton Herald" },
+  { "logo": "/logos/ent-moot.svg", "name": "ENT Moot" },
+  { "logo": "/logos/the-numenor.svg", "name": "The Númenor" },
+  { "logo": "/logos/the-orkland-tribune.svg", "name": "The Orkland Tribune" },
+  { "logo": "/logos/the-rivendell-reporter.svg", "name": "The Rivendell Reporter" },
+  { "logo": "/logos/eye-of-sauron.svg", "name": "Eye of Sauron" },
+  { "logo": "/logos/elfpost.svg", "name": "Elf Post" },
+  { "logo": "/logos/goblin-stank.svg", "name": "Goblin Stank" },
+  { "logo": "/logos/erutube.svg", "name": "Erutube" },
+  { "logo": "/logos/breefeed.svg", "name": "BreeFeed" },
+  { "logo": "/logos/elendil.svg", "name": "Elendil!" },
+  { "logo": "/logos/urukhai-radio.svg", "name": "UrukHai Radio" }
+]

@@ -1,20 +1,23 @@
-import { Lusitana, Eagle_Lake } from 'next/font/google';
+import { Cormorant_Garamond, Lato } from 'next/font/google';
 import '@/app/styles/reset.scss'
 import '@/app/styles/globals.scss'
 import '@/app/styles/swiper.scss'
-import Footer from '@/components/footer'
-import Nav from '@/components/nav'
+import Footer from '@/components/ui/footer'
+import Nav from '@/components/ui/nav'
 
-const eagleLake = Eagle_Lake({
+const cormorantGaramond = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: '400', 
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-heading',
+  display: 'swap',
 });
 
-const lusitana = Lusitana({
+const lato = Lato({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['300', '400', '700'],
+  variable: '--font-body',
+  display: 'swap',
 });
-
 
 export const metadata = {
   title: 'The Shire',
@@ -24,8 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${eagleLake.className} ${lusitana.className} `}>
-        
+      <body className={`${cormorantGaramond.variable} ${lato.variable}`}>
         <Nav />
         {children}
         <Footer />

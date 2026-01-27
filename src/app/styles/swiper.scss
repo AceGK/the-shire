@@ -1,25 +1,113 @@
 @import "./_variables.scss";
 @import "./mixins";
 
-.swiper-slide-shadow-left, .swiper-slide-shadow-flip, 
+// Remove default shadows on flip effect
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-flip,
 .swiper-slide-shadow-right {
-  background-image:none!important;
+  background-image: none !important;
+}
+
+// Pagination bullets
+.swiper-pagination {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 1.5rem;
+  position: relative !important;
+  bottom: 0 !important;
 }
 
 .swiper-pagination-bullet {
-  background: transparent!important;
-  border:1px solid $clr-primary!important;
-  opacity: 1!important;
-  height:10px!important;
-  width:10px!important;
+  background: transparent !important;
+  border: 1px solid $clr-accent !important;
+  opacity: 1 !important;
+  height: 8px !important;
+  width: 8px !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba($clr-accent, 0.3) !important;
+  }
 }
 
 .swiper-pagination-bullet-active {
-  background: $clr-primary!important;
+  background: $clr-accent !important;
+  border-color: $clr-accent !important;
 }
 
-.swiper-pagination {
-  display: flex;
-  gap:4px;
-  justify-content: center;
+// Navigation arrows
+.swiper-button-prev,
+.swiper-button-next {
+  color: $clr-accent !important;
+  width: 44px !important;
+  height: 44px !important;
+  transition: all 0.2s ease;
+
+  &::after {
+    font-size: 1.25rem !important;
+    font-weight: 300;
+  }
+
+  &:hover {
+    color: $clr-accent-light !important;
+  }
+
+  // Hide on mobile/tablet
+  @include max-desktop {
+    display: none !important;
+  }
+}
+
+.swiper-button-prev {
+  left: -50px !important;
+
+  @include lg {
+    left: -60px !important;
+  }
+}
+
+.swiper-button-next {
+  right: -50px !important;
+
+  @include lg {
+    right: -60px !important;
+  }
+}
+
+// Disabled state
+.swiper-button-disabled {
+  opacity: 0.3 !important;
+}
+
+// Swiper slide transitions
+.swiper-slide {
+  transition: opacity 0.3s ease;
+}
+
+// Dark background pagination (for sections with dark bg)
+.bg-color,
+.bg-dark {
+  .swiper-pagination-bullet {
+    border-color: rgba($clr-cream, 0.5) !important;
+
+    &:hover {
+      background: rgba($clr-cream, 0.2) !important;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $clr-accent !important;
+    border-color: $clr-accent !important;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: $clr-cream !important;
+
+    &:hover {
+      color: $clr-accent !important;
+    }
+  }
 }

@@ -1,12 +1,13 @@
-import Press from "@/components/press";
-import Process from "@/components/process";
-import Strains from "@/components/strains";
-import Map from "@/components/map";
-import Hero from "@/components/hero";
-import Visit from "@/components/visit";
-import Packaging from "@/components/packaging";
-import Reviews from "@/components/reviews";
-import About from "@/components/about";
+import Press from "@/components/modules/press";
+import Process from "@/components/modules/process";
+import Strains from "@/components/modules/strains";
+import Map from "@/components/modules/map";
+import Partners from "@/components/modules/partners";
+import Hero from "@/components/modules/hero";
+import Visit from "@/components/modules/visit";
+import Packaging from "@/components/modules/packaging";
+import Reviews from "@/components/modules/reviews";
+import About from "@/components/modules/about";
 
 export default function Home() {
   return (
@@ -15,41 +16,55 @@ export default function Home() {
         <Hero id="home" />
 
         <section id="about" className="content-grid bg-texture">
-          <About />
-          </section>
+          <div className="reveal">
+            <About />
+          </div>
+        </section>
 
         <section id="process" className="content-grid bg-color">
-          <Process />
-          <Packaging />
+          <div className="reveal">
+            <Process />
+          </div>
+          <div className="reveal">
+            <Packaging />
+          </div>
         </section>
 
         <section id="strains" className="content-grid bg-texture">
-          <Strains />
-        </section>
-
-        <section id="visit" className="content-grid bg-color">
-          <Visit />
+          <div className="reveal">
+            <Strains />
+          </div>
         </section>
 
         <section id="buy" className="content-grid bg-color">
-          <Map />
-          <h2>Support our partners</h2>
-          <ul>
-            <li>Merry&apos;s Munchies</li>
-            <li>Gimli&apos;s Grinders</li>
-            <li>ENT Vapes</li>
-            <li>Treebeard&apos;s Tinctures</li>
-            <li>Galadriel&apos;s Glassworks</li>
-          </ul>
+          <div className="reveal">
+            <Map />
+          </div>
         </section>
 
         <section id="press" className="content-grid bg-texture">
-          <Press />
+          <div className="reveal">
+            <Press />
+          </div>
         </section>
 
-        <section id="reviews" className="content-grid bg-texture">
-          <Reviews />
+        <section id="reviews" className="content-grid bg-color">
+          <div className="reveal">
+            <Reviews />
+          </div>
         </section>
+
+        <section id="partners" className="content-grid bg-texture">
+          <div className="reveal">
+            <Partners />
+          </div>
+        </section>
+
+        {/* <section id="visit" className="content-grid bg-color">
+          <div className="reveal">
+            <Visit />
+          </div>
+        </section> */}
       </main>
     </>
   );

@@ -1,16 +1,87 @@
-$desktopValue: 900px;
-$tabletValue: 500px;
+// _mixins.scss - Enhanced Responsive Breakpoint System
 
-// You can add an offset to any of these
-// @include tablet(30px) { ... }
+// ===== BREAKPOINT VALUES =====
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-xxl: 1536px;
 
-@mixin tablet() {
-  @media (min-width:$tabletValue) {
-      @content;
+// Legacy values (for backwards compatibility)
+$tabletValue: $breakpoint-md;
+$desktopValue: $breakpoint-lg;
+
+// ===== MOBILE-FIRST MIXINS =====
+@mixin sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
   }
 }
-@mixin desktop() {
-  @media (min-width:$desktopValue) {
+
+@mixin tablet {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $breakpoint-xxl) {
+    @content;
+  }
+}
+
+// ===== DESKTOP-FIRST (MAX-WIDTH) MIXINS =====
+@mixin max-sm {
+  @media (max-width: #{$breakpoint-sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin max-tablet {
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin max-desktop {
+  @media (max-width: #{$breakpoint-lg - 1px}) {
+    @content;
+  }
+}
+
+// ===== UTILITY MIXINS =====
+
+// Hover effects only on devices that support hover
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
       @content;
+    }
+  }
+}
+
+// Respect reduced motion preferences
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+// High DPI screens
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
   }
 }

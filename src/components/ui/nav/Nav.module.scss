@@ -1,0 +1,252 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  width: 100%;
+  background: rgba($clr-primary, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba($clr-accent, 0.15);
+  transition: all 0.3s ease;
+}
+
+.navInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include tablet {
+    padding: 1.25rem 2.5rem;
+  }
+
+  @include desktop {
+    padding: 1.5rem 3rem;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: $clr-cream;
+  font-family: var(--ff-heading);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  img {
+    height: 36px;
+    width: auto;
+
+    @include tablet {
+      height: 42px;
+    }
+  }
+}
+
+.navLinks {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+
+  ul {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    @include desktop {
+      gap: 2.5rem;
+    }
+  }
+}
+
+.navItem {
+  a {
+    color: $clr-cream;
+    text-decoration: none;
+    font-family: var(--ff-body);
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background-color: $clr-accent;
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: $clr-accent-light;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.cta {
+  display: none;
+  padding: 0.625rem 1.25rem;
+  background: transparent;
+  border: 1px solid $clr-accent;
+  color: $clr-accent;
+  font-family: var(--ff-body);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  @include tablet {
+    display: inline-block;
+  }
+
+  &:hover {
+    background: $clr-accent;
+    color: $clr-primary-dark;
+  }
+}
+
+// Mobile menu button
+.mobileMenuBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  @include tablet {
+    display: none;
+  }
+
+  span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: $clr-cream;
+    transition: all 0.3s ease;
+  }
+
+  &:hover span {
+    background: $clr-accent;
+  }
+}
+
+// Mobile menu overlay
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba($clr-primary-dark, 0.98);
+  backdrop-filter: blur(20px);
+  z-index: 999998;
+  padding: 6rem 2rem 2rem;
+
+  &.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include tablet {
+    display: none !important;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li a {
+      color: $clr-cream;
+      text-decoration: none;
+      font-family: var(--ff-heading);
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $clr-accent;
+      }
+    }
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 1px;
+    background: $clr-cream;
+    transition: background 0.2s ease;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover::before,
+  &:hover::after {
+    background: $clr-accent;
+  }
+}

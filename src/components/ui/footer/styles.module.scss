@@ -1,0 +1,141 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  color: $clr-cream;
+
+  // Top decorative border
+  &::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: $clr-accent;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-family: var(--ff-body);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba($clr-cream, 0.7);
+    margin: 0;
+  }
+
+  // Copyright text
+  > span,
+  > p:last-of-type {
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    color: rgba($clr-cream, 0.5);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    color: rgba($clr-cream, 0.6);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $clr-accent;
+    }
+  }
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+
+  > div {
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.newsletter {
+  margin-bottom: 0.5rem;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    label {
+      font-family: var(--ff-heading);
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: $clr-cream;
+      letter-spacing: 0.02em;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      @include sm {
+        flex-direction: row;
+        gap: 0;
+      }
+
+      input {
+        padding: 0.75rem 1rem;
+        background: rgba($clr-cream, 0.1);
+        border: 1px solid rgba($clr-accent, 0.3);
+        color: $clr-cream;
+        font-family: var(--ff-body);
+        font-size: 0.875rem;
+        min-width: 220px;
+        transition: all 0.2s ease;
+
+        @include sm {
+          border-right: none;
+          min-width: 250px;
+        }
+
+        &::placeholder {
+          color: rgba($clr-cream, 0.5);
+        }
+
+        &:focus {
+          outline: none;
+          border-color: $clr-accent;
+          background: rgba($clr-cream, 0.15);
+        }
+      }
+
+      button {
+        padding: 0.75rem 1.5rem;
+        background: $clr-accent;
+        border: 1px solid $clr-accent;
+        color: $clr-primary-dark;
+        font-family: var(--ff-body);
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: $clr-accent-light;
+          border-color: $clr-accent-light;
+        }
+      }
+    }
+  }
+}

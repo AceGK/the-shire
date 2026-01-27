@@ -1,0 +1,13 @@
+[
+  { "name": "Hobbiton Herbals", "coords": [3176, 1482], "region": "The Shire" },
+  { "name": "Bree Botanicals", "coords": [3171, 1793], "region": "Bree-land" },
+  { "name": "Green Dragon Dispensary", "coords": [3150, 1450], "region": "Bywater" },
+  { "name": "Rivendell Remedies", "coords": [3211, 2516], "region": "Rivendell" },
+  { "name": "Lothlórien Leaf Co.", "coords": [2655, 2666], "region": "Lothlórien" },
+  { "name": "Rohan Remedies", "coords": [1951, 2589], "region": "Edoras" },
+  { "name": "Gondor Gardens", "coords": [1627, 3279], "region": "Minas Tirith" },
+  { "name": "Fangorn Florals", "coords": [2500, 2550], "region": "Fangorn" },
+  { "name": "Erebor Extracts", "coords": [3509, 3405], "region": "Erebor" },
+  { "name": "Orthanc Organics", "coords": [2217, 2335], "region": "Isengard" },
+  { "name": "Misty Mountain Meds", "coords": [3354, 2647], "region": "Goblin-town" }
+]

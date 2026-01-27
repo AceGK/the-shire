@@ -1,14 +1,33 @@
-// _variables.scss
-$clr-neutral-100: rgb(255, 255, 255);
-$clr-neutral-125: rgb(251, 251, 251);
-$clr-neutral-150: rgb(247, 247, 247);
-$clr-neutral-175: rgb(242, 242, 242);
-$clr-neutral-200: rgb(238, 238, 238);
-$clr-neutral-250: rgb(232, 232, 232);
-$clr-neutral-275: rgb(225, 225, 225);
-$clr-neutral-300: rgb(204, 204, 204);
-$clr-neutral-400: rgb(179, 179, 179);
-$clr-neutral-500: rgb(155, 155, 155);
+// _variables.scss - Premium Color Palette
+
+// ===== PRIMARY COLORS - Refined Forest Tones =====
+$clr-primary: #1a3d2e;        // Deep forest green (elegant)
+$clr-primary-light: #2d5a4a;  // Lighter forest green
+$clr-primary-dark: #0d2018;   // Very dark forest
+
+// ===== ACCENT COLORS - Luxury Gold/Champagne =====
+$clr-accent: #c9a962;         // Muted gold
+$clr-accent-light: #d4bc7d;   // Light champagne gold
+$clr-accent-dark: #a68b4a;    // Aged gold
+
+// ===== NEUTRAL PALETTE - Refined Creams and Darks =====
+$clr-cream: #f7f4ed;          // Warm off-white (main light background)
+$clr-cream-dark: #ebe5d9;     // Slightly darker cream
+$clr-charcoal: #2b2b2b;       // Rich charcoal for text
+$clr-charcoal-light: #4a4a4a; // Secondary text
+$clr-black: #1a1a1a;          // Deep black for contrast
+
+// ===== NEUTRAL SCALE (Legacy support) =====
+$clr-neutral-100: #ffffff;
+$clr-neutral-125: #fbfbfb;
+$clr-neutral-150: #f7f7f7;
+$clr-neutral-175: #f2f2f2;
+$clr-neutral-200: #eeeeee;
+$clr-neutral-250: #e8e8e8;
+$clr-neutral-275: #e1e1e1;
+$clr-neutral-300: #cccccc;
+$clr-neutral-400: #b3b3b3;
+$clr-neutral-500: #9b9b9b;
 $clr-neutral-600: hsl(0, 0%, 50%);
 $clr-neutral-650: hsl(0, 0%, 45%);
 $clr-neutral-700: hsl(0, 0%, 40%);
@@ -17,5 +36,26 @@ $clr-neutral-800: hsl(0, 0%, 25%);
 $clr-neutral-850: hsl(240, 6%, 10%);
 $clr-neutral-900: hsl(240, 4%, 6%);
 
-$clr-primary: #2f661b;
-$clr-secondary: #DFC7A1;
+// ===== GRADIENTS =====
+$gradient-hero: linear-gradient(
+  180deg,
+  rgba(13, 32, 24, 0.7) 0%,
+  rgba(26, 61, 46, 0.85) 50%,
+  rgba(13, 32, 24, 0.95) 100%
+);
+
+$gradient-section-dark: linear-gradient(
+  180deg,
+  #1a3d2e 0%,
+  #0d2018 100%
+);
+
+// ===== BORDER COLORS =====
+$clr-border-light: rgba(201, 169, 98, 0.3);  // Subtle gold border
+$clr-border-dark: rgba(255, 255, 255, 0.1);  // Subtle white border
+
+// ===== SHADOWS =====
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+$shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);

@@ -1,0 +1,284 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.mapSection {
+  padding: 2rem 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-section-title);
+    font-weight: 300;
+    color: $clr-cream;
+    margin-bottom: 1.5rem;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: $clr-accent;
+      margin: 1.5rem auto 0;
+    }
+  }
+
+  p {
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    line-height: 1.8;
+    color: rgba($clr-cream, 0.85);
+  }
+}
+
+.mapContainer {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  border: 1px solid $clr-border-light;
+  background: $clr-cream-dark;
+  overflow: hidden;
+
+  // Decorative inner frame
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid $clr-accent;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1000;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 400px;
+  background: $clr-cream-dark;
+
+  @include tablet {
+    height: 500px;
+  }
+
+  @include desktop {
+    height: 550px;
+  }
+
+  // Override Leaflet default styles
+  :global {
+    .leaflet-container {
+      background: $clr-cream-dark;
+      font-family: var(--ff-body);
+    }
+
+    .leaflet-control-zoom {
+      border: none !important;
+      box-shadow: $shadow-sm;
+
+      a {
+        background: $clr-cream !important;
+        color: $clr-charcoal !important;
+        border: 1px solid $clr-border-light !important;
+
+        &:hover {
+          background: $clr-primary !important;
+          color: $clr-cream !important;
+        }
+      }
+    }
+
+    .leaflet-popup-content-wrapper {
+      background: $clr-primary;
+      color: $clr-cream;
+      border-radius: 0;
+      box-shadow: $shadow-md;
+    }
+
+    .leaflet-popup-tip {
+      background: $clr-primary;
+    }
+
+    .leaflet-popup-content {
+      margin: 0.75rem 1rem;
+    }
+  }
+}
+
+.mapLoading {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $clr-cream-dark;
+
+  @include tablet {
+    height: 500px;
+  }
+
+  span {
+    font-family: var(--ff-body);
+    font-size: 0.875rem;
+    color: $clr-charcoal-light;
+    letter-spacing: 0.05em;
+  }
+}
+
+// Custom marker styles
+.customMarker {
+  background: transparent;
+  border: none;
+}
+
+.markerInner {
+  width: 24px;
+  height: 24px;
+  background: $clr-accent;
+  border: 3px solid $clr-primary-dark;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.3);
+    background: $clr-accent-light;
+  }
+}
+
+// Popup styles
+.popup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+
+  strong {
+    font-family: var(--ff-heading);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  span {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+.customPopup {
+  :global(.leaflet-popup-content-wrapper) {
+    padding: 0;
+  }
+}
+
+// Location list
+.locationList {
+  max-width: 900px;
+  margin: 0 auto;
+
+  h3 {
+    font-family: var(--ff-heading);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $clr-cream;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: $clr-accent;
+      margin: 1rem auto 0;
+    }
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: $clr-cream;
+    border: 1px solid $clr-border-light;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+
+    // Inner frame effect on hover
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      border: 1px solid $clr-accent;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @include hover {
+      border-color: $clr-accent;
+      transform: translateY(-4px);
+      box-shadow: $shadow-lg;
+
+      &::before {
+        opacity: 0.3;
+      }
+    }
+
+    &:focus-visible {
+      border-color: $clr-accent;
+      outline: none;
+    }
+  }
+
+  .storeName {
+    font-family: var(--ff-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    color: $clr-primary-dark;
+    margin-bottom: 0.25rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .region {
+    font-family: var(--ff-body);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $clr-accent;
+    position: relative;
+    z-index: 1;
+  }
+}
