@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   sassOptions: {
-    includePaths: ['./app/styles'], // Adjust based on your directory structure
+    includePaths: ['./src/app/styles'],
   },
   webpack(config) {
     config.module.rules.push({

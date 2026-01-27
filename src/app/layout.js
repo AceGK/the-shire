@@ -3,7 +3,7 @@ import '@/app/styles/reset.scss'
 import '@/app/styles/globals.scss'
 import '@/app/styles/swiper.scss'
 import Footer from '@/components/footer'
-import Nav from 'components/nav'
+import Nav from '@/components/nav'
 
 const eagleLake = Eagle_Lake({
   subsets: ['latin'],
