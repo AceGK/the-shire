@@ -7,13 +7,10 @@ import styles from './Nav.module.scss';
 
 const navItems = [
   { title: "About", link: "#about" },
-  // { title: "Process", link: "#process" },
   { title: "Strains", link: "#strains" },
   { title: "Retailers", link: "#buy" },
   { title: "Press", link: "#press" },
   { title: "Reviews", link: "#reviews" },
-  // { title: "Partners", link: "#partners" },
-  // { title: "Visit", link: "#visit" },
 ];
 
 export default function Nav() {
