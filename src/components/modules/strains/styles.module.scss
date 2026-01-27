@@ -36,7 +36,7 @@
 
 .swiperContainer {
   padding: 1rem 0;
-  overflow: visible !important;
+  overflow: hidden;
 
   @include tablet {
     padding: 2rem 0;

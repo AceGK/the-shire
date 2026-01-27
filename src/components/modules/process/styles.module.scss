@@ -1,7 +1,7 @@
 @import "@/app/styles/variables.scss";
 @import "@/app/styles/mixins.scss";
 
-.about {
+.process {
   display: flex;
   flex-direction: column;
   gap: 5rem;
@@ -24,10 +24,6 @@
   justify-content: center;
   gap: 0.75rem;
   margin: 1rem 0 1.5rem;
-
-  @include tablet {
-    justify-content: flex-start;
-  }
 }
 
 .dot {
@@ -54,10 +50,6 @@
   margin-top: 1.5rem;
   line-height: 1;
   text-align: center;
-
-  @include tablet {
-    text-align: left;
-  }
 }
 
 .blurb {
@@ -80,6 +72,11 @@
     position: relative;
     padding: 0.75rem;
     border: 1px solid rgba($clr-accent, 0.6);
+    max-width: 500px;
+    justify-self: center;
+    @include tablet {
+      max-width:400px;
+    }
 
     img {
       width: 100%;
@@ -87,7 +84,7 @@
       aspect-ratio: 4/5;
       object-fit: cover;
       display: block;
-      border-radius:1rem;
+      border-radius: 1rem;
     }
   }
 
@@ -129,7 +126,7 @@
 
     @include tablet {
       padding: 1rem 0;
-      text-align: left;
+      text-align: center;
     }
   }
 
@@ -154,10 +151,10 @@
 .blurb:nth-child(odd) {
   @include tablet {
     .imageFrame {
-      order: 1;
+      order: 2;
     }
     > div:not(.imageFrame) {
-      order: 2;
+      order: 1;
     }
   }
 }
@@ -165,19 +162,10 @@
 .blurb:nth-child(even) {
   @include tablet {
     .imageFrame {
-      order: 2;
+      order: 1;
     }
     > div:not(.imageFrame) {
-      order: 1;
-      text-align: right;
-
-      .divider {
-        justify-content: flex-end;
-      }
-
-      .flourish {
-        text-align: right;
-      }
+      order: 2;
     }
   }
 }

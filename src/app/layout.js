@@ -27,7 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${cormorantGaramond.variable} ${lato.variable}`}>
+      <body className={`${cormorantGaramond.variable} ${lato.variable} bg-map`}>
         <Nav />
         {children}
         <Footer />

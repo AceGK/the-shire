@@ -15,53 +15,53 @@ export default function Home() {
       <main id="main-content">
         <Hero id="home" />
 
-        <section id="about" className="content-grid bg-texture">
-          <div className="reveal">
+        <section id="about" className="content-grid">
+          <div>
             <About />
           </div>
         </section>
 
         <section id="process" className="content-grid bg-color">
-          <div className="reveal">
+          <div>
             <Process />
           </div>
-          <div className="reveal">
+          <div>
             <Packaging />
           </div>
         </section>
 
-        <section id="strains" className="content-grid bg-texture">
-          <div className="reveal">
+        <section id="strains" className="content-grid">
+          <div>
             <Strains />
           </div>
         </section>
 
         <section id="buy" className="content-grid bg-color">
-          <div className="reveal">
+          <div>
             <Map />
           </div>
         </section>
 
-        <section id="press" className="content-grid bg-texture">
-          <div className="reveal">
+        <section id="press" className="content-grid">
+          <div>
             <Press />
           </div>
         </section>
 
         <section id="reviews" className="content-grid bg-color">
-          <div className="reveal">
+          <div>
             <Reviews />
           </div>
         </section>
 
-        <section id="partners" className="content-grid bg-texture">
-          <div className="reveal">
+        <section id="partners" className="content-grid">
+          <div>
             <Partners />
           </div>
         </section>
 
         {/* <section id="visit" className="content-grid bg-color">
-          <div className="reveal">
+          <div>
             <Visit />
           </div>
         </section> */}
