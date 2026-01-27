@@ -3,6 +3,15 @@
 
 .packaging {
   padding: 2rem 0;
+  margin-top: 4rem;
+
+  @include tablet {
+    margin-top: 6rem;
+  }
+
+  @include desktop {
+    margin-top: 8rem;
+  }
 
   h2 {
     font-family: var(--ff-heading);
@@ -22,14 +31,57 @@
     }
   }
 
-  h3 {
-    font-family: var(--ff-heading);
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: $clr-accent;
-    text-align: center;
-    margin-top: 1.25rem;
-    margin-bottom: 0;
+  // Framed title with decorative border
+  .framedTitle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    margin: 1.25rem auto 0;
+    border: 1px solid $clr-accent;
+    background: transparent;
+
+    // Corner decorations
+    &::before,
+    &::after {
+      content: '◆';
+      position: absolute;
+      font-size: 0.5rem;
+      color: $clr-accent;
+      background: $clr-primary;
+      padding: 0 0.25rem;
+    }
+
+    &::before {
+      top: -0.35rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &::after {
+      bottom: -0.35rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .label {
+      font-family: var(--ff-body);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $clr-cream;
+    }
+
+    .script {
+      font-family: var(--ff-heading);
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 400;
+      color: $clr-cream;
+    }
   }
 
   .grid {
@@ -53,9 +105,9 @@
     .card {
       position: relative;
       aspect-ratio: 3/4;
-      background:$clr-cream;
+      background: $clr-cream url('/images/card-texture.png') center/cover;
       border: 1px solid rgba($clr-accent, 0.2);
-      border-radius: 0;
+      border-radius: 1rem;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -79,7 +131,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 2rem;
+        padding: 3rem;
         background: rgba($clr-primary-dark, 0.95);
         color: $clr-cream;
         font-family: var(--ff-body);
@@ -89,6 +141,35 @@
         opacity: 0;
         transition: opacity 0.4s ease;
         z-index: 10;
+
+        // Decorative inner border frame
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 1rem;
+          border: 1px solid rgba($clr-accent, 0.5);
+          pointer-events: none;
+        }
+
+        p {
+          margin: 0;
+          position: relative;
+          z-index: 1;
+        }
+      }
+
+      // Corner diamonds
+      .corner {
+        position: absolute;
+        font-size: 0.45rem;
+        color: $clr-accent;
+        z-index: 11;
+        line-height: 1;
+
+        &[data-pos="tl"] { top: 0.65rem; left: 0.65rem; }
+        &[data-pos="tr"] { top: 0.65rem; right: 0.65rem; }
+        &[data-pos="bl"] { bottom: 0.65rem; left: 0.65rem; }
+        &[data-pos="br"] { bottom: 0.65rem; right: 0.65rem; }
       }
 
       @include hover {

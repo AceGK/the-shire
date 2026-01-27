@@ -17,6 +17,49 @@
   }
 }
 
+// Divider with dots and line
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
+
+  @include tablet {
+    justify-content: flex-start;
+  }
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: $clr-accent;
+  border-radius: 50%;
+}
+
+.line {
+  width: 60px;
+  height: 1px;
+  background: $clr-accent;
+
+  @include tablet {
+    width: 100px;
+  }
+}
+
+// Bottom Flourish
+.flourish {
+  font-size: 1.5rem;
+  color: $clr-accent;
+  margin-top: 1.5rem;
+  line-height: 1;
+  text-align: center;
+
+  @include tablet {
+    text-align: left;
+  }
+}
+
 .blurb {
   display: grid;
   gap: 2rem;
@@ -32,19 +75,50 @@
     gap: 5rem;
   }
 
-  // Image styling
-  img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-    border: none;
-    box-shadow: $shadow-xl;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  // Image frame with decorative border
+  .imageFrame {
+    position: relative;
+    padding: 0.75rem;
+    border: 1px solid rgba($clr-accent, 0.6);
 
-    @include hover {
-      transform: scale(1.02);
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
+      border-radius:1rem;
+    }
+  }
+
+  // Corner flourishes
+  .corner {
+    position: absolute;
+    color: $clr-accent;
+    font-size: 1.5rem;
+    line-height: 1;
+
+    &[data-pos="tl"] {
+      top: -0.5rem;
+      left: -0.5rem;
+    }
+
+    &[data-pos="tr"] {
+      top: -0.5rem;
+      right: -0.5rem;
+      transform: scaleX(-1);
+    }
+
+    &[data-pos="bl"] {
+      bottom: -0.5rem;
+      left: -0.5rem;
+      transform: scaleY(-1);
+    }
+
+    &[data-pos="br"] {
+      bottom: -0.5rem;
+      right: -0.5rem;
+      transform: scale(-1);
     }
   }
 
@@ -61,26 +135,10 @@
 
   h2 {
     font-family: var(--ff-heading);
-    font-size: var(--fs-subsection);
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 400;
     color: $clr-cream;
-    margin-bottom: 1rem;
-    position: relative;
-
-    // Decorative underline
-    &::after {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: $clr-accent;
-      margin-top: 1rem;
-
-      @include max-tablet {
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
+    margin-bottom: 0;
   }
 
   p {
@@ -95,10 +153,10 @@
 // Alternating layout for desktop
 .blurb:nth-child(odd) {
   @include tablet {
-    img {
+    .imageFrame {
       order: 1;
     }
-    div {
+    > div:not(.imageFrame) {
       order: 2;
     }
   }
@@ -106,16 +164,19 @@
 
 .blurb:nth-child(even) {
   @include tablet {
-    img {
+    .imageFrame {
       order: 2;
     }
-    div {
+    > div:not(.imageFrame) {
       order: 1;
       text-align: right;
 
-      h2::after {
-        margin-left: auto;
-        margin-right: 0;
+      .divider {
+        justify-content: flex-end;
+      }
+
+      .flourish {
+        text-align: right;
       }
     }
   }
