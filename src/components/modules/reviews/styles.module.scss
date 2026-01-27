@@ -6,6 +6,7 @@
   flex-direction: column;
   gap: 1rem;
   padding: 2rem 0;
+  position: relative;
 
   h2 {
     font-family: var(--ff-heading);
@@ -25,92 +26,127 @@
     }
   }
 
-  ul {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0;
-    list-style: none;
-    margin: 0;
+  .swiperWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
-    @include tablet {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
+  .navPrev,
+  .navNext {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba($clr-cream, 0.9);
+    border: 1px solid $clr-border-light;
+    border-radius: 50%;
+    color: $clr-accent;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: $clr-accent;
+      color: $clr-cream;
+      border-color: $clr-accent;
+    }
+  }
+
+  .swiper {
+    width: 100%;
+    padding: 1rem 0 3rem;
+    overflow: hidden;
+
+    :global(.swiper-pagination-bullet) {
+      width: 10px;
+      height: 10px;
+      background: $clr-border-light;
+      opacity: 1;
+      transition: all 0.2s;
     }
 
-    li {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2.5rem 2rem;
-      background: $clr-cream url('/images/bg-texture.png') center/cover;
-      border: 1px solid $clr-border-light;
-      text-align: center;
+    :global(.swiper-pagination-bullet-active) {
+      background: $clr-accent;
+      width: 24px !important;
+      height: 10px !important;
+      border-radius: 5px !important;
+      &:hover {
+        background: $clr-accent!important;
+      }
+    }
+  }
+
+  .slide {
+    height: auto;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 2rem;
+    background: $clr-cream url('/images/bg-texture.png') center/cover;
+    border: 1px solid $clr-border-light;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+    height: 100%;
+
+    // Inner frame effect
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      border: 1px solid $clr-accent;
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    // Decorative quote mark
+    &::after {
+      content: '"';
+      font-family: var(--ff-heading);
+      font-size: 4rem;
+      color: $clr-accent;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      order: 0;
       position: relative;
-      transition: all 0.4s ease;
+      z-index: 1;
+    }
 
-      // Inner frame effect on hover
-      &::before {
-        content: '';
-        position: absolute;
-        top: 8px;
-        left: 8px;
-        right: 8px;
-        bottom: 8px;
-        border: 1px solid $clr-accent;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-        z-index: 0;
-      }
+    h3 {
+      font-family: var(--ff-body);
+      font-size: 0.75rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: $clr-accent;
+      margin: 1.5rem 0 0;
+      order: 2;
+      position: relative;
+      z-index: 1;
+    }
 
-      @include hover {
-        border-color: $clr-accent;
-        transform: translateY(-4px);
-        box-shadow: $shadow-lg;
-
-        &::before {
-          opacity: 0.3;
-        }
-      }
-
-      // Decorative quote mark
-      &::after {
-        content: '"';
-        font-family: var(--ff-heading);
-        font-size: 4rem;
-        color: $clr-accent;
-        line-height: 1;
-        margin-bottom: 0.5rem;
-        order: 0;
-        position: relative;
-        z-index: 1;
-      }
-
-      h3 {
-        font-family: var(--ff-body);
-        font-size: 0.75rem;
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: $clr-accent;
-        margin: 1.5rem 0 0;
-        order: 2;
-        position: relative;
-        z-index: 1;
-      }
-
-      div {
-        font-family: var(--ff-body);
-        font-size: var(--fs-body);
-        font-style: italic;
-        line-height: 1.8;
-        color: $clr-charcoal-light;
-        order: 1;
-        position: relative;
-        z-index: 1;
-        text-wrap: pretty;
-      }
+    div {
+      font-family: var(--ff-body);
+      font-size: var(--fs-body);
+      font-style: italic;
+      line-height: 1.8;
+      color: $clr-charcoal-light;
+      order: 1;
+      position: relative;
+      z-index: 1;
+      text-wrap: pretty;
     }
   }
 }
