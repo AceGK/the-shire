@@ -65,6 +65,9 @@
   flex: 1;
   text-align: center;
   max-width: 500px;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
 
   @include tablet {
     text-align: left;
@@ -75,7 +78,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1.5rem 0;
+  padding: 1.5rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
 
   @include tablet {
     padding: 2rem 0;
@@ -122,26 +127,25 @@
 }
 
 // Custom pagination styling for this component
-.about:global(.swiper-pagination) {
-  margin-top: 1.5rem;
-  position: relative;
-  bottom: 0 !important;
-}
-
-.about:global(.swiper-pagination-bullet) {
-  width: 8px;
-  height: 8px;
-  background: transparent;
-  border: 1px solid $clr-accent;
-  opacity: 1;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: rgba($clr-accent, 0.3);
+.textSwiper {
+  :global(.swiper-pagination) {
+    margin-top: 1.5rem;
+    position: relative;
+    bottom: 0 !important;
   }
-}
 
-.about:global(.swiper-pagination-bullet-active) {
-  background: $clr-accent;
-  border-color: $clr-accent;
+  :global(.swiper-pagination-bullet) {
+    width: 10px;
+    height: 10px;
+    background: $clr-border-light;
+    opacity: 1;
+    transition: all 0.2s;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    background: $clr-accent;
+    width: 24px !important;
+    height: 10px !important;
+    border-radius: 5px !important;
+  }
 }

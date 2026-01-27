@@ -54,11 +54,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="partners" className="content-grid">
+        {/* <section id="partners" className="content-grid">
           <div>
             <Partners />
           </div>
-        </section>
+        </section> */}
 
         {/* <section id="visit" className="content-grid bg-color">
           <div>

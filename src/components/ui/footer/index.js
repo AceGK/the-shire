@@ -22,21 +22,21 @@ export default function Footer() {
 
         <p>Follow us</p>
         <div className={styles.icons}>
-          <div title="FellowshipBook">
+          <a href="https://www.facebook.com/" title="FellowshipBook" target="_blank" rel="noopener noreferrer">
             <Scroll style={{ transform: 'scaleX(-1)' }} />
-          </div>
-          <div title="InstaGold">
+          </a>
+          <a href="https://instagram.com/" title="InstaGold" target="_blank" rel="noopener noreferrer">
             <TreasureChest />
-          </div>
-          <div title="X Twitter for Dragons">
+          </a>
+          <a href="https://bsky.app/" title="BluëSmaug" target="_blank" rel="noopener noreferrer">
             <Dragon />
-          </div>
-          <div title="Palantir">
+          </a>
+          <a href="https://linkedin.com/" title="Palantir" target="_blank" rel="noopener noreferrer">
             <CrystalBall />
-          </div>
-          <div title="MyDungeon">
+          </a>
+          <a href="https://myspace.com/" title="MyDungeon" target="_blank" rel="noopener noreferrer">
             <Dungeon />
-          </div>
+          </a>
         </div>
 
         &copy; {new Date().getFullYear()} The Shire

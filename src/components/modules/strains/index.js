@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import styles from "./styles.module.scss";
 import strains from "@/lib/strains.json";
+import Button from "@/components/ui/button";
 
 export default function Strains() {
   return (
@@ -20,10 +21,22 @@ export default function Strains() {
 
       <Swiper
         modules={[Navigation]}
-        spaceBetween={30}
-        slidesPerView={3}
-        slidesPerGroup={3}
+        spaceBetween={20}
+        slidesPerView={1}
+        slidesPerGroup={1}
         navigation
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 24,
+          },
+          1024: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 30,
+          },
+        }}
         className={styles.swiperContainer}
         style={{ overflow: "hidden" }}
       >
@@ -39,6 +52,10 @@ export default function Strains() {
         </SwiperSlide>
         ))}
       </Swiper>
+
+      <div className={styles.viewAll}>
+        <Button href="/strains" variant="outline">View All Strains</Button>
+      </div>
     </div>
   );
 }

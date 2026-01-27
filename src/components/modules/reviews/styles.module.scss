@@ -36,24 +36,22 @@
   .navPrev,
   .navNext {
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    background: rgba($clr-cream, 0.9);
-    border: 1px solid $clr-border-light;
-    border-radius: 50%;
+    background: none;
+    border: none;
     color: $clr-accent;
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 1;
     cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: color 0.3s ease;
+    display: none;
+    padding: 0.5rem;
+
+    @include tablet {
+      display: block;
+    }
 
     &:hover {
-      background: $clr-accent;
       color: $clr-cream;
-      border-color: $clr-accent;
     }
   }
 

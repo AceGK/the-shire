@@ -204,3 +204,13 @@
     }
   }
 }
+
+.viewAll {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+  @include tablet {
+    margin-top: 2.5rem;
+  }
+}
