@@ -11,13 +11,14 @@ import styles from "./styles.module.scss";
  *
  * @param {Object} props
  * @param {React.ReactNode} props.children
- * @param {"primary" | "secondary" | "outline" | "destructive" | "ghost" | "link"} [props.variant="primary"]
+ * @param {"primary" | "secondary" | "default" | "outline" | "outlineLight" | "ghost" | "destructive" | "link"} [props.variant="primary"]
  * @param {"sm" | "md" | "lg" | "icon"} [props.size="md"]
  * @param {string} [props.className]
  * @param {string} [props.href] - If present, renders a Link
  * @param {() => void} [props.onClick]
  * @param {"button" | "submit" | "reset"} [props.type="button"]
  * @param {boolean} [props.disabled=false]
+ * @param {boolean} [props.hideOnMobile=false] - Hides button on mobile, shows on tablet+
  * @param {string} [props.title]
  * @param {string} [props.target]
  * @param {string} [props.rel]
@@ -31,17 +32,21 @@ export default function Button({
   onClick,
   type = "button",
   disabled = false,
+  hideOnMobile = false,
   title,
   target,
   rel,
 }) {
-  const classes = `
-    ${styles.button}
-    ${styles[variant]}
-    ${styles[size]}
-    ${disabled ? styles.disabled : ""}
-    ${className || ""}
-  `;
+  const classes = [
+    styles.button,
+    styles[variant],
+    styles[size],
+    disabled ? styles.disabled : "",
+    hideOnMobile ? styles.hideOnMobile : "",
+    className || "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   if (href) {
     return (

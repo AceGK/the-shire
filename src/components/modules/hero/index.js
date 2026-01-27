@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Button from '@/components/ui/button';
 import styles from './styles.module.scss';
 
 export default function Hero() {
@@ -23,12 +23,12 @@ export default function Hero() {
         </span>
 
         <div className={styles.ctaGroup}>
-          <Link href="#strains" className={`${styles.ctaButton} ${styles.primary}`}>
+          <Button href="#strains" variant="primary">
             Explore Strains
-          </Link>
-          <Link href="#about" className={`${styles.ctaButton} ${styles.outline}`}>
+          </Button>
+          <Button href="#about" variant="outlineLight">
             Our Story
-          </Link>
+          </Button>
         </div>
       </div>
 

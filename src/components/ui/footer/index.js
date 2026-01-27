@@ -1,3 +1,4 @@
+import Button from '@/components/ui/button';
 import styles from './styles.module.scss';
 import TreasureChest from '@/app/icons/treasure-chest-solid.svg';
 import Scroll from '@/app/icons/scroll-old-solid.svg';
@@ -7,15 +8,15 @@ import Dungeon from '@/app/icons/dungeon-solid.svg';
 
 export default function Footer() {
   return (
-    <footer className="content-grid bg-color">
-      <div className={styles.footer}>
-
-        <div className={styles.newsletter}>
+    <footer className={styles.footer}>
+      <div className="content-grid">
+        <div className={styles.content}>
+          <div className={styles.newsletter}>
           <form>
             <label htmlFor="email">Sign up for our newsletter</label>
             <div>
               <input type="email" placeholder="Your email address" />
-              <button type="submit">Sign Up</button>
+              <Button type="submit" variant="primary" size="sm">Sign Up</Button>
             </div>
           </form>
         </div>
@@ -39,7 +40,8 @@ export default function Footer() {
           </a>
         </div>
 
-        &copy; {new Date().getFullYear()} The Shire
+          <span>&copy; {new Date().getFullYear()} The Shire</span>
+        </div>
       </div>
     </footer>
   );

@@ -111,39 +111,6 @@
   }
 }
 
-.ctaButton {
-  display: inline-block;
-  padding: 0.875rem 2rem;
-  font-family: var(--ff-body);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  text-decoration: none;
-  border: 1px solid;
-  transition: all 0.3s ease;
-
-  &.primary {
-    background: $clr-accent;
-    border-color: $clr-accent;
-    color: $clr-primary-dark;
-
-    &:hover {
-      background: $clr-accent-light;
-      border-color: $clr-accent-light;
-    }
-  }
-
-  &.outline {
-    background: transparent;
-    border-color: rgba($clr-cream, 0.5);
-    color: $clr-cream;
-
-    &:hover {
-      border-color: $clr-cream;
-      background: rgba($clr-cream, 0.1);
-    }
-  }
-}
 
 // Scroll indicator
 .scrollIndicator {

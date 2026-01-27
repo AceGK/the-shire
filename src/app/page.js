@@ -21,7 +21,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="process" className="content-grid bg-color">
+        <section id="process" className="content-grid bg-map-green">
           <div>
             <Process />
           </div>
@@ -36,7 +36,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="buy" className="content-grid bg-color">
+        <section id="buy" className="content-grid bg-map-green">
           <div>
             <Map />
           </div>
@@ -48,7 +48,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="reviews" className="content-grid bg-color">
+        <section id="reviews" className="content-grid bg-map-green">
           <div>
             <Reviews />
           </div>

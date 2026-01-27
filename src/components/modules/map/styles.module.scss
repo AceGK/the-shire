@@ -2,7 +2,20 @@
 @import "@/app/styles/mixins.scss";
 
 .mapSection {
-  padding: 2rem 0;
+  margin: -5rem 0;
+  padding: 5rem 0;
+  background-size: cover;
+  background-position: center;
+
+  @include tablet {
+    margin: -7rem 0;
+    padding: 7rem 0;
+  }
+
+  @include desktop {
+    margin: -9rem 0;
+    padding: 9rem 0;
+  }
 }
 
 .header {
@@ -36,14 +49,32 @@
   }
 }
 
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include tablet {
+    flex-direction: row-reverse;
+    gap: 1.5rem;
+  }
+}
+
 .mapContainer {
   position: relative;
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto 3rem;
+  height: 350px;
   border: 1px solid $clr-border-light;
   background: $clr-cream-dark;
   overflow: hidden;
+
+  @include tablet {
+    flex: 1;
+    height: auto;
+    min-height: 450px;
+  }
 
   // Decorative inner frame
   &::before {
@@ -59,22 +90,16 @@
 
 .map {
   width: 100%;
-  height: 400px;
+  height: 100%;
   background: $clr-cream-dark;
-
-  @include tablet {
-    height: 500px;
-  }
-
-  @include desktop {
-    height: 550px;
-  }
 
   // Override Leaflet default styles
   :global {
     .leaflet-container {
       background: $clr-cream-dark;
       font-family: var(--ff-body);
+      width: 100% !important;
+      height: 100% !important;
     }
 
     .leaflet-control-zoom {
@@ -82,12 +107,13 @@
       box-shadow: $shadow-sm;
 
       a {
-        background: $clr-cream !important;
-        color: $clr-charcoal !important;
-        border: 1px solid $clr-border-light !important;
+        background: $clr-primary !important;
+        color: $clr-cream !important;
+        border: 1px solid $clr-primary-dark !important;
+        font-weight: bold;
 
         &:hover {
-          background: $clr-primary !important;
+          background: $clr-primary-dark !important;
           color: $clr-cream !important;
         }
       }
@@ -112,15 +138,12 @@
 
 .mapLoading {
   width: 100%;
-  height: 400px;
+  height: 100%;
+  min-height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: $clr-cream-dark;
-
-  @include tablet {
-    height: 500px;
-  }
 
   span {
     font-family: var(--ff-body);
@@ -181,16 +204,25 @@
 
 // Location list
 .locationList {
-  max-width: 900px;
-  margin: 0 auto;
+  background: rgba($clr-cream, 0.05);
+  border: 1px solid $clr-border-light;
+  padding: 1.5rem;
+
+  @include tablet {
+    width: 280px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+  }
 
   h3 {
     font-family: var(--ff-heading);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 400;
     color: $clr-cream;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
 
     &::after {
       content: '';
@@ -198,62 +230,59 @@
       width: 40px;
       height: 1px;
       background: $clr-accent;
-      margin: 1rem auto 0;
+      margin: 0.75rem auto 0;
     }
   }
 
   ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     list-style: none;
-    padding: 0;
+    padding: 0 0.5rem 0 0;
     margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     @include tablet {
-      grid-template-columns: repeat(3, 1fr);
+      max-height: 400px;
     }
 
-    @include desktop {
-      grid-template-columns: repeat(4, 1fr);
+    // Custom scrollbar
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba($clr-cream, 0.1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba($clr-accent, 0.5);
+      border-radius: 3px;
+
+      &:hover {
+        background: $clr-accent;
+      }
     }
   }
 
   li {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem 1rem;
+    padding: 0.75rem 1rem;
     background: $clr-cream;
     border: 1px solid $clr-border-light;
-    transition: all 0.4s ease;
+    transition: all 0.2s ease;
     cursor: pointer;
-    position: relative;
-
-    // Inner frame effect on hover
-    &::before {
-      content: '';
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      right: 8px;
-      bottom: 8px;
-      border: 1px solid $clr-accent;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-      z-index: 0;
-    }
 
     @include hover {
       border-color: $clr-accent;
-      transform: translateY(-4px);
-      box-shadow: $shadow-lg;
-
-      &::before {
-        opacity: 0.3;
-      }
+      background: rgba($clr-accent, 0.1);
+        .storeName {
+          color: $clr-accent;
+        }
     }
 
     &:focus-visible {
@@ -264,21 +293,17 @@
 
   .storeName {
     font-family: var(--ff-heading);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: $clr-primary-dark;
-    margin-bottom: 0.25rem;
-    position: relative;
-    z-index: 1;
+    margin-bottom: 0.125rem;
   }
 
   .region {
     font-family: var(--ff-body);
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: $clr-accent;
-    position: relative;
-    z-index: 1;
   }
 }

@@ -1,17 +1,19 @@
 @use "@/app/styles/variables" as *;
+@use "@/app/styles/mixins" as *;
 
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-family: var(--font-body);
-  font-weight: 600;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-family: var(--ff-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
   text-decoration: none;
-  border: none;
-  border-radius: 4px;
+  text-align: center;
+  border: 1px solid;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 
   &:focus-visible {
     outline: 2px solid $clr-accent;
@@ -21,82 +23,112 @@
 
 // Variants
 .primary {
-  background-color: $clr-primary;
-  color: $clr-cream;
+  background: $clr-accent;
+  border-color: $clr-accent;
+  color: $clr-primary-dark;
 
-  &:hover {
-    background-color: $clr-primary-light;
+  @include hover {
+    background: $clr-accent-light;
+    border-color: $clr-accent-light;
   }
 }
 
 .secondary {
-  background-color: $clr-accent;
-  color: $clr-primary-dark;
+  background: $clr-primary;
+  border-color: $clr-primary;
+  color: $clr-cream;
 
-  &:hover {
-    background-color: $clr-accent-light;
+  @include hover {
+    background: $clr-primary-light;
+    border-color: $clr-primary-light;
+  }
+}
+
+.default {
+  background: $clr-charcoal;
+  border-color: $clr-charcoal;
+  color: $clr-cream;
+
+  @include hover {
+    background: $clr-charcoal-light;
+    border-color: $clr-charcoal-light;
   }
 }
 
 .outline {
-  background-color: transparent;
-  color: $clr-primary;
-  border: 2px solid $clr-primary;
+  background: transparent;
+  border-color: $clr-accent;
+  color: $clr-accent;
 
-  &:hover {
-    background-color: $clr-primary;
-    color: $clr-cream;
+  @include hover {
+    background: $clr-accent;
+    color: $clr-primary-dark;
   }
 }
 
-.destructive {
-  background-color: #b91c1c;
-  color: white;
+.outlineLight {
+  background: transparent;
+  border-color: rgba($clr-cream, 0.5);
+  color: $clr-cream;
 
-  &:hover {
-    background-color: #991b1b;
+  @include hover {
+    border-color: $clr-cream;
+    background: rgba($clr-cream, 0.1);
   }
 }
 
 .ghost {
-  background-color: transparent;
-  color: $clr-primary;
+  background: transparent;
+  border-color: transparent;
+  color: $clr-accent;
 
-  &:hover {
-    background-color: rgba($clr-primary, 0.1);
+  @include hover {
+    background: rgba($clr-accent, 0.1);
+  }
+}
+
+.destructive {
+  background: #b91c1c;
+  border-color: #b91c1c;
+  color: white;
+
+  @include hover {
+    background: #991b1b;
+    border-color: #991b1b;
   }
 }
 
 .link {
-  background-color: transparent;
+  background: transparent;
+  border-color: transparent;
   color: $clr-accent;
   padding: 0;
   text-decoration: underline;
   text-underline-offset: 3px;
 
-  &:hover {
+  @include hover {
     color: $clr-accent-dark;
   }
 }
 
 // Sizes
 .sm {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.625rem;
 }
 
 .md {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.6875rem;
 }
 
 .lg {
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
+  padding: 1rem 2.5rem;
+  font-size: 0.75rem;
 }
 
 .icon {
-  padding: 0.5rem;
+  padding: 0.625rem;
   aspect-ratio: 1;
 }
 
@@ -105,4 +137,13 @@
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
+}
+
+// Responsive visibility helpers (for nav CTA pattern)
+.hideOnMobile {
+  display: none;
+
+  @include tablet {
+    display: inline-block;
+  }
 }

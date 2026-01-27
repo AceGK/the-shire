@@ -33,29 +33,31 @@ export default function Map() {
           throughout Middle-earth.
         </p>
       </div>
-      <div className={styles.mapContainer}>
-        <MiddleEarthMap ref={mapRef} locations={locations} />
-      </div>
-      <div className={styles.locationList}>
-        <h3>Our Retailers</h3>
-        <ul>
-          {locations.map((location, index) => (
-            <li
-              key={index}
-              onClick={() => handleLocationClick(index)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  handleLocationClick(index);
-                }
-              }}
-            >
-              <span className={styles.storeName}>{location.name}</span>
-              <span className={styles.region}>{location.region}</span>
-            </li>
-          ))}
-        </ul>
+      <div className={styles.layout}>
+        <div className={styles.mapContainer}>
+          <MiddleEarthMap ref={mapRef} locations={locations} />
+        </div>
+        <div className={styles.locationList}>
+          <h3>Our Retailers</h3>
+          <ul>
+            {locations.map((location, index) => (
+              <li
+                key={index}
+                onClick={() => handleLocationClick(index)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    handleLocationClick(index);
+                  }
+                }}
+              >
+                <span className={styles.storeName}>{location.name}</span>
+                <span className={styles.region}>{location.region}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

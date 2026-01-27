@@ -115,28 +115,6 @@
   }
 }
 
-.cta {
-  display: none;
-  padding: 0.625rem 1.25rem;
-  background: transparent;
-  border: 1px solid $clr-accent;
-  color: $clr-accent;
-  font-family: var(--ff-body);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  text-decoration: none;
-  transition: all 0.3s ease;
-
-  @include tablet {
-    display: inline-block;
-  }
-
-  &:hover {
-    background: $clr-accent;
-    color: $clr-primary-dark;
-  }
-}
 
 // Mobile menu button
 .mobileMenuBtn {

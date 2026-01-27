@@ -2,16 +2,17 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Button from '@/components/ui/button';
 import styles from './Nav.module.scss';
 
 const navItems = [
   { title: "About", link: "#about" },
-  { title: "Process", link: "#process" },
+  // { title: "Process", link: "#process" },
   { title: "Strains", link: "#strains" },
-  { title: "Stockists", link: "#buy" },
+  { title: "Retailers", link: "#buy" },
   { title: "Press", link: "#press" },
   { title: "Reviews", link: "#reviews" },
-  { title: "Partners", link: "#partners" },
+  // { title: "Partners", link: "#partners" },
   // { title: "Visit", link: "#visit" },
 ];
 
@@ -78,9 +79,9 @@ export default function Nav() {
           </nav>
 
           {/* CTA Button */}
-          <Link href="#buy" className={styles.cta}>
-            Find Us
-          </Link>
+          <Button href="#buy" variant="primary" hideOnMobile>
+            Shop
+          </Button>
 
           {/* Mobile Menu Button */}
           <button

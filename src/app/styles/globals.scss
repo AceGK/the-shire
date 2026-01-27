@@ -222,6 +222,14 @@ main section {
   background-position: top center;
   background-attachment: fixed;
 }
+
+.bg-map-green {
+  background-color: $clr-primary;
+  background-image: url("/images/bg-map.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 .bg-texture {
   background-color: $clr-cream;
   background-image: url("/images/bg-texture.png");
