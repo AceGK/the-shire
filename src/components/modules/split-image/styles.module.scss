@@ -1,0 +1,154 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.splitImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2rem 0;
+
+  @include tablet {
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  @include desktop {
+    gap: 5rem;
+  }
+
+  &.reverse {
+    @include tablet {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.imageWrapper {
+  flex: 1;
+  max-width: 400px;
+  width: 100%;
+
+  @include tablet {
+    max-width: 420px;
+  }
+
+  @include desktop {
+    max-width: 480px;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  aspect-ratio: 4/5;
+
+  // Inner decorative frame
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid $clr-accent;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid $clr-border-light;
+  }
+}
+
+.content {
+  flex: 1;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+
+  @include tablet {
+    text-align: left;
+  }
+}
+
+.pretitle {
+  display: block;
+  font-family: var(--ff-body);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: $clr-accent;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-section-title);
+  font-weight: 300;
+  color: $clr-charcoal;
+  margin-bottom: 1.25rem;
+  position: relative;
+  text-wrap: pretty;
+
+  // Decorative accent bar
+  &::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: $clr-accent;
+    margin-bottom: 1.5rem;
+
+    @include tablet {
+      margin-left: 0;
+    }
+  }
+
+  // Center the accent bar on mobile
+  @include max-tablet {
+    &::before {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.subtitle {
+  font-family: var(--ff-heading);
+  font-size: 1.125rem;
+  font-weight: 300;
+  font-style: italic;
+  color: $clr-charcoal;
+  margin-bottom: 1rem;
+}
+
+.body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: 1.8;
+  color: $clr-charcoal-light;
+  margin: 0;
+
+  p {
+    margin: 0 0 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+
+  @include tablet {
+    justify-content: flex-start;
+  }
+}

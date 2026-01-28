@@ -45,14 +45,9 @@
 
 .card {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1.5rem;
   background: $clr-cream;
   border: 1px solid $clr-border-light;
   border-radius: 0;
-  text-align: center;
   transition: all 0.4s ease;
   overflow: hidden;
   min-height: 320px;
@@ -81,6 +76,16 @@
       opacity: 0.3;
     }
   }
+}
+
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  height: 100%;
 
   img {
     width: 100px;
@@ -96,8 +101,7 @@
 
   @include hover {
     img {
-      opacity: 0.1;
-      transform: scale(0.95);
+      transform: scale(1.05);
     }
   }
 
@@ -144,40 +148,15 @@
     color: $clr-charcoal-light;
     z-index: 1;
   }
-
-  // Hover description overlay
-  p {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 1.5rem;
-    background: rgba($clr-primary, 0.95);
-    color: $clr-cream;
-    font-family: var(--ff-body);
-    font-size: 0.875rem;
-    line-height: 1.7;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 10;
-    margin: 0;
-  }
-
-  @include hover {
-    p {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
 }
 
 // Responsive adjustments
 @include max-desktop {
   .card {
     min-height: 280px;
+  }
+
+  .cardLink {
     padding: 1.5rem 1rem;
 
     img {
@@ -187,18 +166,15 @@
     .name {
       font-size: 1.125rem;
     }
-
-    p {
-      font-size: 0.8125rem;
-      padding: 1.5rem 1rem;
-    }
   }
 }
 
 @include max-tablet {
   .card {
     min-height: 260px;
+  }
 
+  .cardLink {
     .name {
       font-size: 1rem;
     }

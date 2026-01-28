@@ -1,13 +1,11 @@
 import Press from "@/components/modules/press";
-import Process from "@/components/modules/process";
 import Strains from "@/components/modules/strains";
 import Map from "@/components/modules/map";
-import Partners from "@/components/modules/partners";
 import Hero from "@/components/modules/hero";
-import Visit from "@/components/modules/visit";
-import Packaging from "@/components/modules/packaging";
 import Reviews from "@/components/modules/reviews";
 import About from "@/components/modules/about";
+import SplitImage from "@/components/modules/split-image";
+import Button from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -16,18 +14,27 @@ export default function Home() {
         <Hero id="home" />
 
         <section id="about" className="content-grid">
-          <div>
+          {/* <div>
             <About />
-          </div>
+          </div> */}
+          <SplitImage
+            image="/images/the-shire.jpg"
+            alt="Hobbit house"
+            pretitle="Our Story"
+            title="Continuing a Legacy Since the Third Age"
+            subtitle="A tradition of excellence"
+            buttons={
+              <>
+                <Button href="/about">About Us</Button>
+              </>
+            }
+          >
+            <p>In the gentle hills of Longbottom, where the morning mist rolls through the valleys, we tend to our crops as Hobbits have for generations. No magic, no shortcuts — just honest work and rich Shire soil.</p>
+          </SplitImage>
         </section>
 
         <section id="process" className="content-grid bg-map-green">
-          <div>
-            <Process />
-          </div>
-          <div>
-            <Packaging />
-          </div>
+
         </section>
 
         <section id="strains" className="content-grid">

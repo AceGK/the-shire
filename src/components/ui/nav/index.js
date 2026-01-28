@@ -3,14 +3,14 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/button';
-import styles from './Nav.module.scss';
+import styles from './styles.module.scss';
 
 const navItems = [
-  { title: "About", link: "#about" },
-  { title: "Strains", link: "#strains" },
-  { title: "Retailers", link: "#buy" },
-  { title: "Press", link: "#press" },
-  { title: "Reviews", link: "#reviews" },
+  { title: "About", link: "/#about" },
+  { title: "Strains", link: "/#strains" },
+  { title: "Retailers", link: "/#find-us" },
+  { title: "Press", link: "/#press" },
+  { title: "Reviews", link: "/#reviews" },
 ];
 
 export default function Nav() {
@@ -60,7 +60,7 @@ export default function Nav() {
 
         <div className={styles.navInner}>
           {/* Logo */}
-          <Link href="#home" className={styles.logo}>
+          <Link href="/#home" className={styles.logo}>
             The Shire
           </Link>
 

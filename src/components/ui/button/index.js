@@ -11,7 +11,7 @@ import styles from "./styles.module.scss";
  *
  * @param {Object} props
  * @param {React.ReactNode} props.children
- * @param {"primary" | "secondary" | "default" | "outline" | "outlineLight" | "ghost" | "destructive" | "link"} [props.variant="primary"]
+ * @param {"primary" | "secondary" | "default" | "outline" | "outlineLight" | "ghost" | "destructive" | "link" | "label"} [props.variant="primary"]
  * @param {"sm" | "md" | "lg" | "icon"} [props.size="md"]
  * @param {string} [props.className]
  * @param {string} [props.href] - If present, renders a Link
@@ -48,10 +48,17 @@ export default function Button({
     .filter(Boolean)
     .join(" ");
 
+  const content =
+    variant === "label" ? (
+      <span className={styles.labelInner}>{children}</span>
+    ) : (
+      children
+    );
+
   if (href) {
     return (
       <Link href={href} className={classes} target={target} rel={rel} title={title}>
-        {children}
+        {content}
       </Link>
     );
   }
@@ -64,7 +71,7 @@ export default function Button({
       title={title}
       className={classes}
     >
-      {children}
+      {content}
     </button>
   );
 }

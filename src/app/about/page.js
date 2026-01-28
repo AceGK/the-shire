@@ -1,3 +1,6 @@
+import Process from "@/components/modules/process";
+import Packaging from "@/components/modules/packaging";
+
 function About() {
   return (
     <>
@@ -8,8 +11,20 @@ function About() {
       old as the hills that surround us.
 
       <h2>Our Founder</h2>
-      <p>Tobold Hornblower, affectionately known as &apos;Old Toby,&apos; hails from Longbottom in the Southfarthing of the Shire. A visionary in the art of cultivating pipe-weed, he discovered his passion during his youthful travels to Bree. His pioneering spirit led to the first true cultivation of the herb in the Shire around S.R. 1070, transforming the local tradition of pipe-weed into a revered art form. The variety &apos;Old Toby,&apos; named in his honor, is celebrated for its exceptional quality and embodies the tranquility and joy of the Shire. Tobold&apos;s legacy lives on in our farm, guiding us in sustaining quality, community, and a profound connection with nature.</p></>
+      <p>Tobold Hornblower, affectionately known as &apos;Old Toby,&apos; hails from Longbottom in the Southfarthing of the Shire. A visionary in the art of cultivating pipe-weed, he discovered his passion during his youthful travels to Bree. His pioneering spirit led to the first true cultivation of the herb in the Shire around S.R. 1070, transforming the local tradition of pipe-weed into a revered art form. The variety &apos;Old Toby,&apos; named in his honor, is celebrated for its exceptional quality and embodies the tranquility and joy of the Shire. Tobold&apos;s legacy lives on in our farm, guiding us in sustaining quality, community, and a profound connection with nature.</p>
+
+      <section id="process" className="content-grid bg-map-green">
+        <div>
+          <Process />
+        </div>
+        <div>
+          <Packaging />
+        </div>
+      </section>
+    </>
   );
+
+
 }
 
 export default About;
