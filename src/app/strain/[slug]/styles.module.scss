@@ -119,17 +119,17 @@
 }
 
 .lineage {
-  font-family: var(--ff-body);
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: $clr-charcoal-light;
   margin-bottom: 2rem;
+  font-weight: 500;
+  font-family: var(--ff-heading);
 
   span {
-  font-style: italic;
-  }
-
-  @include tablet {
-    font-size: 1.125rem;
+    font-size: 0.875rem;
+    font-family: var(--ff-body);
+    font-weight:normal;
+    font-style: italic;
   }
 }
 
@@ -212,7 +212,7 @@
   h2 {
     font-family: var(--ff-heading);
     font-size: clamp(1.25rem, 3vw, 1.5rem);
-    font-weight: 300;
+    font-weight: 500;
     color: $clr-charcoal;
     margin-bottom: 1.25rem;
   }
@@ -247,7 +247,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 1rem;
 }
 
 .cannabinoidItem {

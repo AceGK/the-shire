@@ -49,6 +49,7 @@ export default function SplitImage({
 
       <div className={styles.content}>
         {pretitle && <span className={styles.pretitle}>{pretitle}</span>}
+        <span className={styles.accentLine} />
         {title && <h2 className={styles.title}>{title}</h2>}
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         {children && <div className={styles.body}>{children}</div>}

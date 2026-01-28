@@ -55,11 +55,12 @@ export default async function StrainPage({ params }) {
             {strain.type}
           </span>
           <h1>{strain.name}</h1>
-          <p className={styles.lineage}>Lineage: <span>{strain.lineage}</span></p>
 
           {strain.description && (
             <p className={styles.description}>{strain.description}</p>
           )}
+
+          <p className={styles.lineage}>Lineage: <span>{strain.lineage}</span></p>
 
           {/* Cannabinoids Section */}
           {strain.cannabinoids && (

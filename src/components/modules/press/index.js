@@ -5,7 +5,6 @@ import logos from '@/lib/press.json';
 function AsSeenIn() {
   return (
     <div className={styles.asSeen}>
-      <h2>As Seen in</h2>
       <ul className={styles.logos}>
         {logos.map((item, id) => (
           <li key={id} title={item.name}>

@@ -84,36 +84,22 @@
   margin-bottom: 1rem;
 }
 
-.title {
-  font-family: var(--ff-heading);
-  font-size: var(--fs-section-title);
-  font-weight: 300;
-  color: $clr-charcoal;
-  margin-bottom: 1.25rem;
-  position: relative;
-  text-wrap: pretty;
+.accentLine {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: $clr-accent;
+  margin-bottom: 1.5rem;
 
-  // Decorative accent bar
-  &::before {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 2px;
-    background: $clr-accent;
-    margin-bottom: 1.5rem;
-
-    @include tablet {
-      margin-left: 0;
-    }
-  }
-
-  // Center the accent bar on mobile
   @include max-tablet {
-    &::before {
-      margin-left: auto;
-      margin-right: auto;
-    }
+    margin-left: auto;
+    margin-right: auto;
   }
+}
+
+.title {
+  margin-bottom: 1.25rem;
+  text-wrap: pretty;
 }
 
 .subtitle {

@@ -78,12 +78,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: var(--fs-hero);
-  font-weight: 300;
+  font-weight: 500;
 }
 
 h2 {
   font-size: var(--fs-section-title);
-  font-weight: 300;
+  font-weight: 500;
 }
 
 h3 {
@@ -332,26 +332,52 @@ main section {
   text-align: center;
 }
 
-// Section header pattern
+// Section title - utility class for centered section headings
+.section-title {
+  text-align: center;
+
+  // Light text for dark backgrounds
+  &--light {
+    color: $clr-cream;
+  }
+}
+
+// Decorative accent line element
+.accent-line {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: $clr-accent;
+  margin: 1.5rem auto;
+
+  // Small variant
+  &--sm {
+    width: 40px;
+  }
+
+  // Thicker variant (2px)
+  &--thick {
+    height: 2px;
+  }
+
+  // Position before title (margin below instead of above)
+  &--before {
+    margin: 0 auto 1.5rem;
+  }
+
+  // Tighter spacing
+  &--tight {
+    margin-top: 1rem;
+  }
+}
+
+// Section header pattern (title + description)
 .section-header {
   text-align: center;
   margin-bottom: 3rem;
 
   @include tablet {
     margin-bottom: 4rem;
-  }
-
-  h2 {
-    margin-bottom: 1.5rem;
-
-    &::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 1px;
-      background: $clr-accent;
-      margin: 1.5rem auto 0;
-    }
   }
 
   p {

@@ -38,12 +38,6 @@ export default function Map({ variant = "dark" }) {
 
   return (
     <div className={`${styles.mapSection} ${variant === "light" ? styles.light : ""}`}>
-      <div className={styles.header}>
-        <h2>Where to Buy</h2>
-        <p>
-          Find our premium Southfarthing leaf at these fine establishments. You don't need to go to Mordor and back to find such fine pipeweed.
-        </p>
-      </div>
       <div className={styles.layout}>
         <div className={styles.mapContainer}>
           <MiddleEarthMap ref={mapRef} locations={locations} />

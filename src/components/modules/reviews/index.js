@@ -14,7 +14,6 @@ export default function Reviews() {
 
   return (
     <div className={styles.reviews}>
-      <h2>Reviews</h2>
       <div className={styles.swiperWrapper}>
         <button
           className={styles.navPrev}

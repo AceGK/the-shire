@@ -1,11 +1,12 @@
 import Press from "@/components/modules/press";
-import Strains from "@/components/modules/strains";
+import StrainCarousel from "@/components/modules/strain-carousel";
 import Map from "@/components/modules/map";
 import Hero from "@/components/modules/hero";
 import Reviews from "@/components/modules/reviews";
 import About from "@/components/modules/about";
 import SplitImage from "@/components/modules/split-image";
 import Button from "@/components/ui/button";
+import HeaderBlock from "@/components/modules/header-block";
 
 export default function Home() {
   return (
@@ -14,9 +15,6 @@ export default function Home() {
         <Hero id="home" />
 
         <section id="about" className="content-grid">
-          {/* <div>
-            <About />
-          </div> */}
           <SplitImage
             image="/images/the-shire.jpg"
             alt="Hobbit house"
@@ -29,7 +27,7 @@ export default function Home() {
               </>
             }
           >
-            <p>In the gentle hills of Longbottom, where the morning mist rolls through the valleys, we tend to our crops as Hobbits have for generations. No magic, no shortcuts — just honest work and rich Shire soil.</p>
+            <p>In the gentle hills of Longbottom, where the morning mist rolls through the valleys, we tend to our crops as Hobbits have for generations. No magic — just honest work and rich Shire soil.</p>
           </SplitImage>
         </section>
 
@@ -38,27 +36,39 @@ export default function Home() {
         </section>
 
         <section id="strains" className="content-grid">
-          <div>
-            <Strains />
-          </div>
+          <HeaderBlock
+            as="h2"
+            title="Our Strains"
+            description="Each of our strains pays homage to the enchanting world of Middle-Earth."
+          />
+          <StrainCarousel />
         </section>
 
         <section id="buy" className="content-grid bg-map-green">
-          <div>
-            <Map />
-          </div>
+          <HeaderBlock
+            as="h2"
+            variant="light"
+            title="Where to Buy"
+            description="Find our premium Southfarthing leaf at these fine establishments. You don't need to go to Mordor and back to find such fine pipe-weed."
+          />
+          <Map />
         </section>
 
         <section id="press" className="content-grid">
-          <div>
-            <Press />
-          </div>
+          <HeaderBlock
+            as="h2"
+            title="As Seen In"
+          />
+          <Press />
         </section>
 
         <section id="reviews" className="content-grid bg-map-green">
-          <div>
+           <HeaderBlock
+            as="h2"
+            variant="light"
+            title="Reviews"
+          />
             <Reviews />
-          </div>
         </section>
 
         {/* <section id="partners" className="content-grid">

@@ -1,0 +1,17 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+.swiperContainer {
+  padding: 3rem 0rem;
+  overflow: hidden;
+}
+
+.viewAll {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+  @include tablet {
+    margin-top: 2.5rem;
+  }
+}

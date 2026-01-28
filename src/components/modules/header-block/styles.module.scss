@@ -1,0 +1,76 @@
+@use "@/app/styles/variables" as *;
+@use "@/app/styles/mixins" as *;
+
+.header {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--ff-heading);
+    margin-bottom: 1.5rem;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      margin: 1.5rem auto 0;
+    }
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  h2 {
+    font-size: var(--fs-section-title);
+  }
+
+  h3 {
+    font-size: var(--fs-subsection);
+  }
+
+  p {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    line-height: 1.8;
+    text-wrap: balance;
+  }
+}
+
+// Dark variant (default) - dark text on light backgrounds
+.dark {
+  h1,
+  h2,
+  h3 {
+    color: $clr-charcoal;
+
+    &::after {
+      background: $clr-accent;
+    }
+  }
+
+  p {
+    color: $clr-charcoal-light;
+  }
+}
+
+// Light variant - light text on dark backgrounds
+.light {
+  h1,
+  h2,
+  h3 {
+    color: $clr-cream;
+
+    &::after {
+      background: $clr-accent;
+    }
+  }
+
+  p {
+    color: rgba($clr-cream, 0.85);
+  }
+}

@@ -10,15 +10,9 @@ import strains from "@/lib/strains.json";
 import StrainCard from "@/components/ui/strain-card";
 import Button from "@/components/ui/button";
 
-export default function Strains() {
+export default function StrainCarousel() {
   return (
-    <div className={styles.header}>
-      <h2>Our Strains</h2>
-      <p>
-        Each of our strains pays homage to the
-        enchanting world of Middle-Earth.
-      </p>
-
+    <div>
       <Swiper
         modules={[Navigation]}
         spaceBetween={20}

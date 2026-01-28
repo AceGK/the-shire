@@ -1,41 +1,6 @@
 @import "@/app/styles/variables.scss";
 @import "@/app/styles/mixins.scss";
 
-.header {
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  text-align: center;
-
-  @include tablet {
-    margin-bottom: 4rem;
-  }
-
-  h1 {
-    font-family: var(--ff-heading);
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 300;
-    color: $clr-charcoal;
-    margin-bottom: 1.5rem;
-
-    &::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 1px;
-      background: $clr-accent;
-      margin: 1.5rem auto 0;
-    }
-  }
-
-  p {
-    font-family: var(--ff-body);
-    font-size: var(--fs-body);
-    color: $clr-charcoal-light;
-    line-height: 1.8;
-    text-wrap: balance;
-  }
-}
-
 .grid {
   display: grid;
   grid-template-columns: 1fr;

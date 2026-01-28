@@ -76,7 +76,7 @@ export default function Nav() {
           </nav>
 
           {/* CTA Button */}
-          <Button href="#buy" variant="primary" hideOnMobile>
+          <Button href="/strains" variant="primary" hideOnMobile>
             Order Online
           </Button>
 

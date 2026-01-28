@@ -1,5 +1,6 @@
 import strains from '@/lib/strains.json';
 import StrainCard from '@/components/ui/strain-card';
+import HeaderBlock from '@/components/modules/header-block';
 import styles from './styles.module.scss';
 
 export const metadata = {
@@ -9,13 +10,11 @@ export const metadata = {
 
 export default function StrainsPage() {
   return (
-    <main className="page-content">
-      <div className={styles.header}>
-        <h1>Our Strains</h1>
-        <p>
-          Each of our strains pays homage to the enchanting world of Middle-Earth.
-        </p>
-      </div>
+    <main className="page-content content-grid">
+      <HeaderBlock
+        title="Our Strains"
+        description="Each of our strains pays homage to the enchanting world of Middle-Earth."
+      />
 
       <div className={styles.grid}>
         {strains.map((strain, id) => (
