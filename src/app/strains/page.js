@@ -1,6 +1,5 @@
-import Link from 'next/link';
 import strains from '@/lib/strains.json';
-import { slugify } from '@/lib/utils';
+import StrainCard from '@/components/ui/strain-card';
 import styles from './styles.module.scss';
 
 export const metadata = {
@@ -21,18 +20,7 @@ export default function StrainsPage() {
 
       <div className={styles.grid}>
         {strains.map((strain, id) => (
-          <Link
-            href={`/strain/${slugify(strain.name)}`}
-            key={id}
-            className={styles.card}
-          >
-            <img src="/images/nug.png" alt={`${strain.name} nug`} />
-            <span className={styles.name}>{strain.name}</span>
-            <span className={`${styles.type} ${styles[strain.type]}`}>
-              {strain.type}
-            </span>
-            <span className={styles.lineage}>{strain.lineage}</span>
-          </Link>
+          <StrainCard key={id} strain={strain} />
         ))}
       </div>
     </main>

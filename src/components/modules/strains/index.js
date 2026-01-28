@@ -1,14 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import styles from "./styles.module.scss";
 import strains from "@/lib/strains.json";
-import { slugify } from "@/lib/utils";
+import StrainCard from "@/components/ui/strain-card";
 import Button from "@/components/ui/button";
 
 export default function Strains() {
@@ -43,15 +42,8 @@ export default function Strains() {
         style={{ overflow: "hidden" }}
       >
         {strains.map((strain, id) => (
-          <SwiperSlide key={id} className={styles.card}>
-            <Link href={`/strain/${slugify(strain.name)}`} className={styles.cardLink}>
-              <img src="/images/nug.png" alt={`${strain.name} nug`} />
-              <span className={styles.name}>{strain.name}</span>
-              <span className={`${styles.strain} ${styles[strain.type]}`}>
-                {strain.type}
-              </span>
-              <span className={styles.lineage}>{strain.lineage}</span>
-            </Link>
+          <SwiperSlide key={id}>
+            <StrainCard strain={strain} />
           </SwiperSlide>
         ))}
       </Swiper>

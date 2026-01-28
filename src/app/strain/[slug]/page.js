@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import strains from '@/lib/strains.json';
+import { terpenes, effects } from '@/lib/cannabisIcons';
 import { slugify, getStrainBySlug } from '@/lib/utils';
 import styles from './styles.module.scss';
 
@@ -46,7 +47,7 @@ export default async function StrainPage({ params }) {
 
       <div className={styles.content}>
         <div className={styles.imageContainer}>
-          <img src="/images/nug.png" alt={`${strain.name} nug`} />
+          <img src={strain.image} alt={`${strain.name} nug`} />
         </div>
 
         <div className={styles.details}>
@@ -54,10 +55,83 @@ export default async function StrainPage({ params }) {
             {strain.type}
           </span>
           <h1>{strain.name}</h1>
-          <p className={styles.lineage}>{strain.lineage}</p>
+          <p className={styles.lineage}>Lineage: <span>{strain.lineage}</span></p>
 
           {strain.description && (
             <p className={styles.description}>{strain.description}</p>
+          )}
+
+          {/* Cannabinoids Section */}
+          {strain.cannabinoids && (
+            <section className={styles.section}>
+              <h2>Cannabinoids</h2>
+              <div className={styles.cannabinoidList}>
+                {Object.entries(strain.cannabinoids).map(([key, value]) => (
+                  <div key={key} className={styles.cannabinoidItem}>
+                    <span className={styles.cannabinoidName}>{key.toUpperCase()}</span>
+                    <span className={styles.cannabinoidValue}>{value}%</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Terpenes Section */}
+          {strain.terpenes && strain.terpenes.length > 0 && (
+            <section className={styles.section}>
+              <h2>Terpene Profile</h2>
+              {strain.totalTerpenes && (
+                <div className={styles.totalTerpenes}>
+                  Total Terpenes: {strain.totalTerpenes}
+                </div>
+              )}
+              <div className={styles.terpeneGrid}>
+                {strain.terpenes.map((terpeneKey) => {
+                  const terpene = terpenes[terpeneKey];
+                  if (!terpene) return null;
+                  return (
+                    <div
+                      key={terpeneKey}
+                      className={styles.terpeneCard}
+                      style={{ '--terpene-color': terpene.color }}
+                    >
+                      <div className={styles.terpeneIcon}>
+                        {terpene.icon}
+                      </div>
+                      <div className={styles.terpeneInfo}>
+                        <h3>{terpene.name}</h3>
+                        <p>{terpene.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          )}
+
+          {/* Effects Section */}
+          {strain.effects && strain.effects.length > 0 && (
+            <section className={styles.section}>
+              <h2>Anticipated Effects</h2>
+              <div className={styles.effectsGrid}>
+                {strain.effects.map((effectKey) => {
+                  const effect = effects[effectKey];
+                  if (!effect) return null;
+                  return (
+                    <div
+                      key={effectKey}
+                      className={styles.effectCard}
+                      style={{ '--effect-color': effect.color }}
+                    >
+                      <div className={styles.effectIcon}>
+                        {effect.icon}
+                      </div>
+                      <span className={styles.effectName}>{effect.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
           )}
         </div>
       </div>
