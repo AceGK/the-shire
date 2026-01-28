@@ -6,9 +6,9 @@ import Button from '@/components/ui/button';
 import styles from './styles.module.scss';
 
 const navItems = [
-  { title: "About", link: "/#about" },
-  { title: "Strains", link: "/#strains" },
-  { title: "Retailers", link: "/#find-us" },
+  { title: "About", link: "/about" },
+  { title: "Strains", link: "/strains" },
+  { title: "Retailers", link: "/retailers" },
   { title: "Press", link: "/#press" },
   { title: "Reviews", link: "/#reviews" },
 ];

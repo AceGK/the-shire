@@ -69,6 +69,15 @@
   line-height: 1.1;
   margin: 0;
 
+  span {
+    display:block;
+    font-size:1rem;
+    letter-spacing: 0.75em;
+    text-transform: uppercase;
+    font-weight:500;
+      font-family: var(--ff-body);
+  }
+
   @include tablet {
     font-size: clamp(3rem, 8vw, 5.5rem);
   }
@@ -76,7 +85,7 @@
 
 .tagline {
   font-family: var(--ff-heading);
-  font-size: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(1rem, 3vw, 1.5rem);
   font-weight: 400;
   color: $clr-cream;
   letter-spacing: 0.03em;

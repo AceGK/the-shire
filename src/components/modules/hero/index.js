@@ -12,7 +12,7 @@ export default function Hero() {
       <div className={styles.content}>
         <div className={styles.decorBorder}></div>
 
-        <h1 className={styles.title}>The Shire</h1>
+        <h1 className={styles.title}>The Shire <span>Supply Company</span></h1>
 
         <p className={styles.tagline}>
           The finest pipe-weed in the Southfarthing

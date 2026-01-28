@@ -2,20 +2,8 @@
 @import "@/app/styles/mixins.scss";
 
 .mapSection {
-  margin: -5rem 0;
-  padding: 5rem 0;
   background-size: cover;
   background-position: center;
-
-  @include tablet {
-    margin: -7rem 0;
-    padding: 7rem 0;
-  }
-
-  @include desktop {
-    margin: -9rem 0;
-    padding: 9rem 0;
-  }
 }
 
 .header {
@@ -46,6 +34,16 @@
     font-size: var(--fs-body);
     line-height: 1.8;
     color: rgba($clr-cream, 0.85);
+  }
+
+  .light & {
+    h2 {
+      color: $clr-charcoal;
+    }
+
+    p {
+      color: $clr-charcoal-light;
+    }
   }
 }
 
@@ -204,15 +202,61 @@
 
 // Location list
 .locationList {
+  position: relative;
   background: rgba($clr-cream, 0.05);
   border: 1px solid $clr-border-light;
   padding: 1.5rem;
+
+  .light & {
+    background: rgba($clr-primary, 0.03);
+  }
 
   @include tablet {
     width: 280px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+  }
+
+  // Top and bottom fade gradients
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 50px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 1s ease;
+  }
+
+  &::before {
+    top: 4.8rem; // Below the h3
+    background: linear-gradient(to bottom, rgba($clr-primary, 0.95), transparent);
+
+    .light & {
+      background: linear-gradient(to bottom, rgba($clr-cream, 0.95), transparent);
+    }
+  }
+
+  &::after {
+    bottom: 1.5rem;
+    background: linear-gradient(to top, rgba($clr-primary, 0.95), transparent);
+
+    .light & {
+      background: linear-gradient(to top, rgba($clr-cream, 0.95), transparent);
+    }
+  }
+
+  // Hide gradients when scrolled to edges
+  &.atTop::before {
+    opacity: 0;
+  }
+
+  &.atBottom::after {
+    opacity: 0;
   }
 
   h3 {
@@ -231,6 +275,10 @@
       height: 1px;
       background: $clr-accent;
       margin: 0.75rem auto 0;
+    }
+
+    .light & {
+      color: $clr-charcoal;
     }
   }
 

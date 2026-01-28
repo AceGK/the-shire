@@ -3,6 +3,13 @@
 
 // ===== CSS CUSTOM PROPERTIES =====
 :root {
+  // Nav Height (for fixed nav offset)
+  --nav-height: 70px;
+
+  @media (min-width: 768px) {
+    --nav-height: 74px;
+  }
+
   // Font Families
   --ff-heading: 'Cormorant Garamond', Georgia, serif;
   --ff-body: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -185,6 +192,12 @@ main section {
   @include desktop {
     padding: 9rem 0;
   }
+}
+
+// Page content offset for fixed nav
+.page-content {
+  padding-top: calc(var(--nav-height) + 4rem);
+  padding-bottom:6rem;
 }
 
 // ===== BACKGROUND VARIANTS =====

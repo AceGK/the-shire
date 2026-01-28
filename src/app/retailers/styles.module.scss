@@ -1,13 +1,22 @@
 @import "@/app/styles/variables.scss";
 @import "@/app/styles/mixins.scss";
 
+.retailersPage {
+  min-height: 100vh;
+}
+
 .header {
+  padding: 6rem 1.5rem 3rem;
   max-width: 800px;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
   text-align: center;
 
   @include tablet {
-    margin-bottom: 4rem;
+    padding: 8rem 2rem 4rem;
+  }
+
+  @include desktop {
+    padding: 10rem 4rem 5rem;
   }
 
   h1 {
@@ -36,25 +45,15 @@
   }
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  max-width: 1400px;
-  margin: 0 auto;
-
-  @include sm {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
+.mapWrapper {
+  // background: $clr-primary;
+  padding: 0 1.5rem 4rem;
 
   @include tablet {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    padding: 0 2rem 5rem;
   }
 
   @include desktop {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    padding: 0 4rem 6rem;
   }
 }

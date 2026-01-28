@@ -9,12 +9,11 @@ export const metadata = {
 
 export default function StrainsPage() {
   return (
-    <main className={styles.strainsPage}>
+    <main className="page-content">
       <div className={styles.header}>
         <h1>Our Strains</h1>
         <p>
           Each of our strains pays homage to the enchanting world of Middle-Earth.
-          You don&apos;t need to go to Mordor and back to find such fine pipeweed.
         </p>
       </div>
 

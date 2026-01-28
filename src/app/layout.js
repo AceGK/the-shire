@@ -20,7 +20,7 @@ const lato = Lato({
 });
 
 export const metadata = {
-  title: 'The Shire',
+  title: 'The Shire Supply Co. | Finest Pipe-Weed in the Southfarthing',
   description: 'The finest weed in the Southfarthing',
 }
 

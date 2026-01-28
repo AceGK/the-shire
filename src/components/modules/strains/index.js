@@ -16,8 +16,7 @@ export default function Strains() {
       <h2>Our Strains</h2>
       <p>
         Each of our strains pays homage to the
-        enchanting world of Middle-Earth. You
-        don&apos;t need to go to Mordor and back to find such fine pipeweed.
+        enchanting world of Middle-Earth.
       </p>
 
       <Swiper
