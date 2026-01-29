@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Button from '@/components/ui/button';
 import PromoBar from './PromoBar';
 import styles from './styles.module.scss';
+import Logo from "@/assets/the-shire-supply-co.svg";
 
 const navItems = [
   { title: "About", link: "/about" },
@@ -89,7 +90,7 @@ export default function Nav({ promoMessage }) {
 
           <div className={styles.navInner}>
             <Link href="/#home" className={styles.logo}>
-              The Shire
+              <Logo />
             </Link>
 
             <nav className={styles.navLinks}>
