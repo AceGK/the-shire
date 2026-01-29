@@ -232,7 +232,10 @@ main section {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;
-  background-attachment: fixed;
+
+  // @include tablet {
+  //   background-attachment: fixed;
+  // }
 }
 
 .bg-map-green {
@@ -240,7 +243,10 @@ main section {
   background-image: url("/images/bg-map-hobbiton-green.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+
+  // @include tablet {
+  //   background-attachment: fixed;
+  // }
 }
 .bg-texture {
   background-color: $clr-cream;
@@ -328,12 +334,12 @@ main section {
 
     &::before {
       content: '"';
-      margin-right: 0.1em;
+      margin-right: 0.2em;
     }
 
     &::after {
       content: '"';
-      margin-left: 0.1em;
+      margin-left: 0.2em;
     }
   }
 
