@@ -8,7 +8,7 @@
   right: 0;
   z-index: 999999;
   width: 100%;
-  background: $clr-primary;
+  // background: $clr-primary;
   transition: transform 0.3s ease;
 
   &.hidden {
@@ -22,10 +22,23 @@
 
 // Promo Bar (inside nav)
 .promoBar {
+  position: relative;
   background-color: $clr-brown;
   color: $clr-cream;
   padding: 0.625rem 1rem;
   margin: 0;
+
+  // Bridge element to prevent gap during animation
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: $clr-brown;
+    z-index: 1;
+  }
 }
 
 .promoInner {
@@ -75,8 +88,7 @@
   background: rgba($clr-primary, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba($clr-accent, 0.15);
-  margin: 0;
+  // border-bottom: 1px solid rgba($clr-accent, 0.15);
 }
 
 .navInner {

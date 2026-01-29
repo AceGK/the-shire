@@ -315,14 +315,35 @@ main section {
 // Text utilities
 
 .full-width-quote {
-  font-family: var(--font-hobbiton);
-  font-size: clamp(1.5rem, 5vw, 3.4rem);
-  font-weight: 400;
   text-align: center;
   margin: 0 auto;
   padding: 0;
-  // color: $clr-accent-light;
-  color: #cfbe8f;;
+
+  blockquote {
+    font-family: var(--font-hobbiton);
+    font-size: clamp(1.5rem, 5vw, 3.4rem);
+    font-weight: 400;
+    color: #cfbe8f;
+    margin: 0;
+
+    &::before {
+      content: '"';
+      margin-right: 0.1em;
+    }
+
+    &::after {
+      content: '"';
+      margin-left: 0.1em;
+    }
+  }
+
+  figcaption {
+    font-family: var(--ff-body);
+    font-size: var(--fs-small);
+    color: rgba(#cfbe8f, 0.7);
+    margin-top: 1rem;
+    letter-spacing: 0.05em;
+  }
 }
 
 .text-uppercase {

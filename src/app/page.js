@@ -32,7 +32,10 @@ export default function Home() {
         </section>
 
         <section className="content-grid bg-map-green">
-            <h2 className="full-width-quote">"The Finest Pipe-weed in the Southfarthing"</h2>
+            <figure className="full-width-quote">
+              <blockquote>The Finest Pipe-weed in the Southfarthing</blockquote>
+              {/* <figcaption>— Bilbo Baggins</figcaption> */}
+            </figure>
         </section>
 
         <section id="strains" className="content-grid">
