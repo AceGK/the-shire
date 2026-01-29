@@ -15,14 +15,37 @@ const navItems = [
   { title: "Reviews", link: "/#reviews" },
 ];
 
+const PROMO_COOKIE_NAME = 'promo_dismissed';
+const PROMO_COOKIE_HOURS = 1;
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+  return null;
+}
+
+function setCookie(name, value, hours) {
+  const expires = new Date(Date.now() + hours * 36e5).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+
 export default function Nav({ promoMessage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [promoVisible, setPromoVisible] = useState(true);
+  const [promoVisible, setPromoVisible] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [headerHeight, setHeaderHeight] = useState(104); // Initial estimate: navBar (~68px) + promoBar (~36px)
+  const [headerHeight, setHeaderHeight] = useState(104); 
   const headerRef = useRef(null);
   const lastScrollY = useRef(0);
+
+  // Check cookie on mount to determine promo visibility
+  useEffect(() => {
+    const dismissed = getCookie(PROMO_COOKIE_NAME);
+    if (!dismissed) {
+      setPromoVisible(true);
+    }
+  }, []);
 
   // Track header height with ResizeObserver
   useEffect(() => {
@@ -79,10 +102,13 @@ export default function Nav({ promoMessage }) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-                {promoMessage && promoVisible && (
+        {promoMessage && promoVisible && (
           <PromoBar
             message={promoMessage}
-            onClose={() => setPromoVisible(false)}
+            onClose={() => {
+              setCookie(PROMO_COOKIE_NAME, '1', PROMO_COOKIE_HOURS);
+              setPromoVisible(false);
+            }}
           />
         )}
         <div className={styles.navBar}>
