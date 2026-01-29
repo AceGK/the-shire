@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Button from '@/components/ui/button';
 import PromoBar from './PromoBar';
 import styles from './styles.module.scss';
-import Logo from "@/assets/the-shire-supply-co.svg";
+import Logo from "@/assets/the-shire-supply-co-color.svg";
 
 const navItems = [
   { title: "About", link: "/about" },
@@ -103,18 +103,21 @@ export default function Nav({ promoMessage }) {
               </ul>
             </nav>
 
-            <Button href="/strains" variant="primary" hideOnMobile>
+            <Button href="/strains" variant="primary" className={styles.navCta}>
               Order Online
             </Button>
 
             <button
-              className={styles.mobileMenuBtn}
+              type="button"
+              className={`${styles.burger} ${mobileMenuOpen ? styles.open : ''}`}
               onClick={toggleMobileMenu}
-              aria-label="Open menu"
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
             >
-              <span></span>
-              <span></span>
-              <span></span>
+              <span className={styles.bar} />
+              <span className={styles.bar} />
+              <span className={styles.bar} />
             </button>
           </div>
         </div>
@@ -126,7 +129,7 @@ export default function Nav({ promoMessage }) {
         style={{ height: headerHeight }}
       />
 
-      <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.open : ''}`}>
+      <div id="mobile-menu" className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.open : ''}`}>
         <button
           className={styles.closeBtn}
           onClick={closeMobileMenu}
@@ -144,6 +147,14 @@ export default function Nav({ promoMessage }) {
             </li>
           ))}
         </ul>
+        <Button
+          href="/strains"
+          variant="primary"
+          className={styles.mobileMenuCta}
+          onClick={closeMobileMenu}
+        >
+          Order Online
+        </Button>
       </div>
     </>
   );

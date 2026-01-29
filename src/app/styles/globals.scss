@@ -583,8 +583,8 @@ main section {
 }
 
 // Touch-friendly tap targets on mobile
-@include max-tablet {
-  a, button {
-    min-height: 44px;
-  }
-}
+// @include max-tablet {
+//   a, button {
+//     min-height: 44px;
+//   }
+// }

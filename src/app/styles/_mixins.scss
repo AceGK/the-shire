@@ -24,6 +24,12 @@ $desktopValue: $breakpoint-lg;
   }
 }
 
+@mixin nav-collapse {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (min-width: $breakpoint-lg) {
     @content;
