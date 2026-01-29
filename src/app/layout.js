@@ -1,4 +1,5 @@
 import { Cormorant_Garamond, Lato } from 'next/font/google';
+import localFont from 'next/font/local';
 import '@/app/styles/reset.scss'
 import '@/app/styles/globals.scss'
 import '@/app/styles/swiper.scss'
@@ -19,6 +20,12 @@ const lato = Lato({
   display: 'swap',
 });
 
+const hobbiton = localFont({
+  src: '../../public/fonts/Hobbiton.ttf',
+  variable: '--font-hobbiton',
+  display: 'swap',
+});
+
 export const metadata = {
   title: 'The Shire Supply Co. | Finest Pipe-Weed in the Southfarthing',
   description: 'The finest weed in the Southfarthing',
@@ -27,8 +34,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${cormorantGaramond.variable} ${lato.variable} bg-map`}>
-        <Nav />
+      <body className={`${cormorantGaramond.variable} ${lato.variable} ${hobbiton.variable} bg-map`}>
+        <Nav promoMessage="Join our Fellowship to receive 10% off!" />
         {children}
         <Footer />
       </body>

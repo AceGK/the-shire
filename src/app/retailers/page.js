@@ -5,6 +5,7 @@ export default function RetailersPage() {
   return (
     <main className="page-content content-grid">
       <HeaderBlock
+        isPageHeader
         title="Where to Buy"
         description="Find our premium Southfarthing leaf at these fine establishments across Middle-earth."
       />

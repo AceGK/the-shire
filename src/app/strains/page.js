@@ -12,6 +12,7 @@ export default function StrainsPage() {
   return (
     <main className="page-content content-grid">
       <HeaderBlock
+        isPageHeader
         title="Our Strains"
         description="Each of our strains pays homage to the enchanting world of Middle-Earth."
       />

@@ -1,30 +1,21 @@
 [
   {
     "name": "Gandalf G.",
-    "review": "Unassuming, yet full of surprises. I never leave without a pouch of Longbottom Leaf."
-  },
-  {
-    "name": "Aragorn E.",
-    "review": "As a ranger, I've tasted many herbs, but nothing quite as regal as the pipe-weed from The Shire; truly fit for a King.",
-    "alt-review": "I've wandered many lands, but The Shire's pipe-weed is fit for a king. And I would know."
+    "review": "Like the Hobbits themselves, unassuming, yet full of surprises. Buy, you fools!"
   },
   {
     "name": "Boromir D.",
     "review": "One does not simply walk into The Shire without picking up some Halfling leaf."
   },
   {
+    "name": "Aragorn E.",
+    "review": "I've sampled leaf from many lands, but The Shire's pipe-weed is truly fit for a king."
+  },
+  {
     "name": "Samwise G.",
     "review": "If I know anything, it's gardening. These folks tend their crop the right way."
   }, 
   {
-    "name": "Legolas L.",
-    "review": "Subtle. Earthy. Notes I haven't encountered in three thousand years. I'm impressed."
-  },
-  {
-    "name": "Gimli G.",
-    "review": "I never thought I'd praise anything from a Hobbit hole. I've never been happier to be wrong."
-  },
-    {
     "name": "Faramir D.",
     "review": "I was skeptical of Halfling leaf. My father would never approve. But this... this I would defend."
   }

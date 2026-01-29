@@ -31,8 +31,8 @@ export default function Home() {
           </SplitImage>
         </section>
 
-        <section id="process" className="content-grid bg-map-green">
-
+        <section className="content-grid bg-map-green">
+            <h2 className="full-width-quote">"The Finest Pipe-weed in the Southfarthing"</h2>
         </section>
 
         <section id="strains" className="content-grid">
@@ -71,17 +71,6 @@ export default function Home() {
             <Reviews />
         </section>
 
-        {/* <section id="partners" className="content-grid">
-          <div>
-            <Partners />
-          </div>
-        </section> */}
-
-        {/* <section id="visit" className="content-grid bg-color">
-          <div>
-            <Visit />
-          </div>
-        </section> */}
       </main>
     </>
   );

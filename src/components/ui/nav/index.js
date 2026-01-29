@@ -13,24 +13,44 @@ const navItems = [
   { title: "Reviews", link: "/#reviews" },
 ];
 
-export default function Nav() {
+export default function Nav({ promoMessage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [promoVisible, setPromoVisible] = useState(true);
   const [hidden, setHidden] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(104); // Initial estimate: navBar (~68px) + promoBar (~36px)
+  const headerRef = useRef(null);
   const lastScrollY = useRef(0);
+
+  // Track header height with ResizeObserver
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+
+    const updateHeight = () => {
+      const height = header.offsetHeight;
+      setHeaderHeight(height);
+      document.documentElement.style.setProperty('--header-height', `${height}px`);
+    };
+
+    // Initial measurement
+    updateHeight();
+
+    const resizeObserver = new ResizeObserver(updateHeight);
+    resizeObserver.observe(header);
+
+    return () => resizeObserver.disconnect();
+  }, [promoVisible]);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Don't hide if hovering or at top of page
       if (isHovered || currentScrollY < 100) {
         setHidden(false);
       } else if (currentScrollY > lastScrollY.current) {
-        // Scrolling down
         setHidden(true);
       } else {
-        // Scrolling up
         setHidden(false);
       }
 
@@ -52,48 +72,80 @@ export default function Nav() {
   return (
     <>
       <header
+        ref={headerRef}
         className={`${styles.nav} ${hidden ? styles.hidden : ''}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <a href="#main-content" className="header-skip">Skip to content</a>
+        {promoMessage && promoVisible && (
+          <div className={styles.promoBar}>
+            <div className={styles.promoInner}>
+              <p className={styles.promoMessage}>{promoMessage}</p>
+              <button
+                className={styles.promoClose}
+                onClick={() => setPromoVisible(false)}
+                aria-label="Close promotional banner"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L13 13M1 13L13 1"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
 
-        <div className={styles.navInner}>
-          {/* Logo */}
-          <Link href="/#home" className={styles.logo}>
-            The Shire
-          </Link>
+        <div className={styles.navBar}>
+          <a href="#main-content" className="header-skip">Skip to content</a>
 
-          {/* Desktop Navigation */}
-          <nav className={styles.navLinks}>
-            <ul>
-              {navItems.map((item) => (
-                <li key={item.title} className={styles.navItem}>
-                  <Link href={item.link}>{item.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div className={styles.navInner}>
+            <Link href="/#home" className={styles.logo}>
+              The Shire
+            </Link>
 
-          {/* CTA Button */}
-          <Button href="/strains" variant="primary" hideOnMobile>
-            Order Online
-          </Button>
+            <nav className={styles.navLinks}>
+              <ul>
+                {navItems.map((item) => (
+                  <li key={item.title} className={styles.navItem}>
+                    <Link href={item.link}>{item.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className={styles.mobileMenuBtn}
-            onClick={toggleMobileMenu}
-            aria-label="Open menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+            <Button href="/strains" variant="primary" hideOnMobile>
+              Order Online
+            </Button>
+
+            <button
+              className={styles.mobileMenuBtn}
+              onClick={toggleMobileMenu}
+              aria-label="Open menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Spacer to push content below fixed header */}
+      <div
+        className={styles.headerSpacer}
+        style={{ height: headerHeight }}
+      />
+
       <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.open : ''}`}>
         <button
           className={styles.closeBtn}

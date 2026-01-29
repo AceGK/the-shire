@@ -46,6 +46,9 @@
     width: 100%;
     padding: 0;
     overflow: hidden;
+    &:hover {
+      cursor:grab;
+    }
 
     :global(.swiper-pagination-bullet) {
       width: 10px;
@@ -96,18 +99,6 @@
       z-index: 0;
     }
 
-    // Decorative quote mark
-    &::after {
-      content: '"';
-      font-family: var(--ff-heading);
-      font-size: 4rem;
-      color: $clr-accent;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-      order: 0;
-      position: relative;
-      z-index: 1;
-    }
 
     h3 {
       font-family: var(--ff-body);
@@ -132,6 +123,35 @@
       position: relative;
       z-index: 1;
       text-wrap: pretty;
+    }
+
+    .reviewText {
+      &::before,
+      &::after {
+        font-family: var(--ff-heading);
+        font-size: 2rem;
+        color: $clr-accent;
+        line-height: 0;
+        vertical-align: middle;
+      }
+
+      &::before {
+        content: '"';
+        margin-right: 0.25rem;
+      }
+
+      &::after {
+        content: '"';
+        margin-left: 0.125rem;
+      }
+    }
+
+    .stars {
+      font-style: normal;
+      color: $clr-accent;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
     }
   }
 }

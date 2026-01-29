@@ -194,10 +194,9 @@ main section {
   }
 }
 
-// Page content offset for fixed nav
+// Page content spacing (header spacer handles top offset)
 .page-content {
-  padding-top: calc(var(--nav-height) + 4rem);
-  padding-bottom:6rem;
+  padding-bottom: 6rem;
 }
 
 // ===== BACKGROUND VARIANTS =====
@@ -229,7 +228,7 @@ main section {
 
 .bg-map {
   background-color: $clr-cream;
-  background-image: url("/images/bg-map.png");
+  background-image: url("/images/bg-map-hobbiton.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;
@@ -238,7 +237,7 @@ main section {
 
 .bg-map-green {
   background-color: $clr-primary;
-  background-image: url("/images/bg-map.png");
+  background-image: url("/images/bg-map-hobbiton-green.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -314,6 +313,18 @@ main section {
 }
 
 // Text utilities
+
+.full-width-quote {
+  font-family: var(--font-hobbiton);
+  font-size: clamp(1.5rem, 5vw, 3.4rem);
+  font-weight: 400;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  // color: $clr-accent-light;
+  color: #cfbe8f;;
+}
+
 .text-uppercase {
   text-transform: uppercase;
   letter-spacing: var(--ls-uppercase);

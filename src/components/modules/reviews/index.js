@@ -43,7 +43,8 @@ export default function Reviews() {
             <SwiperSlide key={index} className={styles.slide}>
               <div className={styles.card}>
                 <h3>{review.name}</h3>
-                <div>{review.review}</div>
+                <div className={styles.stars}>★★★★★</div>
+                <div className={styles.reviewText}>{review.review}</div>
               </div>
             </SwiperSlide>
           ))}
