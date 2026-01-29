@@ -1,5 +1,5 @@
-@import "@/app/styles/variables.scss";
-@import "@/app/styles/mixins.scss";
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
 
 .nav {
   position: fixed;
@@ -11,7 +11,8 @@
   // background: $clr-primary;
   transition: transform 0.3s ease;
   overflow: hidden;
-
+    background: rgba($clr-primary, 0.95);
+  backdrop-filter: blur(20px);
   &.hidden {
     transform: translateY(-100%);
   }
@@ -19,17 +20,14 @@
 
 .headerSpacer {
   min-height: 68px; // Fallback height (navBar) to prevent layout shift before JS measures
-  background:$clr-primary;
+  background: $clr-primary;
+  backdrop-filter: blur(20px);
 }
 
 // Nav bar section
-.navBar {
-  // background: rgba($clr-primary, 0.95);
-  background: $clr-primary;
-  // backdrop-filter: blur(20px);
-  // -webkit-backdrop-filter: blur(20px);
-  // border-bottom: 1px solid rgba($clr-accent, 0.15);
-}
+// .navBar {
+
+// }
 
 .navInner {
   // max-width: 1400px;

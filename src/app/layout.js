@@ -1,8 +1,8 @@
 import { Cormorant_Garamond, Lato } from 'next/font/google';
 import localFont from 'next/font/local';
-import '@/app/styles/reset.scss'
-import '@/app/styles/globals.scss'
-import '@/app/styles/swiper.scss'
+import '@/styles/reset.scss'
+import '@/styles/globals.scss'
+import '@/styles/swiper.scss'
 import Footer from '@/components/ui/footer'
 import Nav from '@/components/ui/nav'
 
