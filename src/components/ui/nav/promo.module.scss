@@ -1,0 +1,67 @@
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
+
+// Promo Bar (inside nav)
+.promoBar {
+  position: relative;
+  background-color: $clr-brown;
+  color: $clr-cream;
+  padding: 0.5rem 1rem;
+  margin: 0;
+}
+
+.promoInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.promoMessage {
+  font-family: var(--ff-body);
+  font-size: var(--fs-small);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin: 0;
+  color: $clr-cream;
+}
+
+.promoLink {
+  font-family: var(--ff-body);
+  font-size: var(--fs-small);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: $clr-cream;
+  text-decoration: underline;
+  transition: opacity var(--transition-fast);
+
+  @include hover {
+    opacity: 0.7;
+  }
+}
+
+.promoClose {
+  position: absolute;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: $clr-cream;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+
+  @include hover {
+    opacity: 1;
+  }
+
+  svg {
+    display: block;
+  }
+}

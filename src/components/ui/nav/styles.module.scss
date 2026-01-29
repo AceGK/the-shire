@@ -10,6 +10,7 @@
   width: 100%;
   // background: $clr-primary;
   transition: transform 0.3s ease;
+  overflow: hidden;
 
   &.hidden {
     transform: translateY(-100%);
@@ -18,81 +19,20 @@
 
 .headerSpacer {
   min-height: 68px; // Fallback height (navBar) to prevent layout shift before JS measures
-}
-
-// Promo Bar (inside nav)
-.promoBar {
-  position: relative;
-  background-color: $clr-brown;
-  color: $clr-cream;
-  padding: 0.625rem 1rem;
-  margin: 0;
-
-  // Bridge element to prevent gap during animation
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: $clr-brown;
-    z-index: 1;
-  }
-}
-
-.promoInner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.promoMessage {
-  font-family: var(--ff-body);
-  font-size: var(--fs-small);
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  text-align: center;
-  margin: 0;
-  color: $clr-cream;
-}
-
-.promoClose {
-  position: absolute;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  color: $clr-cream;
-  cursor: pointer;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.7;
-  transition: opacity var(--transition-fast);
-
-  @include hover {
-    opacity: 1;
-  }
-
-  svg {
-    display: block;
-  }
+  background:$clr-primary;
 }
 
 // Nav bar section
 .navBar {
-  background: rgba($clr-primary, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  // background: rgba($clr-primary, 0.95);
+  background: $clr-primary;
+  // backdrop-filter: blur(20px);
+  // -webkit-backdrop-filter: blur(20px);
   // border-bottom: 1px solid rgba($clr-accent, 0.15);
 }
 
 .navInner {
-  max-width: 1400px;
+  // max-width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -151,7 +91,7 @@
     color: $clr-cream;
     text-decoration: none;
     font-family: var(--ff-body);
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.15em;
