@@ -247,21 +247,50 @@ main section {
 }
 
 // Legacy background classes (updated styling)
+// Uses fixed-position wrapper divs for iOS Safari compatibility
 
-.bg-map {
-  background-color: $clr-cream;
-  background-image: url("/images/bg-map-hobbiton.png");
+.background-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;
-  background-attachment: fixed;
+  z-index: -1;
+  pointer-events: none;
+
+  &--map {
+    background-color: $clr-cream;
+    background-image: url("/images/bg-map-hobbiton.png");
+  }
+
+  &--map-green {
+    background-color: $clr-primary;
+    background-image: url("/images/bg-map-hobbiton-green.jpg");
+  }
 }
+
+.content-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+// Section-level green map background (with iOS fallback)
 .bg-map-green {
   background-color: $clr-primary;
   background-image: url("/images/bg-map-hobbiton-green.jpg");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: top center;
   background-attachment: fixed;
+
+  // iOS Safari fallback - use scroll instead of fixed
+  @supports (-webkit-touch-callout: none) {
+    background-attachment: scroll;
+    background-size: cover;
+  }
 }
 .bg-texture {
   background-color: $clr-cream;

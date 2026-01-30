@@ -34,10 +34,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${cormorantGaramond.variable} ${lato.variable} ${hobbiton.variable} bg-map`}>
-        <Nav promoMessage="Join our Fellowship to receive 10% off!" />
-        {children}
-        <Footer />
+      <body className={`${cormorantGaramond.variable} ${lato.variable} ${hobbiton.variable}`}>
+        <div className="background-wrap background-wrap--map" aria-hidden="true" />
+        <div className="content-wrap">
+          <Nav promoMessage="Join our Fellowship to receive 10% off!" />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   )
