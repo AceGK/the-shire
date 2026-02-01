@@ -249,19 +249,19 @@ main section {
 // Legacy background classes (updated styling)
 // Uses fixed-position wrapper divs for iOS Safari compatibility
 
-// Fixed background color layer (behind content)
+// Fixed background color layer (behind everything)
 .background-wrap {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -2;
   pointer-events: none;
   background-color: $clr-cream;
 }
 
-// Fixed map overlay (on top of content, multiply blend)
+// Fixed map overlay
 .map-overlay {
   position: fixed;
   top: 0;
@@ -272,19 +272,60 @@ main section {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;
-  z-index: 9999;
+  z-index: 0;
   pointer-events: none;
-  mix-blend-mode: multiply;
+
+  // CSS gradient fade (avoids PNG compression artifacts)
+  // Percentages adjusted to match where image ends with contain sizing
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.85) 35%,
+    rgba(0, 0, 0, 0.25) 45%,
+    transparent 55%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+     rgba(0, 0, 0, 0.85) 35%,
+    rgba(0, 0, 0, 0.25) 45%,
+    transparent 55%
+  );
 }
 
 .content-wrap {
   position: relative;
+
+}
+
+// For pages without green sections - all content above map
+.page-content {
+  position: relative;
   z-index: 1;
 }
 
-// Green sections - solid color, map blends through
+// Regular sections (not bg-map-green) should be above the map
+.content-grid:not(.bg-map-green) {
+  position: relative;
+  z-index: 1;
+}
+
+// Green sections - background behind map, content above map
 .bg-map-green {
-  background-color: $clr-primary;
+  position: relative;
+
+  // Green background layer (behind map)
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: $clr-primary;
+    z-index: -1;
+  }
+
+  // Content layer (above map)
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 }
 .bg-texture {
   background-color: $clr-cream;

@@ -2,6 +2,8 @@
 @import "@/styles/mixins.scss";
 
 .footer {
+  position: relative;
+  z-index: 1; // Above map overlay
   padding-block: 3rem;
   color: $clr-cream;
   background: $clr-primary;
