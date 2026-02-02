@@ -2,8 +2,27 @@
 @import "@/styles/mixins.scss";
 
 .swiperContainer {
-  padding: 3rem 1px;
-  overflow: hidden;
+  padding: 3rem 1rem;
+  max-width: 1300px;
+  @include tablet {
+    padding: 3rem 2rem;
+  }
+   :global(.swiper-slide) {
+    height: auto;
+  }
+   :global(.swiper-scrollbar) {
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    
+    @include tablet {
+      left: 2rem;
+      right: 2rem;
+    }
+  }
+  :global(.swiper-scrollbar-drag) {
+  background: $clr-brown-light;  // handle color (or any color you want)
+}
 }
 
 .viewAll {

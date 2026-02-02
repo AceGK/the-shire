@@ -3,8 +3,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Navigation } from "swiper/modules";
+import "swiper/css/scrollbar";
+import { Navigation, Scrollbar } from "swiper/modules";
 import styles from "./styles.module.scss";
 import strains from "@/lib/strains.json";
 import StrainCard from "@/components/ui/strain-card";
@@ -14,19 +14,20 @@ export default function StrainCarousel() {
   return (
     <div>
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Scrollbar]}
         spaceBetween={20}
-        slidesPerView={1}
+        slidesPerView={1.5}
         slidesPerGroup={1}
         navigation
+        scrollbar={{ draggable: true }}
         breakpoints={{
-          640: {
-            slidesPerView: 2,
-            slidesPerGroup: 2,
+          520: {
+            slidesPerView: 2.5,
+            slidesPerGroup: 1,
             spaceBetween: 24,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 2.98,
             slidesPerGroup: 3,
             spaceBetween: 30,
           },

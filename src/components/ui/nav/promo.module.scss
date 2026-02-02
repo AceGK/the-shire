@@ -27,6 +27,8 @@
   text-align: center;
   margin: 0;
   color: $clr-cream;
+  text-align: left;
+  text-wrap:pretty;
 }
 
 .promoLink {
@@ -39,29 +41,30 @@
   transition: opacity var(--transition-fast);
 
   @include hover {
-    opacity: 0.7;
+    color: $clr-accent-light;
   }
 }
 
 .promoClose {
-  position: absolute;
-  right: 1rem;
+  padding: 0;
   background: transparent;
   border: none;
   color: $clr-cream;
   cursor: pointer;
-  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: opacity var(--transition-fast);
+  margin-left:auto;
 
   @include hover {
     opacity: 1;
+    color: $clr-accent-light;
   }
 
-  svg {
-    display: block;
+  @include sm {
+    position: absolute;
+    right: 1rem;
   }
 }

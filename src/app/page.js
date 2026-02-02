@@ -38,12 +38,14 @@ export default function Home() {
             </figure>
         </section>
 
-        <section id="strains" className="content-grid">
+        <section id="strains">
+          <div className="content-grid">
           <HeaderBlock
             as="h2"
             title="Our Strains"
             description="Each of our strains pays homage to the enchanting world of Middle-Earth."
           />
+          </div>
           <StrainCarousel />
         </section>
 
