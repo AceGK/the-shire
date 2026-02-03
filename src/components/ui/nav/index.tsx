@@ -100,7 +100,7 @@ export default function Nav({ promoMessage, initialPromoDismissed = false }: Nav
               </ul>
             </nav>
 
-            <Button href="/strains" variant="primary" className={styles.navCta}>
+            <Button href="/strains" variant="primary" size="sm" className={styles.navCta}>
               Order Online
             </Button>
 
