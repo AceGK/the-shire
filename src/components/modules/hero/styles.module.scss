@@ -6,10 +6,15 @@
   z-index: 1; // Above map overlay
   width: 100%;
   min-height: calc(100vh - var(--header-height, 68px));
+  max-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  @include tablet {
+    max-height: none;
+  }
 }
 
 // Background layers

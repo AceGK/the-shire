@@ -1,7 +1,7 @@
 [
   { "name": "Hobbiton Herbals", "coords": [3176, 1482], "region": "The Shire" },
   { "name": "Bree Botanicals", "coords": [3171, 1793], "region": "Bree-land" },
-  { "name": "Green Dragon Dispensary", "coords": [3150, 1450], "region": "Bywater" },
+  { "name": "Green Dragon Dispensary", "coords": [3165, 1540], "region": "Bywater" },
   { "name": "Rivendell Remedies", "coords": [3211, 2516], "region": "Rivendell" },
   { "name": "Lothlórien Leaf Co.", "coords": [2655, 2666], "region": "Lothlórien" },
   { "name": "Rohan Remedies", "coords": [1951, 2589], "region": "Edoras" },

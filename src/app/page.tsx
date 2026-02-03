@@ -47,6 +47,7 @@ export default function Home() {
               as="h2"
               title="Our Strains"
               description="Each of our strains pays homage to the enchanting world of Middle-Earth."
+              noMargin
             />
           </div>
           <StrainCarousel />

@@ -9,6 +9,7 @@ interface HeaderBlockProps {
   variant?: HeaderVariant;
   as?: HeadingLevel;
   isPageHeader?: boolean;
+  noMargin?: boolean;
   className?: string;
 }
 
@@ -18,12 +19,14 @@ export default function HeaderBlock({
   variant = "dark",
   as: Heading = "h1",
   isPageHeader = false,
+  noMargin = false,
   className,
 }: HeaderBlockProps) {
   const classes = [
     styles.header,
     styles[variant],
     isPageHeader ? styles.pageHeader : styles.sectionHeader,
+    noMargin && styles.noMargin,
     className || "",
   ]
     .filter(Boolean)

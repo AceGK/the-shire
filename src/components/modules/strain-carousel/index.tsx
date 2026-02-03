@@ -46,7 +46,7 @@ export default function StrainCarousel() {
       </Swiper>
 
       <div className={styles.viewAll}>
-        <Button href="/strains" variant="outline">View All Strains</Button>
+        <Button href="/strains" variant="primary">View All Strains</Button>
       </div>
     </div>
   );

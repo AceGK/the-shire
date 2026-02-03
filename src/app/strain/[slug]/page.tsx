@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { ArrowLeft } from 'lucide-react';
 import strainsData from '@/lib/strains.json';
 import { terpenes, effects } from '@/lib/cannabisIcons';
 import { slugify, getStrainBySlug } from '@/lib/utils';
@@ -50,7 +51,7 @@ export default async function StrainPage({ params }: PageProps) {
   return (
     <main className={styles.strainPage}>
       <Link href="/strains" className={styles.backLink}>
-        &larr; Back to All Strains
+        <ArrowLeft size={16} /> Back to All Strains
       </Link>
 
       <div className={styles.content}>

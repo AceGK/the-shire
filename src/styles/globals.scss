@@ -59,6 +59,11 @@ html {
   scroll-behavior: smooth;
 }
 
+// Account for fixed header when navigating to anchor links
+[id] {
+  scroll-margin-top: var(--header-height, 68px);
+}
+
 
 body {
   margin: 0;
