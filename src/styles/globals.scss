@@ -3,6 +3,9 @@
 
 // ===== CSS CUSTOM PROPERTIES =====
 :root {
+  // Header Height (updated by JS, default is nav-only)
+  --header-height: 68px;
+
   // Nav Height (for fixed nav offset)
   --nav-height: 70px;
 

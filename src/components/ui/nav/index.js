@@ -35,7 +35,7 @@ export default function Nav({ promoMessage }) {
   const [promoVisible, setPromoVisible] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [headerHeight, setHeaderHeight] = useState(104);
+  const [headerHeight, setHeaderHeight] = useState(68);
   const headerRef = useRef(null);
   const lastScrollY = useRef(0);
   const preventHideRef = useRef(false);

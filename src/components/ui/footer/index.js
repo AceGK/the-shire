@@ -13,7 +13,7 @@ export default function Footer() {
         <div className={styles.content}>
           <div className={styles.newsletter}>
           <form>
-            <label htmlFor="email">Sign up for our newsletter</label>
+            <label htmlFor="email">Join the Fellowship</label>
             <div>
               <input type="email" placeholder="Your email address" />
               <Button type="submit" variant="primary" size="sm">Sign Up</Button>
