@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import strains from '@/lib/strains.json';
 import HeaderBlock from '@/components/modules/header-block';
 import StrainFilter from '@/components/ui/strain-filter';
@@ -16,7 +17,9 @@ export default function StrainsPage() {
         description="Each of our strains pays homage to the enchanting world of Middle-Earth."
       />
 
-      <StrainFilter strains={strains} />
+      <Suspense fallback={null}>
+        <StrainFilter strains={strains} />
+      </Suspense>
     </main>
   );
 }
