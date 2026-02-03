@@ -40,7 +40,7 @@ export default function Footer() {
           </a>
         </div>
 
-          <span>&copy; {new Date().getFullYear()} The Shire</span>
+          <span>&copy; {new Date().getFullYear()} The Shire Supply Co.</span>
         </div>
       </div>
     </footer>

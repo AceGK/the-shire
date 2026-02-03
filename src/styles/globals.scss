@@ -3,8 +3,8 @@
 
 // ===== CSS CUSTOM PROPERTIES =====
 :root {
-  // Header Height (updated by JS, default is nav-only)
-  --header-height: 68px;
+  // Header Height (set by server in layout.tsx, updated by JS on resize)
+  --header-height: 74px;
 
   // Nav Height (for fixed nav offset)
   --nav-height: 70px;
@@ -61,7 +61,7 @@ html {
 
 // Account for fixed header when navigating to anchor links
 [id] {
-  scroll-margin-top: var(--header-height, 68px);
+  scroll-margin-top: var(--header-height, 74px);
 }
 
 

@@ -32,16 +32,18 @@ function setCookie(name: string, value: string, hours: number): void {
 
 interface NavProps {
   promoMessage?: string;
+  initialPromoDismissed?: boolean;
 }
 
-export default function Nav({ promoMessage }: NavProps) {
-  const [promoVisible, setPromoVisible] = useState(true);
+export default function Nav({ promoMessage, initialPromoDismissed = false }: NavProps) {
+  const initialPromoVisible = !!promoMessage && !initialPromoDismissed;
+  const [promoVisible, setPromoVisible] = useState(initialPromoVisible);
   const [isHovered, setIsHovered] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
 
   const mobileMenu = useMobileMenu();
   const { hidden, preventHide } = useScrollHide({ isHovered });
-  const headerHeight = useHeaderHeight(headerRef, [promoVisible]);
+  const headerHeight = useHeaderHeight(headerRef, [promoVisible], initialPromoVisible);
 
   const handleNavLinkClick = useCallback((e: MouseEvent<HTMLAnchorElement>, href: string) => {
     const hash = href.includes('#') ? href.split('#')[1] : null;

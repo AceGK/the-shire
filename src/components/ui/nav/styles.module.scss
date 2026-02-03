@@ -19,7 +19,7 @@
 }
 
 .headerSpacer {
-  min-height: 68px; // Fallback height (navBar) to prevent layout shift before JS measures
+  min-height: 74px; // Fallback height (navBar only) - JS sets actual height based on promo visibility
   background: $clr-primary;
   backdrop-filter: blur(20px);
 }

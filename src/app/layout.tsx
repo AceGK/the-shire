@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { cookies } from 'next/headers';
 import { Cormorant_Garamond, Lato } from 'next/font/google';
 import localFont from 'next/font/local';
 import '@/styles/reset.scss'
@@ -6,6 +7,10 @@ import '@/styles/globals.scss'
 import '@/styles/swiper.scss'
 import Footer from '@/components/ui/footer'
 import Nav from '@/components/ui/nav'
+
+const PROMO_COOKIE_NAME = 'promo_dismissed';
+const NAV_HEIGHT = 74;
+const PROMO_HEIGHT = 39;
 
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ['latin'],
@@ -42,6 +47,7 @@ const kereru = localFont({
   ],
   variable: '--font-kereru',
   display: 'swap',
+  fallback: ['Cormorant Garamond', 'Georgia', 'serif'],
 });
 
 export const metadata: Metadata = {
@@ -64,13 +70,20 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const cookieStore = await cookies();
+  const promoDismissed = cookieStore.has(PROMO_COOKIE_NAME);
+  const initialHeaderHeight = promoDismissed ? NAV_HEIGHT : NAV_HEIGHT + PROMO_HEIGHT;
+
   return (
-    <html lang="en">
+    <html lang="en" style={{ '--header-height': `${initialHeaderHeight}px` } as React.CSSProperties}>
       <body className={`${cormorantGaramond.variable} ${lato.variable} ${hobbiton.variable} ${kereru.variable}`}>
         <div className="background-wrap" aria-hidden="true" />
         <div className="content-wrap">
-          <Nav promoMessage="Join our Fellowship to receive 10% off!" />
+          <Nav
+            promoMessage="Join our Fellowship to receive 10% off!"
+            initialPromoDismissed={promoDismissed}
+          />
           {children}
           <Footer />
         </div>

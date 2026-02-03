@@ -123,3 +123,126 @@
     font-size: 1rem;
   }
 }
+
+// Skeleton styles
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeletonBase {
+  background: linear-gradient(
+    90deg,
+    rgba($clr-charcoal, 0.06) 25%,
+    rgba($clr-charcoal, 0.12) 50%,
+    rgba($clr-charcoal, 0.06) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 2px;
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  background: $clr-cream;
+  border: 1px solid $clr-border-light;
+  min-height: 280px;
+  height: 100%;
+
+  @include max-desktop {
+    padding: 1.5rem 1rem;
+  }
+
+  @include max-tablet {
+    min-height: 260px;
+  }
+}
+
+.skeletonImage {
+  @extend .skeletonBase;
+  width: 100px;
+  height: 140px;
+  margin-bottom: 1.25rem;
+  border-radius: 4px;
+
+  @include tablet {
+    width: 120px;
+    height: 160px;
+  }
+
+  @include max-desktop {
+    width: 80px;
+    height: 110px;
+  }
+}
+
+.skeletonName {
+  @extend .skeletonBase;
+  width: 120px;
+  height: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.skeletonType {
+  @extend .skeletonBase;
+  width: 60px;
+  height: 20px;
+  margin-bottom: 0.625rem;
+}
+
+.skeletonLineage {
+  @extend .skeletonBase;
+  width: 100px;
+  height: 14px;
+}
+
+// Skeleton grid (mirrors .grid from strain-filter)
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+// Skeleton filter bar
+.skeletonFilterBar {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+
+  @include sm {
+    gap: 0.75rem;
+  }
+}
+
+.skeletonFilterButton {
+  @extend .skeletonBase;
+  width: 70px;
+  height: 36px;
+  border-radius: 2rem;
+}

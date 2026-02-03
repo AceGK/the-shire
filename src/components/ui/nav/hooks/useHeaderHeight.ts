@@ -1,7 +1,15 @@
 import { useState, useEffect, RefObject } from 'react';
 
-export function useHeaderHeight(headerRef: RefObject<HTMLElement | null>, deps: unknown[] = []) {
-  const [headerHeight, setHeaderHeight] = useState(68);
+const NAV_HEIGHT = 74;
+const PROMO_HEIGHT = 41;
+
+export function useHeaderHeight(
+  headerRef: RefObject<HTMLElement | null>,
+  deps: unknown[] = [],
+  includePromo: boolean = false
+) {
+  const initialHeight = includePromo ? NAV_HEIGHT + PROMO_HEIGHT : NAV_HEIGHT;
+  const [headerHeight, setHeaderHeight] = useState(initialHeight);
 
   useEffect(() => {
     const header = headerRef.current;

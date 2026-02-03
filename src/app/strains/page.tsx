@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import strainsData from '@/lib/strains.json';
 import HeaderBlock from '@/components/modules/header-block';
 import StrainFilter from '@/components/ui/strain-filter';
+import { StrainGridSkeleton } from '@/components/ui/strain-card/skeleton';
 import type { Strain } from '@/types';
 
 const strains = strainsData as Strain[];
@@ -21,7 +22,7 @@ export default function StrainsPage() {
         description="Each of our strains pays homage to the enchanting world of Middle-Earth."
       />
 
-      <Suspense fallback={null}>
+      <Suspense fallback={<StrainGridSkeleton count={12} />}>
         <StrainFilter strains={strains} />
       </Suspense>
     </main>
