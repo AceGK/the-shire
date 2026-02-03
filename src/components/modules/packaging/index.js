@@ -3,12 +3,12 @@ import styles from './styles.module.scss';
 export default function Packaging() {
   return (
     <div className={styles.packaging}>
-      <h2>Our Packaging</h2>
+      <h2>Recyclable Packaging</h2>
       <div className={styles.grid}>
 
         <div className={styles.item}>
           <div className={styles.card}>
-            <img src="/images/barrel.png" alt="Mallorn Leaf Bags" />
+            <img src="/images/packaging/barrel.png" alt="Mallorn Leaf Bags" />
             <div className={styles.description}>
               <span className={styles.corner} data-pos="tl">◆</span>
               <span className={styles.corner} data-pos="tr">◆</span>
@@ -25,7 +25,7 @@ export default function Packaging() {
 
         <div className={styles.item}>
           <div className={styles.card}>
-            <img src="/images/jar.png" alt="Elven Crafted Jars" />
+            <img src="/images/packaging/jar.png" alt="Elven Crafted Jars" />
             <div className={styles.description}>
               <span className={styles.corner} data-pos="tl">◆</span>
               <span className={styles.corner} data-pos="tr">◆</span>
@@ -42,13 +42,13 @@ export default function Packaging() {
 
         <div className={styles.item}>
           <div className={styles.card}>
-            <img src="/images/barrel.png" alt="Dwarven-Made Barrels" />
+            <img src="/images/packaging/barrel.png" alt="Dwarven-Made Barrels" />
             <div className={styles.description}>
               <span className={styles.corner} data-pos="tl">◆</span>
               <span className={styles.corner} data-pos="tr">◆</span>
               <span className={styles.corner} data-pos="bl">◆</span>
               <span className={styles.corner} data-pos="br">◆</span>
-              <p>Our barrels are the same used for the finest dwarven ales. They are sturdy and reusable, perfect for storing your pipe-weed.</p>
+              <p>Our barrels are the same used for the finest dwarven ales. They are sturdy and reusable, perfect for storing your pipe-weed in bulk.</p>
             </div>
           </div>
           <h3 className={styles.framedTitle}>

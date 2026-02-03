@@ -87,7 +87,7 @@
 .accentLine {
   display: block;
   width: 40px;
-  height: 2px;
+  height: 1px;
   background: $clr-accent;
   margin-bottom: 1.5rem;
 
@@ -98,8 +98,9 @@
 }
 
 .title {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   text-wrap: pretty;
+  line-height: 4rem;
 }
 
 .subtitle {
@@ -109,6 +110,7 @@
   font-style: italic;
   color: $clr-charcoal;
   margin-bottom: 1rem;
+  text-wrap: pretty;
 }
 
 .body {

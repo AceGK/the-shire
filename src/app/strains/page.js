@@ -1,7 +1,6 @@
 import strains from '@/lib/strains.json';
-import StrainCard from '@/components/ui/strain-card';
 import HeaderBlock from '@/components/modules/header-block';
-import styles from './styles.module.scss';
+import StrainFilter from '@/components/ui/strain-filter';
 
 export const metadata = {
   title: 'Our Strains | The Shire',
@@ -17,11 +16,7 @@ export default function StrainsPage() {
         description="Each of our strains pays homage to the enchanting world of Middle-Earth."
       />
 
-      <div className={styles.grid}>
-        {strains.map((strain, id) => (
-          <StrainCard key={id} strain={strain} />
-        ))}
-      </div>
+      <StrainFilter strains={strains} />
     </main>
   );
 }

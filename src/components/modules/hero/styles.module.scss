@@ -62,9 +62,8 @@
 }
 
 .title {
-  font-family: var(--ff-heading);
-  font-size: clamp(3rem, 10vw, 5rem);
-  font-weight: 300;
+  font-family: var(--ff-kereru);
+  font-size: clamp(3.5rem, 15vw, 6rem);
   color: $clr-cream;
   letter-spacing: 0.05em;
   line-height: 1.1;
@@ -72,7 +71,7 @@
 
   span {
     display: block;
-    font-size: clamp(0.625rem, 2vw, 1rem);
+    font-size: clamp(0.625rem, 2.5vw, 1rem);
     letter-spacing: 0.75em;
     text-transform: uppercase;
     font-weight: 500;
@@ -95,11 +94,12 @@
 
 .subtitle {
   font-family: var(--ff-body);
-  font-size: 0.6875rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: $clr-accent;
+  letter-spacing: 0.3em;
+  color: $clr-cream;
+  opacity: 0.8;
   margin-top: 0.5rem;
 
   @include tablet {

@@ -42,7 +42,7 @@ export default function SplitImage({
             src={image}
             alt={alt}
             fill
-            sizes="(max-width: 768px) 100vw, 480px"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
       </div>

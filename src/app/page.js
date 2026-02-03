@@ -3,10 +3,11 @@ import StrainCarousel from "@/components/modules/strain-carousel";
 import Map from "@/components/modules/map";
 import Hero from "@/components/modules/hero";
 import Reviews from "@/components/modules/reviews";
-import About from "@/components/modules/about";
 import SplitImage from "@/components/modules/split-image";
 import Button from "@/components/ui/button";
 import HeaderBlock from "@/components/modules/header-block";
+import CtaSection from "@/components/modules/cta-section";
+import { Divider2 } from "@/components/ui/dividers";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
             alt="Hobbit house"
             pretitle="Our Story"
             title="Continuing a Legacy Since the Third Age"
-            subtitle="A tradition of excellence"
+            subtitle="A tradition of excellence & fine company"
             buttons={
               <>
                 <Button href="/about">About Us</Button>
@@ -32,19 +33,21 @@ export default function Home() {
         </section>
 
         <section className="content-grid bg-map-green">
-            <figure className="full-width-quote">
-              <blockquote>The Finest Pipe-weed in the Southfarthing</blockquote>
-              {/* <figcaption>— Bilbo Baggins</figcaption> */}
-            </figure>
+          <Divider2 size="lg" color="quote" />
+          <figure className="full-width-quote">
+            <blockquote>The Finest Pipe-weed in the Southfarthing</blockquote>
+            {/* <figcaption>— Bilbo Baggins</figcaption> */}
+          </figure>
+          <Divider2 size="lg" color="quote" />
         </section>
 
         <section id="strains">
           <div className="content-grid">
-          <HeaderBlock
-            as="h2"
-            title="Our Strains"
-            description="Each of our strains pays homage to the enchanting world of Middle-Earth."
-          />
+            <HeaderBlock
+              as="h2"
+              title="Our Strains"
+              description="Each of our strains pays homage to the enchanting world of Middle-Earth."
+            />
           </div>
           <StrainCarousel />
         </section>
@@ -68,13 +71,15 @@ export default function Home() {
         </section>
 
         <section id="reviews" className="content-grid bg-map-green">
-           <HeaderBlock
+          <HeaderBlock
             as="h2"
             variant="light"
             title="Reviews"
           />
-            <Reviews />
+          <Reviews />
         </section>
+
+        <CtaSection />
 
       </main>
     </>

@@ -10,16 +10,17 @@ export default function Hero() {
 
       {/* Content */}
       <div className={styles.content}>
-        <div className={styles.decorBorder}></div>
 
         <h1 className={styles.title}>The Shire <span>Supply Company</span></h1>
 
-        <p className={styles.tagline}>
-          The finest pipe-weed in the Southfarthing
-        </p>
+                <div className={styles.decorBorder}></div>
 
-        <span className={styles.subtitle}>
-          Artisanally Crafted &nbsp;|&nbsp; Since the Third Age
+        {/* <p className={styles.tagline}>
+          The finest pipe-weed in the Southfarthing
+        </p> */}
+
+        <span className={styles.tagline}>
+          The finest pipe-weed in the Southfarthing
         </span>
 
         <div className={styles.ctaGroup}>

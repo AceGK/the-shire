@@ -26,6 +26,23 @@ const hobbiton = localFont({
   display: 'swap',
 });
 
+const kereru = localFont({
+  src: [
+    {
+      path: '../../public/fonts/kereru.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/kereru-bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-kereru',
+  display: 'swap',
+});
+
 export const metadata = {
   title: 'The Shire Supply Co. | Finest Pipe-Weed in the Southfarthing',
   description: 'The finest weed in the Southfarthing',
@@ -34,7 +51,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${cormorantGaramond.variable} ${lato.variable} ${hobbiton.variable}`}>
+      <body className={`${cormorantGaramond.variable} ${lato.variable} ${hobbiton.variable} ${kereru.variable}`}>
         <div className="background-wrap" aria-hidden="true" />
         <div className="content-wrap">
           <Nav promoMessage="Join our Fellowship to receive 10% off!" />

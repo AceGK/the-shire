@@ -14,9 +14,7 @@
   }
 
   h2 {
-    font-family: var(--ff-heading);
     font-size: var(--fs-section-title);
-    font-weight: 300;
     text-align: center;
     color: $clr-cream;
     margin-bottom: 3rem;
@@ -176,7 +174,7 @@
         border-color: $clr-accent;
 
         img {
-          opacity: 0.25;
+          opacity: 0.125;
           // transform: scale(0.9);
         }
 

@@ -1,0 +1,48 @@
+@import "@/styles/variables.scss";
+
+.divider {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Sizes */
+.sm {
+  width: 80px;
+}
+
+.md {
+  width: 120px;
+}
+
+.lg {
+  width: 180px;
+}
+
+.xl {
+  width: 260px;
+}
+
+.full {
+  width: 100%;
+}
+
+/* Colors */
+.light {
+  color: $clr-cream;
+}
+
+.dark {
+  color: $clr-charcoal;
+}
+
+.green {
+  color: $clr-primary;
+}
+
+.gold {
+  color: $clr-accent;
+}
+.quote {
+  color: #CFBE8F;
+}

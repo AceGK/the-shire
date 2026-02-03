@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Button from '@/components/ui/button';
 import PromoBar from './PromoBar';
 import styles from './styles.module.scss';
-import Logo from "@/assets/the-shire-supply-co-color.svg";
+import Logo from "@/assets/shire-supply-co-logo.svg";
 
 const navItems = [
   { title: "About", link: "/about" },
@@ -85,6 +85,19 @@ export default function Nav({ promoMessage }) {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHovered]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);

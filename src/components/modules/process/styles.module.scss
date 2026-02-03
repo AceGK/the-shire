@@ -131,8 +131,7 @@
   }
 
   h2 {
-    font-family: var(--ff-heading);
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 400;
     color: $clr-cream;
     margin-bottom: 0;

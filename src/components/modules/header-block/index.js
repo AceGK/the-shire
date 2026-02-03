@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-
+import { Divider2 } from "@/components/ui/dividers";
 /**
  * HeaderBlock - Centered page/section header with decorative accent line
  *
@@ -31,6 +31,7 @@ export default function HeaderBlock({
   return (
     <header className={classes}>
       <Heading>{title}</Heading>
+      {/* <Divider2 size="lg" color="gold" /> */}
       {description && <p>{description}</p>}
     </header>
   );
