@@ -276,7 +276,7 @@ main section {
   min-width: 1200px;
   height: 100%;
   background-image: url("/images/bg-map-hobbiton.png");
-  background-size: contain;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: top center;
   z-index: 0;
