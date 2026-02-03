@@ -425,10 +425,11 @@ main section {
 
   blockquote {
     font-family: var(--font-kereru), serif;
-    font-size: clamp(1.5rem, 5vw, 3.4rem);
+    font-size: clamp(2rem, 5vw, 3.4rem);
     font-weight: 400;
     color: #cfbe8f;
     margin: 0;
+    text-wrap:balance;
 
     &::before {
       content: '"';
