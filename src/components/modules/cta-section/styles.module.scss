@@ -38,9 +38,10 @@
   font-size: var(--fs-body);
   line-height: var(--lh-body);
   margin: 0 0 2rem;
-  max-width: 480px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-wrap: pretty;
 }
 
 .buttons {

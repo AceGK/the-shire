@@ -1,7 +1,16 @@
+'use client';
+
 import Button from '@/components/ui/button';
 import styles from './styles.module.scss';
 
 export default function Hero() {
+  const scrollToNextSection = () => {
+    const hero = document.getElementById('home');
+    if (hero?.nextElementSibling) {
+      hero.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className={`${styles.hero} full-width`} id="home">
       {/* Background layers */}
@@ -13,7 +22,7 @@ export default function Hero() {
 
         <h1 className={styles.title}>The Shire <span>Supply Company</span></h1>
 
-                <div className={styles.decorBorder}></div>
+        <div className={styles.divider}></div>
 
         {/* <p className={styles.tagline}>
           The finest pipe-weed in the Southfarthing
@@ -34,10 +43,14 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className={styles.scrollIndicator}>
+      <button
+        className={styles.scrollIndicator}
+        onClick={scrollToNextSection}
+        aria-label="Scroll to next section"
+      >
         <span>Discover</span>
         <div className={styles.scrollLine}></div>
-      </div>
+      </button>
     </section>
   );
 }

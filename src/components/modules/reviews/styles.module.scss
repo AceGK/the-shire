@@ -47,12 +47,20 @@
     padding: 0;
     overflow: hidden;
     &:hover {
-      cursor:grab;
+      cursor: grab;
+    }
+
+    // Force equal-height slides to prevent layout shift
+    :global(.swiper-wrapper) {
+      align-items: stretch;
+    }
+
+    :global(.swiper-slide) {
+      height: auto;
+      display: flex;
     }
 
     :global(.swiper-pagination-bullet) {
-      width: 10px;
-      height: 10px;
       background: $clr-border-light;
       opacity: 1;
       transition: all 0.2s;
@@ -61,10 +69,10 @@
     :global(.swiper-pagination-bullet-active) {
       background: $clr-accent;
       width: 24px !important;
-      height: 10px !important;
+      height: 8px !important;
       border-radius: 5px !important;
       &:hover {
-        background: $clr-accent!important;
+        background: $clr-accent !important;
       }
     }
   }

@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 export default function CtaSection({
   pretitle = "Ready for an adventure?",
   title = "Find Your Perfect Leaf",
-  description = "Discover our collection of premium blends or find a retailer near you.",
+  description = "Browse our collection of premium blends or find a retailer near you.",
   primaryButton = { label: "Browse Strains", href: "/strains" },
   secondaryButton = { label: "Find Retailers", href: "/retailers" },
   variant = "light",
