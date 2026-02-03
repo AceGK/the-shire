@@ -1,10 +1,10 @@
 import Button from '@/components/ui/button';
 import styles from './styles.module.scss';
-import TreasureChest from '@/app/icons/treasure-chest-solid.svg';
-import Scroll from '@/app/icons/scroll-old-solid.svg';
-import Dragon from '@/app/icons/dragon-solid.svg';
-import CrystalBall from '@/app/icons/crystal-ball-solid.svg';
-import Dungeon from '@/app/icons/dungeon-solid.svg';
+import TreasureChest from '@/assets/icons/treasure-chest-solid.svg';
+import Scroll from '@/assets/icons/scroll-old-solid.svg';
+import Dragon from '@/assets/icons/dragon-solid.svg';
+import CrystalBall from '@/assets/icons/crystal-ball-solid.svg';
+import Dungeon from '@/assets/icons/dungeon-solid.svg';
 
 export default function Footer() {
   return (
