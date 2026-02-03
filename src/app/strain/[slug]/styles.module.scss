@@ -161,7 +161,6 @@
   flex-direction: column;
   gap: 0.25rem;
   text-decoration: none;
-  transition: color 0.3s ease;
 
   span:first-child {
     font-family: var(--ff-body);
@@ -169,6 +168,9 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: $clr-charcoal-light;
+    display:flex;
+    align-items: center;
+    gap:0.25rem;
   }
 
   @include hover {
@@ -184,6 +186,7 @@
 
 .nextLink {
   text-align: right;
+  align-items: flex-end;
 }
 
 .navName {
@@ -191,7 +194,6 @@
   font-size: 1.125rem;
   font-weight: 500;
   color: $clr-charcoal;
-  transition: color 0.3s ease;
 
   @include tablet {
     font-size: 1.25rem;

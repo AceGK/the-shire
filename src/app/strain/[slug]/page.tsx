@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, MoveLeft, MoveRight } from 'lucide-react';
 import strainsData from '@/lib/strains.json';
 import { terpenes, effects } from '@/lib/cannabisIcons';
 import { slugify, getStrainBySlug } from '@/lib/utils';
@@ -26,13 +26,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!strain) {
     return {
-      title: 'Strain Not Found | The Shire',
+      title: 'Strain Not Found | The Shire Supply Co.',
     };
   }
 
   return {
-    title: `${strain.name} | The Shire`,
-    description: strain.description || `${strain.name} - ${strain.type} strain from The Shire`,
+    title: `${strain.name} | The Shire Supply Co.`,
+    description: strain.description || `${strain.name} - ${strain.type} strain from The Shire Supply Co.`,
   };
 }
 
@@ -149,7 +149,7 @@ export default async function StrainPage({ params }: PageProps) {
       <nav className={styles.pagination}>
         {prevStrain ? (
           <Link href={`/strain/${slugify(prevStrain.name)}`} className={styles.prevLink}>
-            <span>&larr; Previous</span>
+            <span><MoveLeft size={14} /> Previous</span>
             <span className={styles.navName}>{prevStrain.name}</span>
           </Link>
         ) : (
@@ -157,7 +157,7 @@ export default async function StrainPage({ params }: PageProps) {
         )}
         {nextStrain && (
           <Link href={`/strain/${slugify(nextStrain.name)}`} className={styles.nextLink}>
-            <span>Next &rarr;</span>
+            <span>Next <MoveRight size={14} /></span>
             <span className={styles.navName}>{nextStrain.name}</span>
           </Link>
         )}
