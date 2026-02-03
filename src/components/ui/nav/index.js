@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/button';
 import PromoBar from './PromoBar';
@@ -35,9 +35,10 @@ export default function Nav({ promoMessage }) {
   const [promoVisible, setPromoVisible] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [headerHeight, setHeaderHeight] = useState(104); 
+  const [headerHeight, setHeaderHeight] = useState(104);
   const headerRef = useRef(null);
   const lastScrollY = useRef(0);
+  const preventHideRef = useRef(false);
 
   // Check cookie on mount to determine promo visibility
   useEffect(() => {
@@ -67,11 +68,25 @@ export default function Nav({ promoMessage }) {
     return () => resizeObserver.disconnect();
   }, [promoVisible]);
 
+  // Prevent nav hiding during hash navigation (for on-page anchor links)
+  useEffect(() => {
+    const handleHashChange = () => {
+      preventHideRef.current = true;
+      setHidden(false);
+      setTimeout(() => {
+        preventHideRef.current = false;
+      }, 1000);
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (isHovered || currentScrollY < 100) {
+      if (preventHideRef.current || isHovered || currentScrollY < 100) {
         setHidden(false);
       } else if (currentScrollY > lastScrollY.current) {
         setHidden(true);
@@ -85,6 +100,28 @@ export default function Nav({ promoMessage }) {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHovered]);
+
+  // Handle nav link clicks with offset for fixed header
+  const handleNavLinkClick = useCallback((e, href) => {
+    const hash = href.includes('#') ? href.split('#')[1] : null;
+    if (!hash) return;
+
+    const target = document.getElementById(hash);
+    if (!target) return;
+
+    e.preventDefault();
+    preventHideRef.current = true;
+
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+
+    // Update URL hash without triggering another scroll
+    window.history.pushState(null, '', `#${hash}`);
+
+    setTimeout(() => {
+      preventHideRef.current = false;
+    }, 1000);
+  }, [headerHeight]);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -128,7 +165,11 @@ export default function Nav({ promoMessage }) {
           <a href="#main-content" className="header-skip">Skip to content</a>
 
           <div className={styles.navInner}>
-            <Link href="/#home" className={styles.logo}>
+            <Link
+              href="/#home"
+              className={styles.logo}
+              onClick={(e) => handleNavLinkClick(e, '/#home')}
+            >
               <Logo />
             </Link>
 
@@ -136,7 +177,12 @@ export default function Nav({ promoMessage }) {
               <ul>
                 {navItems.map((item) => (
                   <li key={item.title} className={styles.navItem}>
-                    <Link href={item.link}>{item.title}</Link>
+                    <Link
+                      href={item.link}
+                      onClick={(e) => handleNavLinkClick(e, item.link)}
+                    >
+                      {item.title}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -176,11 +222,25 @@ export default function Nav({ promoMessage }) {
         />
         <ul>
           <li>
-            <Link href="#home" onClick={closeMobileMenu}>Home</Link>
+            <Link
+              href="#home"
+              onClick={(e) => {
+                handleNavLinkClick(e, '#home');
+                closeMobileMenu();
+              }}
+            >
+              Home
+            </Link>
           </li>
           {navItems.map((item) => (
             <li key={item.title}>
-              <Link href={item.link} onClick={closeMobileMenu}>
+              <Link
+                href={item.link}
+                onClick={(e) => {
+                  handleNavLinkClick(e, item.link);
+                  closeMobileMenu();
+                }}
+              >
                 {item.title}
               </Link>
             </li>

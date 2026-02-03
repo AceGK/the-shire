@@ -1,16 +1,7 @@
-'use client';
-
 import Button from '@/components/ui/button';
 import styles from './styles.module.scss';
 
 export default function Hero() {
-  const scrollToNextSection = () => {
-    const hero = document.getElementById('home');
-    if (hero?.nextElementSibling) {
-      hero.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className={`${styles.hero} full-width`} id="home">
       {/* Background layers */}
@@ -43,14 +34,14 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <button
+      <a
         className={styles.scrollIndicator}
-        onClick={scrollToNextSection}
-        aria-label="Scroll to next section"
+        href="#about"
+        aria-label="Scroll to about section"
       >
         <span>Discover</span>
         <div className={styles.scrollLine}></div>
-      </button>
+      </a>
     </section>
   );
 }

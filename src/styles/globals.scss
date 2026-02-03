@@ -56,10 +56,6 @@ html {
   scroll-behavior: smooth;
 }
 
-// Offset anchor scroll position for fixed header
-[id] {
-  scroll-margin-top: var(--header-height, 104px);
-}
 
 body {
   margin: 0;
