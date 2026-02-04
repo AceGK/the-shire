@@ -15,7 +15,7 @@ export default function Home() {
       <main id="main-content">
         <Hero id="home" />
 
-        <section id="about" className="content-grid">
+        <section id="about" className="content-grid row">
           <SplitImage
             image="/images/the-shire.jpg"
             alt="Hobbit house"
@@ -32,7 +32,7 @@ export default function Home() {
           </SplitImage>
         </section>
 
-        <section className="content-grid bg-map-green">
+        <section className="content-grid bg-map-green row">
           <Divider2 size="lg" color="quote" />
           <figure className="full-width-quote">
             <blockquote>The Finest Pipe-weed in the Southfarthing</blockquote>
@@ -41,7 +41,7 @@ export default function Home() {
           <Divider2 size="lg" color="quote" />
         </section>
 
-        <section id="strains">
+        <section id="strains" className="row">
           <div className="content-grid">
             <HeaderBlock
               as="h2"
@@ -53,7 +53,7 @@ export default function Home() {
           <StrainCarousel />
         </section>
 
-        <section id="buy" className="content-grid bg-map-green">
+        <section id="buy" className="content-grid bg-map-green row">
           <HeaderBlock
             as="h2"
             variant="light"
@@ -63,7 +63,7 @@ export default function Home() {
           <Map />
         </section>
 
-        <section id="press" className="content-grid">
+        <section id="press" className="content-grid row">
           <HeaderBlock
             as="h2"
             title="As Seen In"
@@ -71,7 +71,7 @@ export default function Home() {
           <Press />
         </section>
 
-        <section id="reviews" className="content-grid bg-map-green">
+        <section id="reviews" className="content-grid bg-map-green row">
           <HeaderBlock
             as="h2"
             variant="light"

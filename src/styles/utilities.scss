@@ -1,0 +1,114 @@
+// utilities.scss - Generic Utility Classes
+
+// ===== SPACING SCALE =====
+$spacing-1: 0.25rem;  // 4px
+$spacing-2: 0.5rem;   // 8px
+$spacing-3: 0.75rem;  // 12px
+$spacing-4: 1rem;     // 16px
+$spacing-5: 1.5rem;   // 24px
+$spacing-6: 2rem;     // 32px
+$spacing-7: 2.5rem;   // 40px
+$spacing-8: 3rem;     // 48px
+$spacing-9: 4rem;     // 64px
+$spacing-10: 5rem;    // 80px
+$spacing-11: 6rem;    // 96px
+
+$spacings: (
+  1: $spacing-1,
+  2: $spacing-2,
+  3: $spacing-3,
+  4: $spacing-4,
+  5: $spacing-5,
+  6: $spacing-6,
+  7: $spacing-7,
+  8: $spacing-8,
+  9: $spacing-9,
+  10: $spacing-10,
+  11: $spacing-11
+);
+
+// ===== PADDING UTILITIES =====
+@each $key, $value in $spacings {
+  // All sides
+  .p-#{$key} {
+    padding: $value;
+  }
+
+  // Individual sides
+  .pt-#{$key} {
+    padding-top: $value;
+  }
+
+  .pr-#{$key} {
+    padding-right: $value;
+  }
+
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+
+  .pl-#{$key} {
+    padding-left: $value;
+  }
+
+  // Axis
+  .px-#{$key} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+
+  .py-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+
+// ===== MARGIN UTILITIES =====
+@each $key, $value in $spacings {
+  // All sides
+  .m-#{$key} {
+    margin: $value;
+  }
+
+  // Individual sides
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+
+  .mr-#{$key} {
+    margin-right: $value;
+  }
+
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+
+  .ml-#{$key} {
+    margin-left: $value;
+  }
+
+  // Axis
+  .mx-#{$key} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+
+  .my-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+}
+
+// ===== ZERO SPACING =====
+.p-0 {
+  padding: 0;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}

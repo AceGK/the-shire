@@ -11,8 +11,9 @@ export default function About() {
         isPageHeader
         title="About Us"
         description="Cultivating the finest leaf in the Southfarthing since S.R. 1070."
+        noMargin
       />
-      <section className="content-grid" style={{paddingTop:'3rem'}}>
+      <section className="content-grid row">
         <SplitImage
           image="/images/hobbit-house-4.jpg"
           alt="Hobbit house"
@@ -44,7 +45,7 @@ export default function About() {
         </SplitImage>
       </section>
 
-      <section id="process" className="content-grid bg-map-green">
+      <section id="process" className="content-grid bg-map-green row">
         <div>
           <Process />
         </div>

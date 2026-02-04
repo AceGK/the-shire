@@ -1,5 +1,6 @@
 @import "./_variables.scss";
 @import "./mixins";
+@import "./utilities";
 
 // ===== CSS CUSTOM PROPERTIES =====
 :root {
@@ -201,8 +202,8 @@ a {
   grid-template-columns: inherit;
 }
 
-// ===== SECTION SPACING =====
-main section {
+// ===== ROW SPACING =====
+.row {
   padding: 5rem 0;
 
   @include tablet {

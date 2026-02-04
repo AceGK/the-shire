@@ -1,0 +1,108 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.item {
+  border-bottom: 1px solid $clr-border-light;
+
+  &:first-child {
+    border-top: 1px solid $clr-border-light;
+  }
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.25rem 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 1rem;
+
+  @include hover {
+    .title {
+      color: $clr-accent-dark;
+    }
+  }
+}
+
+.title {
+  font-family: var(--font-cormorant);
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+  font-weight: 600;
+  color: $clr-charcoal;
+  transition: color 0.2s ease;
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: $clr-accent;
+  transition: transform 0.3s ease;
+
+  .open & {
+    transform: rotate(180deg);
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+
+  .open & {
+    grid-template-rows: 1fr;
+  }
+}
+
+.contentInner {
+  overflow: hidden;
+  padding-bottom: 0;
+  transition: padding-bottom 0.3s ease;
+
+  .open & {
+    padding-bottom: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: $clr-charcoal-light;
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  a {
+    color: $clr-primary;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    @include hover {
+      color: $clr-accent-dark;
+    }
+  }
+
+  ul, ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    color: $clr-charcoal-light;
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+  }
+}
