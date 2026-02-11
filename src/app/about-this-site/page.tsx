@@ -7,7 +7,7 @@ export default function AboutThisSite() {
       <HeaderBlock
         isPageHeader
         title="About This Site"
-        description="Information about this website, including copyright notices and image attribution."
+        description="Information about this website, including copyright notices and attribution."
       />
 
       <section className="content-grid pt-5 pb-11">

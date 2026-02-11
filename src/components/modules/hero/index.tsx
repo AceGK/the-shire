@@ -17,7 +17,7 @@ export default function Hero({ id }: HeroProps) {
 
         <h1 className={styles.title}>The Shire <span>Supply Company</span></h1>
 
-        <div className={styles.divider}></div>
+        {/* <div className={styles.divider}></div> */}
 
         {/* <p className={styles.tagline}>
           The finest pipe-weed in the Southfarthing
@@ -28,10 +28,10 @@ export default function Hero({ id }: HeroProps) {
         </span>
 
         <div className={styles.ctaGroup}>
-          <Button href="#strains" variant="primary">
+          <Button href="#strains" variant="primary" size="lg">
             Explore Strains
           </Button>
-          <Button href="#about" variant="outlineLight">
+          <Button href="#about" variant="outlineLight" size="lg">
             Our Story
           </Button>
         </div>

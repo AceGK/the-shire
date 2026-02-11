@@ -1,6 +1,7 @@
 @import "@/styles/variables.scss";
 @import "@/styles/mixins.scss";
 
+
 .footer {
   position: relative;
   z-index: 1; // Above map overlay
@@ -42,11 +43,39 @@
     color: rgba($clr-cream, 0.5);
   }
 
-  svg {
+  .icons svg {
     width: 24px;
     height: 24px;
     color: rgba($clr-cream, 0.6);
     transition: color 0.2s ease;
+
+    &:hover {
+      color: $clr-accent;
+    }
+  }
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
+  justify-content: center;
+  gap: 0.5rem;
+    @media (max-width: 336px) {
+    flex-direction: column;
+    .separator {
+      display: none;
+    }
+  }
+
+  a {
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    color: rgba($clr-cream, 0.5);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display:flex;
+    align-items:center;
 
     &:hover {
       color: $clr-accent;

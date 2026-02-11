@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Button from '@/components/ui/button';
 import styles from './styles.module.scss';
 import TreasureChest from '@/assets/icons/treasure-chest-solid.svg';
@@ -40,7 +41,11 @@ export default function Footer() {
           </a>
         </div>
 
-          <span>&copy; {new Date().getFullYear()} The Shire Supply Co.</span>
+          <div className={styles.copyright}>
+            <span>&copy; {new Date().getFullYear()} The Shire Supply Co.</span>
+            <span className={styles.separator}>·</span>
+            <Link href="/about-this-site">About this site</Link>
+          </div>
         </div>
       </div>
     </footer>
