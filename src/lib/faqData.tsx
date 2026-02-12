@@ -11,13 +11,15 @@ export interface FaqItem {
 export const faqs: FaqItem[] = [
   {
     id: "is-real-company",
-    title: "Is The Shire Supply Co. a real company?",
+    title: "Is The Shire Supply Co. a Real Company?",
     content: (
       <>
         <p>
           <strong>The Shire Supply Company</strong> is a fictional brand created
-          for demonstration and portfolio purposes. No products are available for purchase, and no transactions can be made through this website. It is not associated with
-          Middle-earth Enterprises nor the Tolkien Estates.
+          for demonstration and portfolio purposes. No products are available
+          for purchase, and no transactions can be made through this website. It
+          is not associated with Middle-earth Enterprises nor the Tolkien
+          Estates.
         </p>
 
         <p>
@@ -36,9 +38,7 @@ export const faqs: FaqItem[] = [
     content: (
       <>
         <p>
-          In Tolkien&apos;s universe, pipe-weed is without a doubt tobacco — a
-          variety of <em>Nicotiana</em> believed to be brought to Middle-earth
-          by the Númenóreans, and later cultivated by Hobbits in the Shire.
+          In Tolkien&apos;s universe, pipe-weed is without a doubt tobacco.
           Tolkien himself clarified this in the prologue to{" "}
           <em>The Lord of the Rings</em>:
         </p>
@@ -47,20 +47,62 @@ export const faqs: FaqItem[] = [
             &ldquo;There is another astonishing thing about Hobbits of old that
             must be mentioned, an astonishing habit: they imbibed or inhaled,
             through pipes of clay or wood, the smoke of the burning leaves of a
-            herb, which they called pipe-weed or leaf, a variety probably of
-            Nicotiana.&rdquo;
+            herb, which they called pipe-weed or leaf, a variety probably of{" "}
+            <strong>Nicotiana</strong>…the <strong>tobacco</strong> of the
+            Southfarthing…&rdquo;
             <footer>
-              — J.R.R. Tolkien, <cite>The Fellowship of the Ring</cite>
+              — J.R.R. Tolkien,{" "}
+              <cite>
+                The Fellowship of the Ring: Prologue — Concerning Hobbits
+              </cite>
             </footer>
           </blockquote>
         </p>
         <p>
-          <strong>So why does this site feature cannabis?</strong> As someone
-          rooted in the cannabis industry, I wanted to bring that same spirit of
-          Hobbit craft and appreciation to a plant with far richer data to
-          explore — terpene profiles, strain lineages, cannabinoid breakdowns,
-          and cross-breeding histories. Tobacco doesn&apos;t offer nearly the
-          same depth of variety to catalog.
+          <strong>So why does this site feature cannabis?</strong> My background
+          is in cannabis web development, so the choice was natural, and
+          cannabis offers far richer data to explore — terpene profiles, strain
+          lineages, cannabinoid breakdowns, and cross-breeding histories.
+          Tobacco doesn&apos;t offer the same depth of variety to catalog. The
+          site is designed to feel like a real cannabis farm and dispensary,
+          serving as a living portfolio piece I can showcase to industry
+          partners.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "strains",
+    title: "Are These Real Strains/Varieties?",
+    content: (
+      <>
+        <p>
+          No — all strains on this site are fictional. However, several are
+          named after actual pipe-weed varieties from Tolkien&apos;s{" "}
+          <em>The Lord of the Rings</em>. In the Prologue, Meriadoc Brandybuck
+          writes in his <em>Herblore of the Shire</em>:
+        </p>
+        <blockquote>
+          &ldquo;Tobold Hornblower of Longbottom in the Southfarthing first grew
+          the true pipe-weed in his gardens in the days of Isengrim the Second,
+          about the year 1070 of Shire-reckoning. The best home-grown still
+          comes from that district, especially the varieties now known as{" "}
+          <strong>Longbottom Leaf</strong>, <strong>Old Toby</strong>, and{" "}
+          <strong>Southern Star</strong>.&rdquo;
+          <footer>
+            — J.R.R. Tolkien,{" "}
+            <cite>
+              The Fellowship of the Ring: Prologue — Concerning Pipe-weed
+            </cite>
+          </footer>
+        </blockquote>
+        <p>
+          These three varieties appear on this site alongside original creations
+          like Tookies, Green Dragon, Mirkwood Mist, and others — each inspired
+          by characters, places, and lore from Middle-earth, as well as real
+          cannabis strain names. The cannabinoid profiles, terpene data, and
+          strain lineages are entirely fictional, crafted to demonstrate the
+          kind of product detail pages found on real dispensary websites.
         </p>
       </>
     ),
@@ -71,8 +113,9 @@ export const faqs: FaqItem[] = [
     content: (
       <>
         <p>
-          The Shire Supply Company logo and press logos are original creations
-          for this website.
+          <strong>The Shire Supply Company</strong> logo and{" "}
+          <Link href="/#press">press logos</Link> are original creations for
+          this website.
         </p>
 
         <p>
