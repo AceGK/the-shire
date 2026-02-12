@@ -8,6 +8,8 @@ import Button from "@/components/ui/button";
 import HeaderBlock from "@/components/modules/header-block";
 import CtaSection from "@/components/modules/cta-section";
 import { Divider2 } from "@/components/ui/dividers";
+import Accordion, { AccordionItem } from "@/components/ui/accordion";
+import { faqs } from "@/lib/faqData";
 
 export default function Home() {
   return (
@@ -28,7 +30,11 @@ export default function Home() {
               </>
             }
           >
-            <p>In the gentle hills of Longbottom, where the morning mist rolls through the valleys, we tend to our crops as Hobbits have for generations. No magic — just honest work and rich Shire soil.</p>
+            <p>
+              In the gentle hills of Longbottom, where the morning mist rolls
+              through the valleys, we tend to our crops as Hobbits have for
+              generations. No magic — just honest work and rich Shire soil.
+            </p>
           </SplitImage>
         </section>
 
@@ -64,24 +70,33 @@ export default function Home() {
         </section>
 
         <section id="press" className="content-grid row">
-          <HeaderBlock
-            as="h2"
-            title="As Seen In"
-          />
+          <HeaderBlock as="h2" title="As Seen In" />
           <Press />
         </section>
 
         <section id="reviews" className="content-grid bg-map-green row">
-          <HeaderBlock
-            as="h2"
-            variant="light"
-            title="Reviews"
-          />
+          <HeaderBlock as="h2" variant="light" title="Reviews" />
           <Reviews />
         </section>
 
-        <CtaSection />
+        <section id="faq" className="content-grid row">
+          <HeaderBlock as="h2" title="FAQ" />
+          <Accordion>
+            {faqs.map((faq) => (
+              <AccordionItem
+                key={faq.id}
+                title={faq.title}
+                defaultOpen={faq.defaultOpen}
+              >
+                {faq.content}
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </section>
 
+        <section className="content-grid bg-map-green">
+          <CtaSection variant="dark" />
+        </section>
       </main>
     </>
   );
