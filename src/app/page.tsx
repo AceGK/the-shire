@@ -1,4 +1,4 @@
-import Press from "@/components/modules/press";
+import Press from "@/components/modules/press-carousel";
 import StrainCarousel from "@/components/modules/strain-carousel";
 import Map from "@/components/modules/map";
 import Hero from "@/components/modules/hero";
@@ -42,7 +42,7 @@ export default function Home() {
           <Divider2 size="lg" color="quote" />
           <figure className="full-width-quote">
             <blockquote>The Finest Pipe-weed in the Southfarthing</blockquote>
-            {/* <figcaption>— Bilbo Baggins</figcaption> */}
+            <figcaption>— Bilbo Baggins, Esq.</figcaption>
           </figure>
           <Divider2 size="lg" color="quote" />
         </section>

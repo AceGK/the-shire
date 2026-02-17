@@ -1,0 +1,70 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  // Fade edges to transparent
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.swiper {
+  overflow: hidden;
+
+  :global(.swiper-wrapper) {
+    transition-timing-function: linear !important;
+  }
+}
+
+.slide {
+  width: auto !important;
+  will-change: transform;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  transition: transform 0.2s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  &:hover {
+    transform: scale(1.05) translateZ(0);
+  }
+}
+
+.logo {
+  display: block;
+  width: 120px;
+  height: 50px;
+  object-fit: contain;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+
+  @include tablet {
+    width: 140px;
+    height: 60px;
+  }
+
+  @include desktop {
+    width: 160px;
+    height: 70px;
+  }
+}
