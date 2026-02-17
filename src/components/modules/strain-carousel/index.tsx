@@ -9,13 +9,14 @@ import styles from "./styles.module.scss";
 import strainsData from "@/lib/strains.json";
 import StrainCard from "@/components/ui/strain-card";
 import Button from "@/components/ui/button";
+import Reveal from "@/components/ui/reveal";
 import type { Strain } from "@/types";
 
 const strains = strainsData as Strain[];
 
 export default function StrainCarousel() {
   return (
-    <div>
+    <Reveal>
       <Swiper
         modules={[Navigation, Scrollbar]}
         spaceBetween={20}
@@ -40,14 +41,16 @@ export default function StrainCarousel() {
       >
         {strains.map((strain, id) => (
           <SwiperSlide key={id}>
-            <StrainCard strain={strain} />
+            <Reveal delay={id < 3 ? id * 100 : 0}>
+              <StrainCard strain={strain} />
+            </Reveal>
           </SwiperSlide>
         ))}
       </Swiper>
 
       <div className={styles.viewAll}>
-        <Button href="/strains" variant="primary">View All Strains</Button>
+        <Button href="/strains" variant="outline" size="lg">View All Strains</Button>
       </div>
-    </div>
+    </Reveal>
   );
 }

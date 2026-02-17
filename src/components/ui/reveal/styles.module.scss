@@ -1,0 +1,48 @@
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// Stagger mode: children animate in sequence
+.stagger {
+  opacity: 1;
+  transform: none;
+
+  > :global(*) {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  &.visible > :global(*) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  // Stagger delays for up to 6 children
+  @for $i from 1 through 6 {
+    &.visible > :global(*:nth-child(#{$i})) {
+      transition-delay: #{($i - 1) * 100}ms;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .stagger > :global(*) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

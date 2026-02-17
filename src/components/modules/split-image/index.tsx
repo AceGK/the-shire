@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import Image from 'next/image';
+import Reveal from '@/components/ui/reveal';
 import styles from './styles.module.scss';
 
 interface SplitImageProps {
@@ -35,7 +36,7 @@ export default function SplitImage({
         .filter(Boolean)
         .join(' ')}
     >
-      <div className={styles.imageWrapper}>
+      <Reveal className={styles.imageWrapper}>
         <div className={styles.imageContainer}>
           <Image
             src={image}
@@ -44,15 +45,14 @@ export default function SplitImage({
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
-      </div>
+      </Reveal>
 
       <div className={styles.content}>
-        {pretitle && <span className={styles.pretitle}>{pretitle}</span>}
-        <span className={styles.accentLine} />
-        {title && <h2 className={styles.title}>{title}</h2>}
-        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
-        {children && <div className={styles.body}>{children}</div>}
-        {buttons && <div className={styles.buttons}>{buttons}</div>}
+        {pretitle && <Reveal delay={100}><span className={styles.pretitle}>{pretitle}</span></Reveal>}
+        {title && <Reveal delay={200}><h2 className={styles.title}>{title}</h2></Reveal>}
+        {subtitle && <Reveal delay={300}><p className={styles.subtitle}>{subtitle}</p></Reveal>}
+        {children && <Reveal delay={400}><div className={styles.body}>{children}</div></Reveal>}
+        {buttons && <Reveal delay={500}><div className={styles.buttons}>{buttons}</div></Reveal>}
       </div>
     </div>
   );

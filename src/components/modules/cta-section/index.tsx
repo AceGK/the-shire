@@ -1,4 +1,5 @@
 import Button from '@/components/ui/button';
+import Reveal from '@/components/ui/reveal';
 import styles from './styles.module.scss';
 
 interface CTAButton {
@@ -27,24 +28,26 @@ export default function CtaSection({
   return (
     <section className={`${styles.cta} ${styles[variant]}`}>
       <div className={styles.inner}>
-        {pretitle && <span className={styles.pretitle}>{pretitle}</span>}
-        <h2 className={styles.title}>{title}</h2>
-        {description && <p className={styles.description}>{description}</p>}
-        <div className={styles.buttons}>
-          {primaryButton && (
-            <Button href={primaryButton.href} variant="primary">
-              {primaryButton.label}
-            </Button>
-          )}
-          {secondaryButton && (
-            <Button
-              href={secondaryButton.href}
-              variant={variant === "dark" ? "outlineLight" : "outline"}
-            >
-              {secondaryButton.label}
-            </Button>
-          )}
-        </div>
+        {pretitle && <Reveal><span className={styles.pretitle}>{pretitle}</span></Reveal>}
+        <Reveal delay={100}><h2 className={styles.title}>{title}</h2></Reveal>
+        {description && <Reveal delay={200}><p className={styles.description}>{description}</p></Reveal>}
+        <Reveal delay={300}>
+          <div className={styles.buttons}>
+            {primaryButton && (
+              <Button href={primaryButton.href} variant="shimmer">
+                {primaryButton.label}
+              </Button>
+            )}
+            {secondaryButton && (
+              <Button
+                href={secondaryButton.href}
+                variant={variant === "dark" ? "outlineLight" : "outline"}
+              >
+                {secondaryButton.label}
+              </Button>
+            )}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

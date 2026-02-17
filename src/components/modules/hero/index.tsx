@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import Button from '@/components/ui/button';
-import styles from './styles.module.scss';
+import { useEffect, useRef } from "react";
+import Button from "@/components/ui/button";
+import styles from "./styles.module.scss";
+import Reveal from "@/components/ui/reveal";
 
 interface HeroProps {
   id?: string;
@@ -24,8 +25,8 @@ export default function Hero({ id }: HeroProps) {
       bgRef.current.style.transform = `scale(${scale})`;
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -36,38 +37,40 @@ export default function Hero({ id }: HeroProps) {
 
       {/* Content */}
       <div className={styles.content}>
-
-        <h1 className={styles.title}>The Shire <span>Supply Company</span></h1>
-
-        {/* <div className={styles.divider}></div> */}
-
-        {/* <p className={styles.tagline}>
-          The finest pipe-weed in the Southfarthing
-        </p> */}
-
-        <span className={styles.tagline}>
-          The finest pipe-weed in the Southfarthing
-        </span>
-
-        <div className={styles.ctaGroup}>
-          <Button href="#strains" variant="primary" size="lg">
-            Explore Strains
-          </Button>
-          <Button href="#about" variant="outlineLight" size="lg">
-            Our Story
-          </Button>
-        </div>
+        <Reveal delay={200}>
+          <h1 className={styles.title}>
+            The Shire <span>Supply Company</span>
+          </h1>
+        </Reveal>
+        <Reveal delay={400}>
+          <span className={styles.tagline}>
+            The finest pipe-weed in the Southfarthing, cultivated with care from the rolling hills of the Shire.
+          </span>
+        </Reveal>
+        <Reveal delay={600}>
+          <div className={styles.ctaGroup}>
+            <Button href="#strains" variant="shimmer" size="lg">
+              Explore Strains
+            </Button>
+            <Button href="#about" variant="outlineLight" size="lg">
+              Our Story
+            </Button>
+          </div>
+        </Reveal>
       </div>
 
+      
       {/* Scroll indicator */}
-      <a
-        className={styles.scrollIndicator}
-        href="#about"
-        aria-label="Scroll to about section"
-      >
-        <span>Discover</span>
-        <div className={styles.scrollLine}></div>
-      </a>
+      <Reveal delay={800} className={styles.scrollReveal}>
+        <a
+          className={styles.scrollIndicator}
+          href="#about"
+          aria-label="Scroll to about section"
+        >
+          <span>Scroll</span>
+          <div className={styles.scrollLine}></div>
+        </a>
+      </Reveal>
     </section>
   );
 }

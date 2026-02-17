@@ -1,10 +1,12 @@
 import styles from "./styles.module.scss";
+import Reveal from "@/components/ui/reveal";
 
 type HeadingLevel = 'h1' | 'h2' | 'h3';
 type HeaderVariant = 'dark' | 'light';
 
 interface HeaderBlockProps {
   title: string;
+  pretitle?: string;
   description?: string;
   variant?: HeaderVariant;
   as?: HeadingLevel;
@@ -15,6 +17,7 @@ interface HeaderBlockProps {
 
 export default function HeaderBlock({
   title,
+  pretitle,
   description,
   variant = "dark",
   as: Heading = "h1",
@@ -34,9 +37,9 @@ export default function HeaderBlock({
 
   return (
     <header className={classes}>
-      <Heading>{title}</Heading>
-      {/* <Divider2 size="lg" color="gold" /> */}
-      {description && <p>{description}</p>}
+      {pretitle && <Reveal><span className={styles.pretitle}>{pretitle}</span></Reveal>}
+      <Reveal delay={pretitle ? 100 : 0}><Heading>{title}</Heading></Reveal>
+      {description && <Reveal delay={pretitle ? 200 : 100}><p>{description}</p></Reveal>}
     </header>
   );
 }

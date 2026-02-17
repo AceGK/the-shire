@@ -42,7 +42,6 @@ export const faqs: FaqItem[] = [
           Tolkien himself clarified this in the prologue to{" "}
           <em>The Lord of the Rings</em>:
         </p>
-        <p>
           <blockquote>
             &ldquo;There is another astonishing thing about Hobbits of old that
             must be mentioned, an astonishing habit: they imbibed or inhaled,
@@ -57,7 +56,6 @@ export const faqs: FaqItem[] = [
               </cite>
             </footer>
           </blockquote>
-        </p>
         <p>
           <strong>So why does this site feature cannabis?</strong> My background
           is in cannabis web development, so the choice was natural, and

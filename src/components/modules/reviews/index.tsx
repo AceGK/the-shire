@@ -9,12 +9,13 @@ import 'swiper/css/pagination';
 
 import styles from './styles.module.scss';
 import reviews from '@/lib/reviews.json';
+import Reveal from '@/components/ui/reveal';
 
 export default function Reviews() {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   return (
-    <div className={styles.reviews}>
+    <Reveal className={styles.reviews}>
       <div className={styles.swiperWrapper}>
         <button
           className={styles.navPrev}
@@ -42,11 +43,13 @@ export default function Reviews() {
         >
           {reviews.map((review, index) => (
             <SwiperSlide key={index} className={styles.slide}>
-              <div className={styles.card}>
-                <h3>{review.name}</h3>
-                <div className={styles.stars}>★★★★★</div>
-                <div className={styles.reviewText}>{review.review}</div>
-              </div>
+              <Reveal delay={index < 3 ? index * 100 : 0}>
+                <div className={styles.card}>
+                  <h3>{review.name}</h3>
+                  <div className={styles.stars}>★★★★★</div>
+                  <div className={styles.reviewText}>{review.review}</div>
+                </div>
+              </Reveal>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -58,6 +61,6 @@ export default function Reviews() {
           ›
         </button>
       </div>
-    </div>
+    </Reveal>
   );
 }

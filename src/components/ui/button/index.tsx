@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import styles from "./styles.module.scss";
 
-type ButtonVariant = 'primary' | 'secondary' | 'default' | 'outline' | 'outlineLight' | 'ghost' | 'destructive' | 'link' | 'label';
+type ButtonVariant = 'primary' | 'shimmer' | 'secondary' | 'default' | 'outline' | 'outlineLight' | 'ghost' | 'destructive' | 'link' | 'label';
 type ButtonSize = 'sm' | 'md' | 'lg' | 'icon';
 
 interface ButtonProps {

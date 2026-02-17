@@ -1,0 +1,34 @@
+@use "@/styles/variables" as *;
+
+.quote {
+  text-align: center;
+  margin: 0 auto;
+  padding: 2rem 0 0.5rem;
+}
+
+.mark {
+  display: block;
+  font-family: var(--font-kereru), serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  color: $clr-accent;
+  line-height: 0.1;
+}
+
+.text {
+  font-family: var(--font-kereru), serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 400;
+  color: $clr-cream;
+  margin: 0;
+  padding: 0;
+  text-wrap: balance;
+  border: none;
+}
+
+.attribution {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-section-subtitle);
+  color: $clr-accent-light;
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+}

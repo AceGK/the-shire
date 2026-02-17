@@ -1,9 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, FreeMode } from 'swiper/modules';
-import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import Image from 'next/image';
@@ -18,24 +16,10 @@ interface PressItem {
 
 export default function PressCarousel() {
   const pressLogos = logos as PressItem[];
-  const swiperRef = useRef<SwiperType | null>(null);
-
-  const handleMouseEnter = () => {
-    swiperRef.current?.autoplay?.stop();
-  };
-
-  const handleMouseLeave = () => {
-    swiperRef.current?.autoplay?.start();
-  };
 
   return (
-    <div
-      className={styles.carousel}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className={styles.carousel}>
       <Swiper
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
         modules={[Autoplay, FreeMode]}
         spaceBetween={48}
         slidesPerView="auto"
