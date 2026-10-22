@@ -92,15 +92,26 @@ $desktopValue: $breakpoint-lg;
   }
 }
 
-// Ink brushstroke shape for the strain type label. Uneven edges, bristle
+// Ink brushstroke shapes for the strain type labels. Uneven edges, bristle
 // splits on the tail and two dry-brush gaps along the top and bottom edges
-// (evenodd cut-outs, kept clear of the text) so it reads as a painted mark
-// rather than a button.
-$brushstroke: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath fill-rule='evenodd' d='M6 20C5 13 12 9 24 8C50 6 80 7 110 5C140 4 165 5 182 6C190 6.5 194 8 196 11L187 12.5L198 14.5C199 17 197 19 200 21L188 22.5L198 25.5C199 29 195 32 186 33C160 35 130 33 100 35C70 37 40 36 18 35C9 34 5 28 6 20ZM38 9.6L96 8.3L62 10.4ZM118 32.4L180 30.8L146 33.2Z'/%3E%3C/svg%3E");
+// (evenodd cut-outs, kept clear of the text) so each reads as a painted mark
+// rather than a button. Each strain type gets its own near-identical stroke,
+// varied slightly in its edges, tail splits, dry gaps and tilt, as if painted
+// by hand three separate times. All paths use a 200 x 40 box.
+@function brushstroke($path) {
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath fill-rule='evenodd' d='#{$path}'/%3E%3C/svg%3E");
+}
+
+// The original stroke
+$brushstroke-indica: brushstroke('M6 20C5 13 12 9 24 8C50 6 80 7 110 5C140 4 165 5 182 6C190 6.5 194 8 196 11L187 12.5L198 14.5C199 17 197 19 200 21L188 22.5L198 25.5C199 29 195 32 186 33C160 35 130 33 100 35C70 37 40 36 18 35C9 34 5 28 6 20ZM38 9.6L96 8.3L62 10.4ZM118 32.4L180 30.8L146 33.2Z');
+// Rises slightly to the right, gaps shifted, the lower tail split sits lower
+$brushstroke-sativa: brushstroke('M5 21C4 14 11 8 22 7C48 5 82 8 112 6C142 5 166 4 184 7C191 8 195 10 197 12L189 14L199 16C200 19 198 21 199 23L190 24.5L197 27C197 30 193 32 184 33C158 35 128 32 98 34C68 36 38 35 16 34C8 33 5 27 5 21ZM52 8.6L118 7.4L84 9.6ZM26 32.2L80 33.4L52 34.4Z');
+// Flatter top edge, a slightly fuller belly, splits set a touch higher
+$brushstroke-hybrid: brushstroke('M7 19C6 12 13 9 26 9C52 7 78 6 108 6C138 5 164 6 181 5C189 5 194 7 197 10L186 11.5L199 13.5C200 16 198 18 199 20L187 21.5L199 24C199 28 196 31 188 32C162 34 132 34 102 36C72 36 42 35 20 36C10 35 6 27 7 19ZM30 10.2L84 8.8L58 10.9ZM132 32.6L180 31.4L156 33.6Z');
 
 // Paints the brushstroke behind a strain type label (.hybrid, .sativa or .indica
-// on the same element), each in its own colour. The stroke sits on a pseudo
-// element behind the text, so the mask never clips the letters.
+// on the same element), each in its own colour and stroke. The stroke sits on
+// a pseudo element behind the text, so the mask never clips the letters.
 @mixin brushstroke-label {
   position: relative;
   isolation: isolate;
@@ -111,12 +122,25 @@ $brushstroke: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' 
     position: absolute;
     inset: 0;
     z-index: -1;
-    transform: rotate(-1.5deg);
-    -webkit-mask: $brushstroke center / 100% 100% no-repeat;
-    mask: $brushstroke center / 100% 100% no-repeat;
+    transform: rotate(var(--brush-tilt, -1.5deg));
+    -webkit-mask: var(--brush-shape) center / 100% 100% no-repeat;
+    mask: var(--brush-shape) center / 100% 100% no-repeat;
+    background: var(--brush-color);
   }
 
-  &.hybrid::before { background: #4a7c59; }
-  &.sativa::before { background: #c17f59; }
-  &.indica::before { background: #5a4a7c; }
+  &.indica {
+    --brush-shape: #{$brushstroke-indica};
+    --brush-color: #5a4a7c;
+    --brush-tilt: -1.5deg;
+  }
+  &.sativa {
+    --brush-shape: #{$brushstroke-sativa};
+    --brush-color: #c17f59;
+    --brush-tilt: -0.75deg;
+  }
+  &.hybrid {
+    --brush-shape: #{$brushstroke-hybrid};
+    --brush-color: #4a7c59;
+    --brush-tilt: -2deg;
+  }
 }

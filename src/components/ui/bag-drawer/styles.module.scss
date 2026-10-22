@@ -196,18 +196,9 @@
   font-size: 0.625rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  padding: 0.25rem 0.5rem;
+  padding: 0.3125rem 0.875rem;
   color: $clr-cream;
-
-  &.hybrid {
-    background: #4a7c59;
-  }
-  &.sativa {
-    background: #c17f59;
-  }
-  &.indica {
-    background: #5a4a7c;
-  }
+  @include brushstroke-label;
 }
 
 .itemVariant {
