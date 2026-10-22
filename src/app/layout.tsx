@@ -7,6 +7,7 @@ import '@/styles/globals.scss'
 import '@/styles/swiper.scss'
 import Footer from '@/components/ui/footer'
 import Nav from '@/components/ui/nav'
+import { CartProvider } from '@/context/CartContext'
 
 const PROMO_COOKIE_NAME = 'promo_dismissed';
 const NAV_HEIGHT = 74;
@@ -78,16 +79,18 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" style={{ '--header-height': `${initialHeaderHeight}px` } as React.CSSProperties}>
       <body className={`${ebGaramond.variable} ${lato.variable} ${hobbiton.variable} ${kereru.variable}`}>
-        <div className="background-wrap" aria-hidden="true" />
-        <div className="content-wrap">
-          <Nav
-            promoMessage="Join our Fellowship to receive 10% off!"
-            initialPromoDismissed={promoDismissed}
-          />
-          {children}
-          <Footer />
-        </div>
-        <div className="map-overlay" aria-hidden="true" />
+        <CartProvider>
+          <div className="background-wrap" aria-hidden="true" />
+          <div className="content-wrap">
+            <Nav
+              promoMessage="Join our Fellowship to receive 10% off!"
+              initialPromoDismissed={promoDismissed}
+            />
+            {children}
+            <Footer />
+          </div>
+          <div className="map-overlay" aria-hidden="true" />
+        </CartProvider>
       </body>
     </html>
   )

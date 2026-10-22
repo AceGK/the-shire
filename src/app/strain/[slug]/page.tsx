@@ -5,6 +5,7 @@ import { ArrowLeft, MoveLeft, MoveRight } from 'lucide-react';
 import strainsData from '@/lib/strains.json';
 import { terpenes, effects } from '@/lib/cannabisIcons';
 import { slugify, getStrainBySlug } from '@/lib/utils';
+import AddToBag from '@/components/ui/add-to-bag';
 import styles from './styles.module.scss';
 import type { Strain } from '@/types';
 
@@ -70,6 +71,8 @@ export default async function StrainPage({ params }: PageProps) {
           )}
 
           <p className={styles.lineage}>Lineage: <span>{strain.lineage}</span></p>
+
+          <AddToBag slug={slug} name={strain.name} prices={strain.prices} />
 
           {/* Cannabinoids Section */}
           {strain.cannabinoids && (

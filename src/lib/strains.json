@@ -12,7 +12,8 @@
     },
     "terpenes": ["myrcene", "caryophyllene", "linalool"],
     "totalTerpenes": "2.1%",
-    "effects": ["relaxing", "sleepy", "calm", "happy"]
+    "effects": ["relaxing", "sleepy", "calm", "happy"],
+    "prices": { "gram": 16, "eighth": 55, "quarter": 100, "half": 185, "ounce": 340 }
   },
   {
     "name": "Longbottom Leaf",
@@ -27,7 +28,8 @@
     },
     "terpenes": ["limonene", "pinene", "terpinolene"],
     "totalTerpenes": "2.4%",
-    "effects": ["energetic", "uplifted", "creative", "social"]
+    "effects": ["energetic", "uplifted", "creative", "social"],
+    "prices": { "gram": 16, "eighth": 55, "quarter": 100, "half": 185, "ounce": 340 }
   },
   {
     "name": "Southern Star",
@@ -42,7 +44,8 @@
     },
     "terpenes": ["limonene", "caryophyllene", "myrcene"],
     "totalTerpenes": "2.2%",
-    "effects": ["creative", "relaxing", "happy", "uplifted"]
+    "effects": ["creative", "relaxing", "happy", "uplifted"],
+    "prices": { "gram": 12, "eighth": 40, "quarter": 75, "half": 140, "ounce": 260 }
   },
   {
     "name": "Bag End Blend",
@@ -57,7 +60,8 @@
     },
     "terpenes": ["pinene", "limonene", "ocimene"],
     "totalTerpenes": "2.5%",
-    "effects": ["uplifted", "focused", "creative", "happy"]
+    "effects": ["uplifted", "focused", "creative", "happy"],
+    "prices": { "gram": 10, "eighth": 30, "quarter": 55, "half": 100, "ounce": 180 }
   },
   {
     "name": "Tookies",
@@ -72,7 +76,8 @@
     },
     "terpenes": ["caryophyllene", "limonene", "linalool"],
     "totalTerpenes": "2.8%",
-    "effects": ["relaxing", "sleepy", "hungry", "happy"]
+    "effects": ["relaxing", "sleepy", "hungry", "happy"],
+    "prices": { "gram": 10, "eighth": 30, "quarter": 55, "half": 100, "ounce": 180 }
   },
   {
     "name": "Brandybuck Blend",
@@ -87,7 +92,8 @@
     },
     "terpenes": ["myrcene", "humulene", "caryophyllene"],
     "totalTerpenes": "2.0%",
-    "effects": ["relaxing", "happy", "social", "calm"]
+    "effects": ["relaxing", "happy", "social", "calm"],
+    "prices": { "gram": 10, "eighth": 30, "quarter": 55, "half": 100, "ounce": 180 }
   },
   {
     "name": "Green Dragon",
@@ -102,7 +108,8 @@
     },
     "terpenes": ["caryophyllene", "myrcene", "limonene"],
     "totalTerpenes": "2.6%",
-    "effects": ["euphoric", "happy", "giggly", "social"]
+    "effects": ["euphoric", "happy", "giggly", "social"],
+    "prices": { "gram": 12, "eighth": 40, "quarter": 75, "half": 140, "ounce": 260 }
   },
   {
     "name": "Mirkwood Mist",
@@ -117,7 +124,8 @@
     },
     "terpenes": ["pinene", "myrcene", "humulene"],
     "totalTerpenes": "2.3%",
-    "effects": ["focused", "creative", "relaxing", "uplifted"]
+    "effects": ["focused", "creative", "relaxing", "uplifted"],
+    "prices": { "gram": 12, "eighth": 40, "quarter": 75, "half": 140, "ounce": 260 }
   },
   {
     "name": "Gardner's Gift",
@@ -132,7 +140,8 @@
     },
     "terpenes": ["pinene", "ocimene", "terpinolene"],
     "totalTerpenes": "2.7%",
-    "effects": ["energetic", "focused", "uplifted", "creative"]
+    "effects": ["energetic", "focused", "uplifted", "creative"],
+    "prices": { "gram": 12, "eighth": 40, "quarter": 75, "half": 140, "ounce": 260 }
   },
   {
     "name": "Precious OG",
@@ -147,7 +156,8 @@
     },
     "terpenes": ["myrcene", "linalool", "caryophyllene"],
     "totalTerpenes": "2.4%",
-    "effects": ["relaxing", "euphoric", "sleepy", "calm"]
+    "effects": ["relaxing", "euphoric", "sleepy", "calm"],
+    "prices": { "gram": 16, "eighth": 55, "quarter": 100, "half": 185, "ounce": 340 }
   },
   {
     "name": "Fellowship Fire",
@@ -162,7 +172,8 @@
     },
     "terpenes": ["limonene", "terpinolene", "pinene"],
     "totalTerpenes": "2.9%",
-    "effects": ["energetic", "social", "talkative", "euphoric"]
+    "effects": ["energetic", "social", "talkative", "euphoric"],
+    "prices": { "gram": 12, "eighth": 40, "quarter": 75, "half": 140, "ounce": 260 }
   },
   {
     "name": "White Wizard",
@@ -177,6 +188,7 @@
     },
     "terpenes": ["caryophyllene", "linalool", "pinene"],
     "totalTerpenes": "2.5%",
-    "effects": ["euphoric", "relaxing", "focused", "creative"]
+    "effects": ["euphoric", "relaxing", "focused", "creative"],
+    "prices": { "gram": 16, "eighth": 55, "quarter": 100, "half": 185, "ounce": 340 }
   }
 ]

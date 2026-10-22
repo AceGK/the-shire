@@ -4,6 +4,12 @@ import type { ReactNode } from 'react';
 // Domain/Data Models
 // ===================
 
+// Weight variants, smallest to largest
+export type Weight = 'gram' | 'eighth' | 'quarter' | 'half' | 'ounce';
+
+/** Price of each weight, in pounds. */
+export type StrainPrices = Record<Weight, number>;
+
 // Strain types
 export interface Strain {
   name: string;
@@ -21,6 +27,7 @@ export interface Strain {
   terpenes?: string[];
   totalTerpenes?: string;
   effects?: string[];
+  prices: StrainPrices;
 }
 
 // Retailer/Location types

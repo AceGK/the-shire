@@ -1,6 +1,5 @@
 import { MouseEvent } from 'react';
 import Link from 'next/link';
-import Button from '@/components/ui/button';
 import styles from './styles.module.scss';
 
 interface NavItem {
@@ -48,14 +47,6 @@ export default function MobileMenu({ isOpen, navItems, onClose, onNavClick }: Mo
           </li>
         ))}
       </ul>
-      <Button
-        href="/strains"
-        variant="primary"
-        className={styles.mobileMenuCta}
-        onClick={onClose}
-      >
-        Order Online
-      </Button>
     </div>
   );
 }

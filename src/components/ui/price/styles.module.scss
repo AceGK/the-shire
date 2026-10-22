@@ -1,0 +1,17 @@
+.price {
+  display: inline-flex;
+  align-items: flex-start;
+  white-space: nowrap;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+// Set the symbol small and raised, like a shop ticket. Its colour is set with the
+// --price-symbol-* custom properties so each context can tint and nudge it.
+.symbol {
+  margin-right: 0.08em;
+  font-size: var(--price-symbol-size, 0.62em);
+  line-height: 1;
+  transform: translateY(var(--price-symbol-shift, 0.2em));
+  color: var(--price-symbol-color, currentColor);
+  opacity: var(--price-symbol-opacity, 0.7);
+}

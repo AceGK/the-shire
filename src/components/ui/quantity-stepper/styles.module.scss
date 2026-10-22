@@ -1,0 +1,82 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.stepper {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid $clr-border-light;
+  border-radius: 999px; // pill, to match the buttons
+  background: $clr-paper;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: $clr-charcoal;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+
+    // Round the end buttons so their hover fill and focus ring follow the pill curve
+    &:first-child {
+      border-radius: 999px 0 0 999px;
+    }
+
+    &:last-child {
+      border-radius: 0 999px 999px 0;
+    }
+
+    @include hover {
+      color: $clr-accent-text;
+      background: rgba($clr-accent, 0.08);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $clr-accent;
+      outline-offset: -2px;
+    }
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      background: none;
+    }
+  }
+
+  output {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff-body);
+    font-weight: 700;
+    color: $clr-charcoal;
+    border-inline: 1px solid $clr-border-light;
+  }
+}
+
+.md {
+  height: 2.75rem;
+
+  button {
+    width: 2.75rem;
+  }
+
+  output {
+    min-width: 2.75rem;
+    font-size: 0.9375rem;
+  }
+}
+
+.sm {
+  height: 2rem;
+
+  button {
+    width: 2.25rem;
+  }
+
+  output {
+    min-width: 2rem;
+    font-size: 0.8125rem;
+  }
+}
