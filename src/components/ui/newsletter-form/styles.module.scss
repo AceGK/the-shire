@@ -1,0 +1,140 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  label {
+    font-family: var(--ff-body);
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+}
+
+// Stacked on phones: two separate pills. From sm up the input and button
+// join into one pill, the input taking the left curve and the button the right.
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  @include sm {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  input {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid rgba($clr-accent, 0.3);
+    border-radius: 999px;
+    font-family: var(--ff-body);
+    font-size: 0.875rem;
+    min-width: 220px;
+    transition: all 0.2s ease;
+
+    @include sm {
+      border-right: none;
+      border-radius: 999px 0 0 999px;
+      min-width: 250px;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $clr-accent;
+    }
+  }
+
+  // Nested under .row so it outweighs the shared Button styles, whose
+  // stylesheet may load after this one.
+  .submit {
+    @include sm {
+      border-radius: 0 999px 999px 0;
+    }
+
+    // Keep the shimmer sweep and colour change, but not the hover lift:
+    // the button is joined to the input, so it shouldn't move.
+    @include hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
+// Replaces the input row after signing up
+.success {
+  max-width: 26rem;
+  margin: 0;
+  font-family: var(--ff-heading);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.5;
+  text-align: center;
+
+  strong {
+    font-weight: 500;
+    overflow-wrap: anywhere;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// ===== Variants =====
+
+// Green sections such as the footer
+.dark {
+  label {
+    color: rgba($clr-cream, 0.7);
+  }
+
+  input {
+    background: rgba($clr-cream, 0.1);
+    color: $clr-cream;
+
+    &::placeholder {
+      color: rgba($clr-cream, 0.5);
+    }
+
+    &:focus {
+      background: rgba($clr-cream, 0.15);
+    }
+  }
+
+  .success {
+    color: $clr-cream;
+
+    strong {
+      color: $clr-accent;
+    }
+  }
+}
+
+// Cream pages
+.light {
+  label {
+    color: $clr-accent-text;
+  }
+
+  input {
+    background: $clr-paper;
+    color: $clr-charcoal;
+
+    &::placeholder {
+      color: rgba($clr-charcoal-light, 0.7);
+    }
+  }
+
+  .success {
+    color: $clr-charcoal;
+
+    strong {
+      color: $clr-accent-text;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
+
+// Framed card, matching the strain cards' inset gold border
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.5rem, 1rem + 1.5vw, 2rem);
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 1.25rem + 3vw, 3.5rem) clamp(1.25rem, 0.5rem + 3vw, 3rem);
+  background: $clr-paper;
+  border: 1px solid $clr-border-light;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba($clr-accent, 0.3);
+    pointer-events: none;
+  }
+}
+
+.perks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--ff-heading);
+  font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  line-height: 1.5;
+  color: $clr-charcoal;
+  // The list itself sits centred in the card; its lines read left-aligned so
+  // wrapped perks on phones keep their diamond beside the first line.
+  text-align: left;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+
+    // Gold diamond, as used on the packaging cards
+    &::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      margin-top: calc(0.75em - 3px); // centre on the first line
+      background: $clr-accent;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.finePrint {
+  margin: 0;
+  font-family: var(--ff-body);
+  font-size: 0.75rem;
+  font-style: italic;
+  color: $clr-charcoal-light;
+}

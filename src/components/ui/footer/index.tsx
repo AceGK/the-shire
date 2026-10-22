@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Button from '@/components/ui/button';
+import NewsletterForm from '@/components/ui/newsletter-form';
 import styles from './styles.module.scss';
 import Logo from '@/assets/shire-supply-co-logo.svg';
 import TreasureChest from '@/assets/icons/treasure-chest-solid.svg';
@@ -35,13 +35,7 @@ export default function Footer() {
 
         <div className={styles.content}>
           <div className={styles.newsletter}>
-            <form>
-              <label htmlFor="email">Join the Fellowship</label>
-              <div>
-                <input type="email" placeholder="your@email.com" />
-                <Button type="submit" variant="primary" size="sm">Sign Up</Button>
-              </div>
-            </form>
+            <NewsletterForm />
           </div>
 
           {/* <p className={styles.followLabel}>Follow us</p> */}
