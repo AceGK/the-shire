@@ -150,10 +150,9 @@ export default function BagDrawer() {
                 <span>Subtotal</span>
                 <Price amount={subtotal} />
               </div>
-              <Button variant="primary" size="lg" disabled className={styles.checkout} title="Online checkout is coming soon">
+              <Button href="/checkout" variant="primary" size="lg" className={styles.checkout} onClick={closeBag}>
                 Checkout
               </Button>
-              <p className={styles.note}>Online checkout is coming soon.</p>
               <div className={styles.footerLinks}>
                 <Button href="/strains" variant="link" onClick={closeBag} className={styles.continue}>
                   Continue Shopping
