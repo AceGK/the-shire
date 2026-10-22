@@ -2,7 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect, MouseEvent } from 'react';
 import Link from 'next/link';
-import { ShoppingBag } from 'lucide-react';
+import ShoppingBagIcon from '@/assets/icons/shopping-bag.svg';
 import BagDrawer from '@/components/ui/bag-drawer';
 import { useCart } from '@/context/CartContext';
 import { prefersReducedMotion } from '@/lib/reducedMotion';
@@ -129,7 +129,7 @@ export default function Nav({ promoMessage, initialPromoDismissed = false }: Nav
                 aria-expanded={bagOpen}
                 aria-controls="bag-drawer"
               >
-                <ShoppingBag size={22} strokeWidth={1.5} aria-hidden="true" />
+                <ShoppingBagIcon width={22} height={22} strokeWidth={1.5} aria-hidden="true" />
                 {hydrated && count > 0 && (
                   <span className={styles.bagCount} aria-hidden="true">
                     {count > 99 ? '99+' : count}

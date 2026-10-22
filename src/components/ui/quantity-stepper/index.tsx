@@ -1,6 +1,7 @@
 'use client';
 
-import { Minus, Plus } from 'lucide-react';
+import MinusIcon from '@/assets/icons/minus.svg';
+import PlusIcon from '@/assets/icons/plus.svg';
 import styles from './styles.module.scss';
 
 interface QuantityStepperProps {
@@ -31,7 +32,7 @@ export default function QuantityStepper({
         disabled={value <= min}
         aria-label={`Decrease quantity${suffix}`}
       >
-        <Minus size={14} />
+        <MinusIcon width={14} height={14} />
       </button>
       <output aria-live="polite">{value}</output>
       <button
@@ -40,7 +41,7 @@ export default function QuantityStepper({
         disabled={value >= max}
         aria-label={`Increase quantity${suffix}`}
       >
-        <Plus size={14} />
+        <PlusIcon width={14} height={14} />
       </button>
     </div>
   );

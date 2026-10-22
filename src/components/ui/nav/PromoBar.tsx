@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { X } from 'lucide-react';
+import CloseIcon from '@/assets/icons/x.svg';
 import styles from './promo.module.scss';
 
 interface PromoBarProps {
@@ -19,7 +19,7 @@ export default function PromoBar({ onClose }: PromoBarProps) {
           onClick={onClose}
           aria-label="Close promotional banner"
         >
-          <X size={24} />
+          <CloseIcon width={24} height={24} />
         </button>
       </div>
     </div>

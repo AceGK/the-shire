@@ -1,7 +1,7 @@
 'use client';
 
 import { useId, useState } from 'react';
-import { ShoppingBag } from 'lucide-react';
+import ShoppingBagIcon from '@/assets/icons/shopping-bag.svg';
 import Button from '@/components/ui/button';
 import Price from '@/components/ui/price';
 import QuantityStepper from '@/components/ui/quantity-stepper';
@@ -78,7 +78,7 @@ export default function AddToBag({ slug, name, prices }: AddToBagProps) {
         />
         <Button variant="primary" size="lg" onClick={handleAdd} disabled={atLimit} className={styles.button}>
           <span className={styles.buttonInner}>
-            <ShoppingBag size={16} aria-hidden="true" />
+            <ShoppingBagIcon width={16} height={16} aria-hidden="true" />
             Add to Bag
           </span>
         </Button>

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, type KeyboardEvent } from 'react';
 import Link from 'next/link';
-import { X } from 'lucide-react';
+import CloseIcon from '@/assets/icons/x.svg';
 import Button from '@/components/ui/button';
 import QuantityStepper from '@/components/ui/quantity-stepper';
 import { useCart, MAX_QUANTITY } from '@/context/CartContext';
@@ -84,7 +84,7 @@ export default function BagDrawer() {
             )}
           </h2>
           <button ref={closeRef} type="button" className={styles.close} onClick={closeBag} aria-label="Close bag">
-            <X size={22} />
+            <CloseIcon width={22} height={22} />
           </button>
         </header>
 

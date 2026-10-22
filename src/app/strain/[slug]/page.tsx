@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, MoveLeft, MoveRight } from 'lucide-react';
+import ArrowLeftIcon from '@/assets/icons/arrow-left.svg';
+import MoveLeftIcon from '@/assets/icons/move-left.svg';
+import MoveRightIcon from '@/assets/icons/move-right.svg';
 import strainsData from '@/lib/strains.json';
 import { terpenes, effects } from '@/lib/cannabisIcons';
 import { slugify, getStrainBySlug } from '@/lib/utils';
@@ -53,7 +55,7 @@ export default async function StrainPage({ params }: PageProps) {
   return (
     <main className={styles.strainPage}>
       <Link href="/strains" className={styles.backLink}>
-        <ArrowLeft size={16} /> Back to All Strains
+        <ArrowLeftIcon width={16} height={16} /> Back to All Strains
       </Link>
 
       <div className={styles.content}>
@@ -154,7 +156,7 @@ export default async function StrainPage({ params }: PageProps) {
       <nav className={styles.pagination}>
         {prevStrain ? (
           <Link href={`/strain/${slugify(prevStrain.name)}`} className={styles.prevLink}>
-            <span><MoveLeft size={14} /> Previous</span>
+            <span><MoveLeftIcon width={14} height={14} /> Previous</span>
             <span className={styles.navName}>{prevStrain.name}</span>
           </Link>
         ) : (
@@ -162,7 +164,7 @@ export default async function StrainPage({ params }: PageProps) {
         )}
         {nextStrain && (
           <Link href={`/strain/${slugify(nextStrain.name)}`} className={styles.nextLink}>
-            <span>Next <MoveRight size={14} /></span>
+            <span>Next <MoveRightIcon width={14} height={14} /></span>
             <span className={styles.navName}>{nextStrain.name}</span>
           </Link>
         )}

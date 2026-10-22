@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, ReactNode } from 'react';
-import { ChevronDown } from 'lucide-react';
+import ChevronDownIcon from '@/assets/icons/chevron-down.svg';
 import styles from './styles.module.scss';
 
 interface AccordionItemProps {
@@ -26,7 +26,7 @@ export function AccordionItem({ title, children, defaultOpen = false }: Accordio
         aria-expanded={isOpen}
       >
         <span className={styles.title}>{title}</span>
-        <ChevronDown className={styles.icon} />
+        <ChevronDownIcon className={styles.icon} />
       </button>
       <div className={styles.content}>
         <div className={styles.contentInner}>

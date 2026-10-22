@@ -1,7 +1,8 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState, type MouseEvent } from 'react';
-import { MapPin, X } from 'lucide-react';
+import MapPinIcon from '@/assets/icons/map-pin.svg';
+import CloseIcon from '@/assets/icons/x.svg';
 import Button from '@/components/ui/button';
 import Map from '@/components/modules/map';
 import styles from './styles.module.scss';
@@ -51,7 +52,7 @@ export default function ViewRetailers({ className = '' }: ViewRetailersProps) {
     <>
       <Button variant="outline" size="lg" onClick={() => setOpen(true)} className={`${styles.trigger} ${className}`}>
         <span className={styles.triggerInner}>
-          <MapPin size={16} aria-hidden="true" />
+          <MapPinIcon width={16} height={16} aria-hidden="true" />
           View Retailers
         </span>
       </Button>
@@ -69,7 +70,7 @@ export default function ViewRetailers({ className = '' }: ViewRetailersProps) {
               <p>Find our Southfarthing leaf at these fine establishments across Middle-earth.</p>
             </div>
             <button type="button" className={styles.close} onClick={close} aria-label="Close retailers map">
-              <X size={22} />
+              <CloseIcon width={22} height={22} />
             </button>
           </header>
 

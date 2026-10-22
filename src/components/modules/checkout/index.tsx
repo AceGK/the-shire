@@ -2,18 +2,16 @@
 
 import { useMemo, useState, type FormEvent, type ReactNode } from 'react';
 import Link from 'next/link';
-import {
-  Bike,
-  Clock,
-  CreditCard,
-  Feather,
-  LocateFixed,
-  Lock,
-  MapPin,
-  Search,
-  Store,
-  Wallet,
-} from 'lucide-react';
+import BikeIcon from '@/assets/icons/bike.svg';
+import ClockIcon from '@/assets/icons/clock.svg';
+import CreditCardIcon from '@/assets/icons/credit-card.svg';
+import FeatherIcon from '@/assets/icons/feather.svg';
+import LocateFixedIcon from '@/assets/icons/locate-fixed.svg';
+import LockIcon from '@/assets/icons/lock.svg';
+import MapPinIcon from '@/assets/icons/map-pin.svg';
+import SearchIcon from '@/assets/icons/search.svg';
+import StoreIcon from '@/assets/icons/store.svg';
+import WalletIcon from '@/assets/icons/wallet.svg';
 import Button from '@/components/ui/button';
 import Price from '@/components/ui/price';
 import { useCart } from '@/context/CartContext';
@@ -104,14 +102,14 @@ export default function Checkout() {
             <ToggleOption
               checked={fulfilment === 'delivery'}
               onChange={() => setFulfilment('delivery')}
-              icon={<Bike size={22} aria-hidden="true" />}
+              icon={<BikeIcon width={22} height={22} aria-hidden="true" />}
               title="Delivery"
               detail="Pony post to your door"
             />
             <ToggleOption
               checked={fulfilment === 'pickup'}
               onChange={() => setFulfilment('pickup')}
-              icon={<Store size={22} aria-hidden="true" />}
+              icon={<StoreIcon width={22} height={22} aria-hidden="true" />}
               title="Pickup"
               detail="Free from a retailer"
             />
@@ -142,7 +140,7 @@ export default function Checkout() {
               id="address-search"
               label="Search for your address"
               placeholder="Start typing your address…"
-              icon={<Search size={18} aria-hidden="true" />}
+              icon={<SearchIcon width={18} height={18} aria-hidden="true" />}
               locateLabel="Use my location"
             />
 
@@ -174,7 +172,7 @@ export default function Checkout() {
                 name="speed"
                 checked={speed === 'standard'}
                 onChange={() => setSpeed('standard')}
-                icon={<Clock size={18} aria-hidden="true" />}
+                icon={<ClockIcon width={18} height={18} aria-hidden="true" />}
                 title="Standard"
                 detail="2 to 3 days by pony post"
                 price={standardFee}
@@ -183,7 +181,7 @@ export default function Checkout() {
                 name="speed"
                 checked={speed === 'express'}
                 onChange={() => setSpeed('express')}
-                icon={<Feather size={18} aria-hidden="true" />}
+                icon={<FeatherIcon width={18} height={18} aria-hidden="true" />}
                 title="Express"
                 detail="Next day, by eagle"
                 price={EXPRESS_FEE}
@@ -205,7 +203,7 @@ export default function Checkout() {
               id="retailer-search"
               label="Search retailers by name or region"
               placeholder="Search by town or region…"
-              icon={<MapPin size={18} aria-hidden="true" />}
+              icon={<MapPinIcon width={18} height={18} aria-hidden="true" />}
               locateLabel="Near me"
               value={retailerQuery}
               onChange={setRetailerQuery}
@@ -219,7 +217,7 @@ export default function Checkout() {
                     name="retailer"
                     checked={retailer === r.name}
                     onChange={() => setRetailer(r.name)}
-                    icon={<Store size={18} aria-hidden="true" />}
+                    icon={<StoreIcon width={18} height={18} aria-hidden="true" />}
                     title={r.name}
                     detail={r.region}
                   />
@@ -254,7 +252,7 @@ export default function Checkout() {
               name="payment"
               checked={payment === 'card'}
               onChange={() => setPayment('card')}
-              icon={<CreditCard size={18} aria-hidden="true" />}
+              icon={<CreditCardIcon width={18} height={18} aria-hidden="true" />}
               title="Card"
               detail="Visa, Mastercard, Amex"
             />
@@ -262,7 +260,7 @@ export default function Checkout() {
               name="payment"
               checked={payment === 'on-collection'}
               onChange={() => setPayment('on-collection')}
-              icon={<Wallet size={18} aria-hidden="true" />}
+              icon={<WalletIcon width={18} height={18} aria-hidden="true" />}
               title={fulfilment === 'pickup' ? 'Pay at pickup' : 'Pay on delivery'}
               detail="Coin or card on the day"
             />
@@ -343,7 +341,7 @@ export default function Checkout() {
         {/* Disabled buttons ignore the pointer, so the wrapper shows the not-allowed cursor. */}
         <div className={styles.placeOrder} title="Online checkout is coming soon">
           <Button type="submit" variant="primary" size="lg" disabled className={styles.placeOrderButton}>
-            <Lock size={14} aria-hidden="true" />
+            <LockIcon width={14} height={14} aria-hidden="true" />
             Place Order
           </Button>
         </div>
@@ -411,7 +409,7 @@ function LocationSearch({ id, label, placeholder, icon, locateLabel, value, onCh
         onChange={onChange ? (e) => onChange(e.target.value) : undefined}
       />
       <button type="button" className={styles.locate}>
-        <LocateFixed size={16} aria-hidden="true" />
+        <LocateFixedIcon width={16} height={16} aria-hidden="true" />
         <span>{locateLabel}</span>
       </button>
     </div>
