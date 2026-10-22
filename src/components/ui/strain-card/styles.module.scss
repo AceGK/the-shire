@@ -62,16 +62,13 @@
     z-index: 5;
   }
 
+  // Nug photos are square; below desktop the max-desktop rule further down
+  // sets a smaller size.
   img {
-    width: 100px;
+    width: 190px;
     height: auto;
     margin-bottom: 1.25rem;
     transition: all 0.4s ease;
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
-
-    @include tablet {
-      width: 120px;
-    }
   }
 }
 
@@ -113,7 +110,7 @@
     padding: 1.5rem 1rem;
 
     img {
-      width: 80px;
+      width: 135px;
     }
   }
 
