@@ -6,6 +6,9 @@
   flex-direction: column;
   gap: 0;
   width: 100%;
+  // Keep long answers at a readable line length, centred in their section
+  max-width: 900px;
+  margin-inline: auto;
 }
 
 .item {
