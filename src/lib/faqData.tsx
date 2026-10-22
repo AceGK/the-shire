@@ -150,6 +150,12 @@ export const faqs: FaqItem[] = [
               Hobbiton Tours
             </a>
           </li>
+          <li>
+            Cannabis nug images sourced from{" "}
+            <a href="https://cannabiotix.com/" rel="nofollow noreferrer">
+              CBX Cannabiotix
+            </a>
+          </li>
         </ul>
       </>
     ),
