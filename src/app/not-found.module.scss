@@ -1,0 +1,65 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.notFound {
+  position: relative;
+  z-index: 1; // above the fixed map overlay
+  padding-block: clamp(3rem, 8vw, 6rem) clamp(4rem, 10vw, 8rem);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+// "4 ring 4"
+.code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.08em;
+  margin-bottom: 1.5rem;
+  font-family: var(--ff-kereru);
+  font-size: clamp(6rem, 22vw, 11rem);
+  line-height: 1;
+  color: $clr-primary;
+}
+
+.pretitle {
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-heading);
+  font-size: 0.875rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: $clr-accent-text;
+}
+
+.title {
+  margin-bottom: 1rem;
+  font-family: var(--ff-kereru);
+  font-size: clamp(2rem, 7vw, 3.25rem);
+  line-height: 1.15;
+  color: $clr-charcoal;
+}
+
+.text {
+  // Wide enough for three lines on desktop; balance keeps them even in length
+  max-width: 44rem;
+  margin: 0 auto 2.5rem;
+  font-family: var(--ff-heading);
+  font-size: var(--fs-section-subtitle, 1.25rem);
+  line-height: 1.6;
+  text-wrap: balance;
+  color: $clr-charcoal-light;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
