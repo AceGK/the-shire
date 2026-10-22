@@ -113,25 +113,13 @@ export const faqs: FaqItem[] = [
         <p>
           <strong>The Shire Supply Company</strong> logo and{" "}
           <Link href="/#press">press logos</Link> are original creations for
-          this website.
+          this website, manually crafted with Adobe Illustrator.
         </p>
 
         <p>
-          Photographic images were generated with{" "}
+          Photographic images and packaging sketches were generated with{" "}
           <a href="https://www.midjourney.com/" rel="nofollow noreferrer">
             Midjourney
-          </a>
-          .
-        </p>
-
-        <p>
-          This site was heavily inspired by{" "}
-          <a href="https://www.hobbitontours.com/" rel="nofollow noreferrer">
-            Hobbiton Tours
-          </a>{" "}
-          and{" "}
-          <a href="https://www.cannabiotix.com/" rel="nofollow noreferrer">
-            Cannabiotix
           </a>
           .
         </p>
