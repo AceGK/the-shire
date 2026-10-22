@@ -1,17 +1,25 @@
+// Plain inline text, so the digits share the baseline of any text around them
+// (an inline-flex box took its baseline from the raised symbol and dropped the
+// number below neighbouring words).
 .price {
-  display: inline-flex;
-  align-items: flex-start;
   white-space: nowrap;
   font-variant-numeric: lining-nums tabular-nums;
 }
 
-// Set the symbol small and raised, like a shop ticket. Its colour is set with the
-// --price-symbol-* custom properties so each context can tint and nudge it.
+// The symbol is set small and raised, like a shop ticket. It is shifted with
+// `position: relative` so the raise never changes the line height.
+// Contexts can tune it with custom properties:
+//   --price-symbol-size     size relative to the price (default 0.62em)
+//   --price-symbol-raise    lift, in the symbol's own em (default 0.45em, which
+//                           lines its top up with the top of the digits)
+//   --price-symbol-color    colour (default: same as the price)
+//   --price-symbol-opacity  opacity (default 0.7)
 .symbol {
+  position: relative;
+  top: calc(-1 * var(--price-symbol-raise, 0.45em));
   margin-right: 0.08em;
   font-size: var(--price-symbol-size, 0.62em);
-  line-height: 1;
-  transform: translateY(var(--price-symbol-shift, 0.2em));
+  line-height: 0;
   color: var(--price-symbol-color, currentColor);
   opacity: var(--price-symbol-opacity, 0.7);
 }

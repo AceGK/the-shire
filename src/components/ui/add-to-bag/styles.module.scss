@@ -114,9 +114,9 @@
 }
 
 .weightPrice {
-  // Small text needs a larger, lower symbol to stay legible and sit on the digits.
+  // Small text needs a larger symbol to stay legible, raised only slightly.
   --price-symbol-size: 0.75em;
-  --price-symbol-shift: 0.3em;
+  --price-symbol-raise: 0.2em;
   font-family: var(--ff-body);
   font-size: 0.8125rem;
   white-space: nowrap;
