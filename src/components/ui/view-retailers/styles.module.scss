@@ -1,0 +1,125 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.trigger {
+  width: 100%;
+  max-width: 26rem;
+  min-height: 2.75rem;
+}
+
+.triggerInner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+// Native <dialog> renders in the top layer, above the fixed nav.
+.dialog {
+  width: min(1100px, calc(100% - 2rem));
+  max-width: none;
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  border: 1px solid $clr-border-light;
+  background: $clr-cream;
+  box-shadow: $shadow-xl;
+  overflow: hidden;
+
+  &[open] {
+    display: flex;
+    animation: dialog-in 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &::backdrop {
+    background: rgba($clr-primary-dark, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  @include reduced-motion {
+    &[open] {
+      animation: none;
+    }
+  }
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 0;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: $clr-primary;
+  color: $clr-cream;
+
+  h2 {
+    margin: 0;
+    font-family: var(--ff-heading);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: $clr-cream;
+  }
+
+  p {
+    margin: 0.25rem 0 0;
+    font-family: var(--ff-body);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: rgba($clr-cream, 0.8);
+  }
+}
+
+.close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: $clr-cream;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  @include hover {
+    color: $clr-accent;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $clr-accent;
+    outline-offset: 2px;
+  }
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1rem;
+
+  @include tablet {
+    padding: 1.5rem;
+  }
+}
