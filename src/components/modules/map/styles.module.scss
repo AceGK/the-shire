@@ -241,17 +241,44 @@
     transition: all 0.2s ease;
     cursor: pointer;
 
+    // Dark variant (default): the hover background is translucent over the
+    // dark section, so use the bright gold for legible text.
     @include hover {
       border-color: $clr-accent;
       background: rgba($clr-accent, 0.1);
-        .storeName {
-          color: $clr-accent;
-        }
+
+      .storeName,
+      .region {
+        color: $clr-accent;
+      }
     }
 
     &:focus-visible {
       border-color: $clr-accent;
       outline: none;
+
+      .storeName,
+      .region {
+        color: $clr-accent;
+      }
+    }
+
+    // Light variant: the background stays light, so use the darker
+    // antique gold for contrast.
+    .light & {
+      @include hover {
+        .storeName,
+        .region {
+          color: $clr-accent-text;
+        }
+      }
+
+      &:focus-visible {
+        .storeName,
+        .region {
+          color: $clr-accent-text;
+        }
+      }
     }
   }
 
@@ -268,6 +295,6 @@
     font-size: 0.625rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: $clr-accent;
+    color: $clr-accent-text;
   }
 }

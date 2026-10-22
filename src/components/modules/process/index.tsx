@@ -29,10 +29,10 @@ export default function Process() {
         <div key={index} className={styles.blurb}>
           <div className={styles.imageFrame}>
             <img src={blurb.image} alt={blurb.alt} />
-            <span className={styles.corner} data-pos="tl">❦</span>
-            <span className={styles.corner} data-pos="tr">❦</span>
-            <span className={styles.corner} data-pos="bl">❦</span>
-            <span className={styles.corner} data-pos="br">❦</span>
+            <span className={styles.corner} aria-hidden="true" data-pos="tl">❦</span>
+            <span className={styles.corner} aria-hidden="true" data-pos="tr">❦</span>
+            <span className={styles.corner} aria-hidden="true" data-pos="bl">❦</span>
+            <span className={styles.corner} aria-hidden="true" data-pos="br">❦</span>
           </div>
           <div>
             <h2>{blurb.title}</h2>
@@ -42,7 +42,7 @@ export default function Process() {
               <span className={styles.dot}></span>
             </div>
             <p>{blurb.description}</p>
-            <div className={styles.flourish}>❧</div>
+            <div className={styles.flourish} aria-hidden="true">❧</div>
           </div>
         </div>
       ))}

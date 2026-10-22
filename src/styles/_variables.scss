@@ -10,14 +10,21 @@ $clr-accent: #c9a962;         // Muted gold
 $clr-accent-light: #d4bc7d;   // Light champagne gold
 $clr-accent-dark: #a68b4a;    // Aged gold
 
+// Gold for TEXT on light backgrounds (paper, cream). The golds above measure
+// about 2:1 to 3:1 on cream, below the WCAG AA minimum of 4.5:1, so keep them for
+// dark backgrounds, borders, rules and ornaments. Same hue, 4.6:1 or better on
+// paper, cream, cream-dark and the gold hover tints.
+$clr-accent-text: #7a5f24;   // Antique gold
+
 // ===== EARTH TONES - Warm Browns =====
 $clr-brown: #3e2c23;          // Rich earth brown
 $clr-brown-light: #95796c;    // Lighter warm brown
 $clr-brown-dark: #2d1e17;     // Deep dark brown
 
-// ===== NEUTRAL PALETTE - Refined Creams and Darks =====
-$clr-cream: #f7f4ed;          // Warm off-white (main light background)
-$clr-cream-dark: #ebe5d9;     // Slightly darker cream
+// ===== NEUTRAL PALETTE - Parchment Creams and Darks =====
+$clr-paper: #fcf8ef;          // Lightest parchment (use instead of pure white)
+$clr-cream: #f6f0e3;          // Parchment (main light background)
+$clr-cream-dark: #eae2d0;     // Slightly darker parchment
 $clr-charcoal: #2b2b2b;       // Rich charcoal for text
 $clr-charcoal-light: #4a4a4a; // Secondary text
 $clr-black: #1a1a1a;          // Deep black for contrast

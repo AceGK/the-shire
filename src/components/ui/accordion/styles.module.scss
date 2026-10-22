@@ -30,7 +30,7 @@
 
   @include hover {
     .title {
-      color: $clr-accent-dark;
+      color: $clr-accent-text;
     }
   }
 }
@@ -95,7 +95,7 @@
     text-underline-offset: 2px;
 
     @include hover {
-      color: $clr-accent-dark;
+      color: $clr-accent-text;
     }
   }
 

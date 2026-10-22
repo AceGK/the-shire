@@ -46,7 +46,7 @@ export default function Reviews() {
               <Reveal delay={index < 3 ? index * 100 : 0}>
                 <div className={styles.card}>
                   <h3>{review.name}</h3>
-                  <div className={styles.stars}>★★★★★</div>
+                  <div className={styles.stars} role="img" aria-label="5 out of 5 stars">★★★★★</div>
                   <div className={styles.reviewText}>{review.review}</div>
                 </div>
               </Reveal>
