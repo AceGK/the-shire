@@ -177,11 +177,13 @@
   bottom: 2rem;
   left: 0;
   right: 0;
-  display: flex;
+  // Hidden on mobile; shown from tablet up
+  display: none;
   justify-content: center;
   z-index: 10;
 
   @include tablet {
+    display: flex;
     bottom: 3rem;
   }
 }
