@@ -7,6 +7,11 @@
   // Header Height (set by server in layout.tsx, updated by JS on resize)
   --header-height: 74px;
 
+  // Header Offset: how much of the header is on screen right now. Equals the
+  // header height while the nav shows and 0 once it hides on scroll. The nav
+  // updates it (see src/lib/headerOffset.ts); use the sticky-below-header mixin.
+  --header-offset: var(--header-height);
+
   // Nav Height (for fixed nav offset)
   --nav-height: 70px;
 

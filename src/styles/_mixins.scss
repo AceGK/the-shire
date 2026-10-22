@@ -85,6 +85,20 @@ $desktopValue: $breakpoint-lg;
   }
 }
 
+// Sticks an element just below the fixed header, `$gap` beneath it. The offset
+// follows the nav as it hides and shows on scroll, animating with the nav's own
+// 0.3s slide so the element never sits under the header or leaves a gap.
+// Driven by --header-offset (see src/lib/headerOffset.ts).
+@mixin sticky-below-header($gap: 1.5rem) {
+  position: sticky;
+  top: calc(var(--header-offset, var(--header-height, 74px)) + #{$gap});
+  transition: top 0.3s ease;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
 // High DPI screens
 @mixin retina {
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {

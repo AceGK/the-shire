@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useRef, useCallback, MouseEvent } from 'react';
+import { useState, useRef, useCallback, useEffect, MouseEvent } from 'react';
 import Link from 'next/link';
 import { ShoppingBag } from 'lucide-react';
 import BagDrawer from '@/components/ui/bag-drawer';
 import { useCart } from '@/context/CartContext';
 import { prefersReducedMotion } from '@/lib/reducedMotion';
+import { setHeaderOffset } from '@/lib/headerOffset';
 import PromoBar from './PromoBar';
 import MobileMenu from './MobileMenu';
 import { useScrollHide, useHeaderHeight, useMobileMenu } from './hooks';
@@ -48,6 +49,11 @@ export default function Nav({ promoMessage, initialPromoDismissed = false }: Nav
   const { count, hydrated, isOpen: bagOpen, openBag } = useCart();
   const { hidden, preventHide } = useScrollHide({ isHovered });
   const headerHeight = useHeaderHeight(headerRef, [promoVisible], initialPromoVisible);
+
+  // Publish how much of the header is on screen, for sticky elements site-wide.
+  useEffect(() => {
+    setHeaderOffset(hidden ? 0 : headerHeight);
+  }, [hidden, headerHeight]);
 
   const handleNavLinkClick = useCallback((e: MouseEvent<HTMLAnchorElement>, href: string) => {
     const hash = href.includes('#') ? href.split('#')[1] : null;

@@ -51,8 +51,7 @@
   border: 1px solid $clr-border-light;
 
   @include tablet {
-    position: sticky;
-    top: 8rem;
+    @include sticky-below-header(2rem);
   }
 
   img {

@@ -433,8 +433,7 @@
   padding: clamp(1.5rem, 1rem + 2vw, 2rem);
 
   @include desktop {
-    position: sticky;
-    top: calc(var(--header-height, 113px) + 1.5rem);
+    @include sticky-below-header(1.5rem);
   }
 }
 
