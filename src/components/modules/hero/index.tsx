@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Button from "@/components/ui/button";
 import styles from "./styles.module.scss";
 import Reveal from "@/components/ui/reveal";
+import { useReducedMotion } from "@/lib/reducedMotion";
 
 interface HeroProps {
   id?: string;
@@ -12,8 +13,15 @@ interface HeroProps {
 export default function Hero({ id }: HeroProps) {
   const heroRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
+    // Scroll-linked zoom is skipped entirely when the visitor prefers reduced motion.
+    if (reduceMotion) {
+      if (bgRef.current) bgRef.current.style.transform = "";
+      return;
+    }
+
     const handleScroll = () => {
       if (!heroRef.current || !bgRef.current) return;
 
@@ -27,7 +35,7 @@ export default function Hero({ id }: HeroProps) {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [reduceMotion]);
 
   return (
     <section className={`${styles.hero} full-width`} id={id} ref={heroRef}>

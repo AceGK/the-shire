@@ -4,6 +4,7 @@ import { useEffect, useRef, useImperativeHandle, forwardRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styles from "./styles.module.scss";
+import { prefersReducedMotion } from "@/lib/reducedMotion";
 import type { Location } from "@/types";
 
 // Middle Earth map image
@@ -35,6 +36,11 @@ const MiddleEarthMap = forwardRef<MiddleEarthMapRef, MiddleEarthMapProps>(functi
         const coords = locations[index].coords;
         // Close any open popups first
         map.closePopup();
+        if (prefersReducedMotion()) {
+          map.setView(coords, 1, { animate: false });
+          marker.openPopup();
+          return;
+        }
         // Fly to the location with animation, then open popup
         map.flyTo(coords, 1, {
           animate: true,
@@ -52,8 +58,13 @@ const MiddleEarthMap = forwardRef<MiddleEarthMapRef, MiddleEarthMapProps>(functi
     if (mapInstanceRef.current) return; // Already initialized
     if (!mapRef.current) return;
 
+    const reduceMotion = prefersReducedMotion();
+
     // Create map with simple CRS (for non-geographic images)
     const map = L.map(mapRef.current, {
+      zoomAnimation: !reduceMotion,
+      fadeAnimation: !reduceMotion,
+      markerZoomAnimation: !reduceMotion,
       crs: L.CRS.Simple,
       minZoom: -2,
       maxZoom: 2,

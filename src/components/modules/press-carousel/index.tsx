@@ -7,6 +7,7 @@ import 'swiper/css/free-mode';
 import Image from 'next/image';
 import styles from './styles.module.scss';
 import logos from '@/lib/press.json';
+import { useReducedMotion } from '@/lib/reducedMotion';
 
 interface PressItem {
   name: string;
@@ -16,10 +17,13 @@ interface PressItem {
 
 export default function PressCarousel() {
   const pressLogos = logos as PressItem[];
+  const reduceMotion = useReducedMotion();
 
   return (
     <div className={styles.carousel}>
       <Swiper
+        // Swiper reads autoplay only at init, so remount when the preference changes.
+        key={reduceMotion ? 'static' : 'autoplay'}
         modules={[Autoplay, FreeMode]}
         spaceBetween={48}
         slidesPerView="auto"
@@ -31,12 +35,16 @@ export default function PressCarousel() {
           momentum: true,
           momentumRatio: 0.5,
         }}
-        speed={3000}
-        autoplay={{
-          delay: 0,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true, 
-        }}
+        speed={reduceMotion ? 0 : 3000}
+        autoplay={
+          reduceMotion
+            ? false
+            : {
+                delay: 0,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }
+        }
         breakpoints={{
           768: {
             spaceBetween: 64,
