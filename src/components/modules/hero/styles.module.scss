@@ -5,16 +5,15 @@
   position: relative;
   z-index: 1; // Above map overlay
   width: 100%;
+  // Fill the screen below the fixed header. svh is the height with the mobile
+  // browser toolbar showing, so the hero fits on load and doesn't jump as the
+  // toolbar hides. The vh line is the fallback for browsers without svh.
   min-height: calc(100vh - var(--header-height, 74px));
-  max-height: 100svh;
+  min-height: calc(100svh - var(--header-height, 74px));
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
-  @include tablet {
-    max-height: none;
-  }
 }
 
 // Background layers

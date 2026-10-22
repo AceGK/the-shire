@@ -3,6 +3,11 @@
 import { useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
 
+// Scroll-triggered fade-up animations. Set to true to turn them back on.
+// While false, every <Reveal> still renders its wrapper and className (so layouts
+// are unchanged) but content shows immediately with no fade, slide or delay.
+const REVEAL_ANIMATIONS_ENABLED = false;
+
 interface RevealProps {
   children: React.ReactNode;
   delay?: number;
@@ -21,6 +26,7 @@ export default function Reveal({
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!REVEAL_ANIMATIONS_ENABLED) return;
     const el = ref.current;
     if (!el) return;
 
@@ -37,6 +43,10 @@ export default function Reveal({
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  if (!REVEAL_ANIMATIONS_ENABLED) {
+    return <Tag className={className || undefined}>{children}</Tag>;
+  }
 
   const classes = [
     styles.reveal,

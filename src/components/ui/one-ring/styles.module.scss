@@ -4,9 +4,9 @@
 // Sized in em, so the ring scales with the font size of whatever holds it.
 .ring {
   position: relative;
-  // Grid so the gold ring and its sheen copy stack in the same cell
-  display: inline-grid;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 1.05em;
   height: 1em;
   color: $clr-accent-dark; // fallback if the gradients fail to load
@@ -23,49 +23,18 @@
   }
 }
 
-// Holds the gradient definitions only; takes no space
-.defs {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
-
-.ringGold,
-.ringSheen {
-  grid-area: 1 / 1;
+// One SVG holds the gradients, the gold and the glint
+.svg {
   position: relative;
   width: 100%;
   height: auto;
-}
-
-.ringGold {
+  aspect-ratio: 1;
+  overflow: visible;
   filter: drop-shadow(0 0.04em 0.06em rgba($clr-brown-dark, 0.22));
-
-  path {
-    fill: url(#ring-gold);
-  }
-
-  // The icon's back face. Its own style fades it to 40%; keep it nearly as
-  // see-through as the flat version, just a touch more solid.
-  :global(.fa-secondary) {
-    fill: url(#ring-gold-inner);
-    opacity: 0.6;
-  }
 }
 
-.ringSheen {
+.glint {
   pointer-events: none;
-
-  :global(.fa-primary) {
-    fill: url(#ring-sheen);
-  }
-
-  // Inner face gets its own band, travelling the opposite way
-  :global(.fa-secondary) {
-    fill: url(#ring-sheen-inner);
-    opacity: 1;
-  }
 }
 
 @keyframes ring-float {
