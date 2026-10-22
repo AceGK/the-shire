@@ -14,7 +14,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   max-width: 1400px;
   margin: 0 auto;
 
@@ -59,14 +59,23 @@
   }
 }
 
-.swiperContainer {
+// The slider clips its slides, so its padding is the room the hovered card's
+// lift and shadow ($shadow-lg: 10px down, 40px blur) can paint into.
+// :global(.swiper) raises specificity: Swiper's own stylesheet loads later and
+// resets .swiper to padding: 0, which is what clipped the cards before.
+.swiperContainer:global(.swiper) {
   width: 100%;
-  max-width: 1300px;
-  // Vertical padding leaves room for the card hover lift and shadow
-  padding: 3rem 1rem 1.5rem;
+  max-width: 1380px;
+  padding: 2.5rem 1rem 3.25rem;
+  // Pull the shadow room back out of the layout so spacing around the slider
+  // stays as it was.
+  margin-block: -1.5rem -2.25rem;
 
-  @include tablet {
-    padding: 3rem 1rem;
+  // Desktop shows whole cards, so pad the sides too. Keep this a few pixels
+  // smaller than the 1024px spaceBetween in index.tsx, or subpixel rounding can
+  // show a 1px sliver of the neighbouring card's border.
+  @include desktop {
+    padding-inline: 40px;
   }
 
   :global(.swiper-slide) {
@@ -79,12 +88,6 @@
     --strain-card-bg: #{rgba($clr-cream, 0)};
     --strain-card-bg-hover: #{rgba($clr-cream, 0.85)};
   }
-}
-
-// Swiper stretches every slide to the tallest one; pass that height through
-// the reveal wrapper so each card (height: 100%) fills its slide.
-.slideReveal {
-  height: 100%;
 }
 
 // Mobile: dots bottom-left, "View all" bottom-right.

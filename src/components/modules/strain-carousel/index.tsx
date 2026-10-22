@@ -52,10 +52,14 @@ export default function StrainCarousel() {
               slidesPerGroup: 1,
               spaceBetween: 24,
             },
+            // The gap is a few pixels wider than the slider's 40px side padding
+            // (see styles). The padding gives the hover shadow room; the extra
+            // gap keeps neighbouring cards past the clip edge even when slide
+            // positions land on fractional pixels and round the wrong way.
             1024: {
-              slidesPerView: 2.98,
+              slidesPerView: 3,
               slidesPerGroup: 3,
-              spaceBetween: 30,
+              spaceBetween: 48,
             },
           }}
           onSwiper={(s) => {
@@ -70,9 +74,7 @@ export default function StrainCarousel() {
         >
           {strains.map((strain, id) => (
             <SwiperSlide key={id}>
-              <Reveal delay={id < 3 ? id * 100 : 0} className={styles.slideReveal}>
-                <StrainCard strain={strain} className={styles.card} />
-              </Reveal>
+              <StrainCard strain={strain} className={styles.card} />
             </SwiperSlide>
           ))}
         </Swiper>
