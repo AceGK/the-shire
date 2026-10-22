@@ -21,13 +21,42 @@
 .backgroundImage {
   position: absolute;
   inset: 0;
-  background-image: url("/images/the-shire-2.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
   will-change: transform;
   transition: transform 0.1s ease-out;
+
+  // Lightly sharpened, compressed copies of the-shire-supply-co-hero.jpg (the original
+  // is kept). Standard screens get the 1920 version; high-density screens get full res.
+  // The plain url() is the fallback for browsers without image-set() type() support.
+  background-image: url("/images/the-shire-supply-co-hero-1920.jpg");
+  background-image: image-set(
+    url("/images/the-shire-supply-co-hero-1920.webp") type("image/webp") 1x,
+    url("/images/the-shire-supply-co-hero-2728.webp") type("image/webp") 2x,
+    url("/images/the-shire-supply-co-hero-1920.jpg") type("image/jpeg") 1x,
+    url("/images/the-shire-supply-co-hero-2728.jpg") type("image/jpeg") 2x
+  );
+
+  // Very wide screens need full res even at 1x (the hero also zooms 15% on scroll).
+  @media (min-width: 1600px) {
+    background-image: url("/images/the-shire-supply-co-hero-2728.jpg");
+    background-image: image-set(
+      url("/images/the-shire-supply-co-hero-2728.webp") type("image/webp"),
+      url("/images/the-shire-supply-co-hero-2728.jpg") type("image/jpeg")
+    );
+  }
+
+  // Portrait screens fill the hero by height, so they get a full-height 3:4 centre
+  // crop instead of an upscaled landscape image.
+  @media (max-aspect-ratio: 3/4) {
+    background-image: url("/images/the-shire-supply-co-hero-portrait.jpg");
+    background-image: image-set(
+      url("/images/the-shire-supply-co-hero-portrait.webp") type("image/webp"),
+      url("/images/the-shire-supply-co-hero-portrait.jpg") type("image/jpeg")
+    );
+  }
 }
 
 .gradientOverlay {

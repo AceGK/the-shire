@@ -20,8 +20,9 @@ export default function Home() {
 
         <section id="about" className="content-grid row">
           <SplitImage
-            image="/images/the-shire.jpg"
+            image="/images/the-shire-supply-co-story.jpg"
             alt="Hobbit house"
+            sizes="(min-width: 1024px) 480px, (min-width: 768px) 420px, 400px"
             pretitle="Our Story"
             title="Continuing a Legacy Since the Third Age"
             subtitle="A tradition of excellence & fine company"

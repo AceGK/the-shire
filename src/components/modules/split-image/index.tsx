@@ -13,6 +13,8 @@ interface SplitImageProps {
   buttons?: ReactNode;
   reverse?: boolean;
   className?: string;
+  /** Rendered image width hints for next/image; pass when the image shape matches the 4:5 frame. */
+  sizes?: string;
 }
 
 export default function SplitImage({
@@ -25,6 +27,7 @@ export default function SplitImage({
   buttons,
   reverse = false,
   className,
+  sizes = '(max-width: 768px) 100vw, 50vw',
 }: SplitImageProps) {
   return (
     <div
@@ -42,7 +45,7 @@ export default function SplitImage({
             src={image}
             alt={alt}
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes={sizes}
           />
         </div>
       </Reveal>
