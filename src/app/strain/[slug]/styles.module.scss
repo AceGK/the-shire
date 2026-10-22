@@ -22,7 +22,7 @@
   transition: color 0.3s ease;
 
   @include hover {
-    color: $clr-accent;
+    color: $clr-accent-text;
   }
 
   @include tablet {
@@ -47,7 +47,7 @@
   justify-content: center;
   align-items: center;
   padding: 3rem;
-  background: $clr-cream;
+  background: $clr-paper;
   border: 1px solid $clr-border-light;
 
   @include tablet {
@@ -81,19 +81,10 @@
   font-size: 0.625rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.25rem;
   color: $clr-cream;
   margin-bottom: 1.5rem;
-
-  &.hybrid {
-    background: #4a7c59;
-  }
-  &.sativa {
-    background: #c17f59;
-  }
-  &.indica {
-    background: #5a4a7c;
-  }
+  @include brushstroke-label;
 }
 
 .details h1 {
@@ -175,11 +166,11 @@
 
   @include hover {
     span:first-child {
-      color: $clr-accent;
+      color: $clr-accent-text;
     }
 
     .navName {
-      color: $clr-accent;
+      color: $clr-accent-text;
     }
   }
 }
@@ -244,33 +235,35 @@
 .cannabinoidList {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: clamp(0.75rem, 2vw, 1rem);
 }
 
 .cannabinoidItem {
+  flex: 1 1 0;
+  min-width: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.75rem 1rem;
+  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(0.75rem, 2vw, 1.25rem);
   background: $clr-cream;
   border: 1px solid $clr-border-light;
-  min-width: 70px;
 }
 
 .cannabinoidName {
   font-family: var(--ff-body);
-  font-size: 0.625rem;
+  font-size: clamp(0.6875rem, 0.6rem + 0.3vw, 0.8125rem);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: $clr-charcoal-light;
 }
 
 .cannabinoidValue {
   font-family: var(--ff-heading);
-  font-size: 1.125rem;
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem);
   font-weight: 500;
+  line-height: 1.1;
   color: $clr-charcoal;
-  margin-top: 0.25rem;
+  margin-top: clamp(0.25rem, 1vw, 0.5rem);
 }
 
 .totalTerpenes {
