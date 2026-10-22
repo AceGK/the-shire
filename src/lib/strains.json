@@ -19,7 +19,7 @@
     "type": "sativa",
     "lineage": "Southfarthing OG × Second Breakfast",
     "description": "The rare and valuable leaf from Longbottom. Longbottom Leaf is a strain celebrated for its uplifting and energizing qualities. Ideal for creative endeavors or social gatherings.",
-    "image": "/images/strains/nug.png",
+    "image": "/images/strains/longbottom-leaf.webp",
     "cannabinoids": {
       "thc": 24,
       "cbd": 0.3,
@@ -34,7 +34,7 @@
     "type": "hybrid",
     "lineage": "Kingsfoil Kush × Sweet Galenas",
     "description": "Southern Star is a harmonious blend that mirrors the beauty and allure of the Southlands. It's celebrated for its balanced effects, offering a burst of creativity and a gentle relaxation.",
-    "image": "/images/strains/nug.png",
+    "image": "/images/strains/southern-star.webp",
     "cannabinoids": {
       "thc": 25,
       "cbd": 0.4,
@@ -49,7 +49,7 @@
     "type": "sativa",
     "lineage": "Hobbiton Haze × Bilbo's Bud",
     "description": "Bag End Blend is a tribute to adventurous spirits of the Shire, offering a soothing yet uplifting experience. This strain is perfect for those seeking a peaceful retreat into their thoughts or going on an adventure.",
-    "image": "/images/strains/nug.png",
+    "image": "/images/strains/bag-end-blend.webp",
     "cannabinoids": {
       "thc": 22,
       "cbd": 0.6,
@@ -64,7 +64,7 @@
     "type": "indica",
     "lineage": "Tuckborough Tangie × Belladonna Cookies",
     "description": "Tookies encapsulates the essence of a Hobbit's day, from elevenses to supper, with its sweet aroma and earthy undertones. This strain promises deep relaxation, evoking the serene tranquility of a leisurely afternoon in the Shire.",
-    "image": "/images/strains/nug.png",
+    "image": "/images/strains/tookies.webp",
     "cannabinoids": {
       "thc": 28,
       "cbd": 0.2,
@@ -79,7 +79,7 @@
     "type": "hybrid",
     "lineage": "Brandywine Cheese × Buckland Biscotti",
     "description": "A unique mix honoring the adventurous spirit of the Brandybuck family, this blend is known for its balanced effects, offering a perfect harmony of relaxation and gentle stimulation.",
-    "image": "/images/strains/nug.png",
+    "image": "/images/strains/brandybuck-blend.webp",
     "cannabinoids": {
       "thc": 23,
       "cbd": 0.8,
@@ -94,7 +94,7 @@
     "type": "hybrid",
     "lineage": "Bywater Kush × Smaug's Fire",
     "description": "Named after the famous inn, the Green Dragon strain is for those seeking a truly potent experience. It promises a powerful, euphoric journey, much like a night spent in the bustling hobbit pub.",
-    "image": "/images/strains/nug.png",
+    "image": "/images/strains/green-dragon.webp",
     "cannabinoids": {
       "thc": 30,
       "cbd": 0.3,
@@ -109,7 +109,7 @@
     "type": "hybrid",
     "lineage": "Mirkwood Haze × Misty Moutain Gold",
     "description": "Evoking the mysterious essence of the Mirkwood forest, this strain is known for its deep, earthy aroma and its ability to heighten the senses, perfect for introspective evenings or exploring the outdoors.",
-    "image": "/images/strains/nug.png",
+    "image": "/images/strains/mirkwood-mist.webp",
     "cannabinoids": {
       "thc": 24,
       "cbd": 0.5,
@@ -124,7 +124,7 @@
     "type": "sativa",
     "lineage": "Sam's Sage × Lembas Bread",
     "description": "Gardner's Gift, named in honor of Samwise Gamgee's gardening prowess. It is revered for its energizing effects and a flavor that hints at fresh earth and a touch of sweetness. Ideal for outdoor activities or tackling tasks with a renewed sense of vigor and focus.",
-    "image": "/images/strains/nug.png",
+    "image": "/images/strains/gardner-s-gift.webp",
     "cannabinoids": {
       "thc": 21,
       "cbd": 1.0,
@@ -139,7 +139,7 @@
     "type": "indica",
     "lineage": "Gollum Grape × Smeagol Skunk",
     "description": "Precious OG is as captivating as the One Ring itself. This hybrid strain is known for its deeply relaxing effects, enveloping the senses much like the depths of the Misty Mountains. Its rich and fruit aroma offers a uniquely profound experience, guiding users to a state of serene introspection and repose.",
-    "image": "/images/strains/nug.png",
+    "image": "/images/strains/precious-og.webp",
     "cannabinoids": {
       "thc": 27,
       "cbd": 0.4,
@@ -154,7 +154,7 @@
     "type": "sativa",
     "lineage": "Rivendell Runtz × Bud Of Lórien",
     "description": "Fellowship Fire ignites the spirit of camaraderie and adventure. This uplifting sativa brings together the best qualities of elvish cultivation, delivering a clear-headed high that's perfect for long journeys or deep conversations with friends.",
-    "image": "/images/strains/nug.png",
+    "image": "/images/strains/fellowship-fire.webp",
     "cannabinoids": {
       "thc": 26,
       "cbd": 0.3,
@@ -169,7 +169,7 @@
     "type": "hybrid",
     "lineage": "Greendalf × Durin's Bud",
     "description": "White Wizard channels ancient wisdom and powerful magic into every puff. This balanced hybrid offers a transcendent experience, beginning with cerebral clarity before settling into full-body relaxation. Perfect for those seeking enlightenment after a long day's quest.",
-    "image": "/images/strains/nug.png",
+    "image": "/images/strains/white-wizard.webp",
     "cannabinoids": {
       "thc": 29,
       "cbd": 0.6,
