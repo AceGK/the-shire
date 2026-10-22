@@ -9,7 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "blurs": "node scripts/generate-strain-blurs.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

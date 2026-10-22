@@ -5,6 +5,7 @@ import ChevronLeftIcon from '@/assets/icons/chevron-left.svg';
 import MoveLeftIcon from '@/assets/icons/move-left.svg';
 import MoveRightIcon from '@/assets/icons/move-right.svg';
 import strainsData from '@/lib/strains.json';
+import StrainImage from '@/components/ui/strain-image';
 import { terpenes, effects } from '@/lib/cannabisIcons';
 import { slugify, getStrainBySlug } from '@/lib/utils';
 import AddToBag from '@/components/ui/add-to-bag';
@@ -70,7 +71,12 @@ export default async function StrainPage({ params }: PageProps) {
           </nav>
 
           <div className={styles.imageContainer}>
-            <img src={strain.image} alt={`${strain.name} nug`} />
+            <StrainImage
+              src={strain.image}
+              alt={`${strain.name} nug`}
+              sizes="320px"
+              priority
+            />
           </div>
         </div>
 

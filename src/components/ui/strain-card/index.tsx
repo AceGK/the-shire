@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import StrainImage from '@/components/ui/strain-image';
 import { slugify } from '@/lib/utils';
 import styles from './styles.module.scss';
 import type { Strain } from '@/types';
@@ -17,7 +18,7 @@ export default function StrainCard({ strain, className = '' }: StrainCardProps) 
       {/* The link stays still and catches the hover; this inner box does the
           lift, so the hover area doesn't move out from under the cursor. */}
       <span className={styles.inner}>
-        <img src={strain.image} alt={`${strain.name} nug`} />
+        <StrainImage src={strain.image} alt={`${strain.name} nug`} sizes="190px" />
         <span className={styles.name}>{strain.name}</span>
         <span className={`${styles.type} ${styles[strain.type]}`}>
           {strain.type}
