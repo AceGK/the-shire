@@ -10,23 +10,76 @@
   margin: 0 auto;
 }
 
-.backLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--ff-body);
-  font-size: 0.875rem;
-  color: $clr-charcoal-light;
-  text-decoration: none;
-  margin-bottom: 2rem;
-  transition: color 0.3s ease;
-
-  @include hover {
-    color: $clr-accent-text;
-  }
+// Left column: breadcrumb above the photo, sticky as one unit from tablet up
+.media {
+  min-width: 0;
 
   @include tablet {
-    margin-bottom: 3rem;
+    @include sticky-below-header(2rem);
+  }
+}
+
+.breadcrumb {
+  margin-bottom: 1.25rem;
+  font-family: var(--ff-body);
+  font-size: 0.875rem;
+  // A tight line height gives the link (icon + text) and the plain current
+  // crumb the same box, so they centre on the same line.
+  line-height: 1.25;
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+    // The global list style adds a bottom margin to all but the last item,
+    // which lifted "Strains" above the current crumb.
+    margin: 0;
+    color: $clr-charcoal;
+  }
+
+  // Slash separator before every crumb after the first
+  li + li::before {
+    content: '/';
+    margin: 0 0.625rem;
+    color: $clr-charcoal-light;
+    opacity: 0.6;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: $clr-charcoal-light;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: $clr-accent-text;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $clr-accent;
+      outline-offset: 2px;
+    }
+
+    svg {
+      flex: none;
+      // Optical nudge: the chevron's stroke sits inside its box
+      margin-left: -0.25rem;
+    }
+  }
+
+  [aria-current="page"] {
+    font-weight: 700;
   }
 }
 
@@ -49,10 +102,6 @@
   padding: 3rem;
   background: $clr-paper;
   border: 1px solid $clr-border-light;
-
-  @include tablet {
-    @include sticky-below-header(2rem);
-  }
 
   img {
     width: 100%;

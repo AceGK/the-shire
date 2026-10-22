@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import ArrowLeftIcon from '@/assets/icons/arrow-left.svg';
+import ChevronLeftIcon from '@/assets/icons/chevron-left.svg';
 import MoveLeftIcon from '@/assets/icons/move-left.svg';
 import MoveRightIcon from '@/assets/icons/move-right.svg';
 import strainsData from '@/lib/strains.json';
@@ -54,13 +54,24 @@ export default async function StrainPage({ params }: PageProps) {
 
   return (
     <main className={styles.strainPage}>
-      <Link href="/strains" className={styles.backLink}>
-        <ArrowLeftIcon width={16} height={16} /> Back to All Strains
-      </Link>
-
       <div className={styles.content}>
-        <div className={styles.imageContainer}>
-          <img src={strain.image} alt={`${strain.name} nug`} />
+        {/* Breadcrumb and photo stick together as one column on wider screens */}
+        <div className={styles.media}>
+          <nav aria-label="Breadcrumb" className={styles.breadcrumb}>
+            <ol>
+              <li>
+                <Link href="/strains">
+                  <ChevronLeftIcon width={16} height={16} />
+                  Strains
+                </Link>
+              </li>
+              <li aria-current="page">{strain.name}</li>
+            </ol>
+          </nav>
+
+          <div className={styles.imageContainer}>
+            <img src={strain.image} alt={`${strain.name} nug`} />
+          </div>
         </div>
 
         <div className={styles.details}>
