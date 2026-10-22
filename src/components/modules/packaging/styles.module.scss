@@ -32,8 +32,13 @@
   // Framed title with decorative border
   .framedTitle {
     position: relative;
+    // Override the global h3 type. Its tall heading line-height cascaded into both
+    // spans, adding uneven leading that pushed the text off vertical centre.
+    font-family: var(--ff-heading);
+    font-size: 1.1rem;
+    line-height: 1;
     display: inline-flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
@@ -104,6 +109,9 @@
       position: relative;
       aspect-ratio: 3/4;
       background: $clr-cream url('/images/bg-texture.png') center/cover;
+      // The texture is grey-white; multiplying it into the cream keeps the paper
+      // grain while letting the parchment colour show through.
+      background-blend-mode: multiply;
       // border: 1px solid rgba($clr-accent, 0.2);
       border-radius: 1rem;
       overflow: hidden;
@@ -115,9 +123,9 @@
       img {
         position: relative;
         z-index: 2;
-        width: 55%;
+        width: 75%;
         height: auto;
-        max-height: 65%;
+        max-height: 75%;
         object-fit: contain;
         transition: all 0.4s ease;
         filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));

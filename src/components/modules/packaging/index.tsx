@@ -8,12 +8,12 @@ export default function Packaging() {
 
         <div className={styles.item}>
           <div className={styles.card}>
-            <img src="/images/packaging/barrel.png" alt="Mallorn Leaf Bags" />
+            <img src="/images/packaging/mallorn-leaf-bag.png" alt="Mallorn Leaf Bags" />
             <div className={styles.description}>
-              <span className={styles.corner} data-pos="tl">◆</span>
-              <span className={styles.corner} data-pos="tr">◆</span>
-              <span className={styles.corner} data-pos="bl">◆</span>
-              <span className={styles.corner} data-pos="br">◆</span>
+              <span className={styles.corner} aria-hidden="true" data-pos="tl">◆</span>
+              <span className={styles.corner} aria-hidden="true" data-pos="tr">◆</span>
+              <span className={styles.corner} aria-hidden="true" data-pos="bl">◆</span>
+              <span className={styles.corner} aria-hidden="true" data-pos="br">◆</span>
               <p>Made from the resilient leaves of Mallorn trees, our organic bags naturally decompose leaving no environmental trace.</p>
             </div>
           </div>
@@ -25,12 +25,12 @@ export default function Packaging() {
 
         <div className={styles.item}>
           <div className={styles.card}>
-            <img src="/images/packaging/jar.png" alt="Elven Crafted Jars" />
+            <img src="/images/packaging/elven-crafted-jars.png" alt="Elven Crafted Jars" />
             <div className={styles.description}>
-              <span className={styles.corner} data-pos="tl">◆</span>
-              <span className={styles.corner} data-pos="tr">◆</span>
-              <span className={styles.corner} data-pos="bl">◆</span>
-              <span className={styles.corner} data-pos="br">◆</span>
+              <span className={styles.corner} aria-hidden="true" data-pos="tl">◆</span>
+              <span className={styles.corner} aria-hidden="true" data-pos="tr">◆</span>
+              <span className={styles.corner} aria-hidden="true" data-pos="bl">◆</span>
+              <span className={styles.corner} aria-hidden="true" data-pos="br">◆</span>
               <p>Masterfully crafted by Elves, our jars embody the elegance and precision of Rivendell&apos;s finest artisans. Made with ethereal yet durable materials, they ensure the freshness and purity of their contents.</p>
             </div>
           </div>
@@ -44,10 +44,10 @@ export default function Packaging() {
           <div className={styles.card}>
             <img src="/images/packaging/barrel.png" alt="Dwarven-Made Barrels" />
             <div className={styles.description}>
-              <span className={styles.corner} data-pos="tl">◆</span>
-              <span className={styles.corner} data-pos="tr">◆</span>
-              <span className={styles.corner} data-pos="bl">◆</span>
-              <span className={styles.corner} data-pos="br">◆</span>
+              <span className={styles.corner} aria-hidden="true" data-pos="tl">◆</span>
+              <span className={styles.corner} aria-hidden="true" data-pos="tr">◆</span>
+              <span className={styles.corner} aria-hidden="true" data-pos="bl">◆</span>
+              <span className={styles.corner} aria-hidden="true" data-pos="br">◆</span>
               <p>Our barrels are the same used for the finest dwarven ales. They are sturdy and reusable, perfect for storing your pipe-weed in bulk.</p>
             </div>
           </div>
