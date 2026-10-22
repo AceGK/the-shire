@@ -14,12 +14,16 @@ export default function StrainCard({ strain, className = '' }: StrainCardProps) 
       href={`/strain/${slugify(strain.name)}`}
       className={`${styles.card} ${className}`}
     >
-      <img src={strain.image} alt={`${strain.name} nug`} />
-      <span className={styles.name}>{strain.name}</span>
-      <span className={`${styles.type} ${styles[strain.type]}`}>
-        {strain.type}
+      {/* The link stays still and catches the hover; this inner box does the
+          lift, so the hover area doesn't move out from under the cursor. */}
+      <span className={styles.inner}>
+        <img src={strain.image} alt={`${strain.name} nug`} />
+        <span className={styles.name}>{strain.name}</span>
+        <span className={`${styles.type} ${styles[strain.type]}`}>
+          {strain.type}
+        </span>
+        <span className={styles.lineage}>{strain.lineage}</span>
       </span>
-      <span className={styles.lineage}>{strain.lineage}</span>
     </Link>
   );
 }

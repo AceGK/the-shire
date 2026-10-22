@@ -4,28 +4,28 @@
 .filterBar {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
+  gap: clamp(0.5rem, 0.35rem + 0.6vw, 1rem);
+  margin-bottom: clamp(2rem, 1.5rem + 1.5vw, 3rem);
   flex-wrap: wrap;
-
-  @include sm {
-    gap: 0.75rem;
-  }
 }
 
 .filterButton {
-  padding: 0.5rem 1.25rem;
+  // Fluid sizing: ~14px text / 35px tall on phones, up to ~18px / 44px on desktop
+  padding: clamp(0.5rem, 0.45rem + 0.2vw, 0.625rem) clamp(1.125rem, 0.75rem + 1.4vw, 2.25rem);
   border: 1px solid $clr-border-light;
   border-radius: 2rem;
-  background: transparent;
+  // Mostly opaque so labels stay legible over the patterned background
+  background: rgba($clr-cream, 0.85);
   color: $clr-charcoal;
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1.125rem);
+  line-height: 1.2;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
 
   &:hover {
-    background: rgba($clr-accent, 0.1);
+    // Gold tint mixed into the cream, so hover stays as opaque as the resting state
+    background: rgba(mix($clr-accent, $clr-cream, 10%), 0.85);
     border-color: $clr-accent;
   }
 

@@ -1,36 +1,155 @@
 @import "@/styles/variables.scss";
 @import "@/styles/mixins.scss";
 
-.swiperContainer {
-  padding: 3rem 1rem;
-  max-width: 1300px;
+// Lift the carousel above the fixed map overlay (.map-overlay, z-index 0).
+// This section sits outside .content-grid, so without this the map painted
+// on top of the cards, their photos and text.
+.carousel {
+  position: relative;
+  z-index: 1;
+}
+
+// Arrows flank the slider, mirroring the reviews carousel
+.swiperWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  // Keep the arrows off the viewport edges (this section isn't in content-grid)
   @include tablet {
-    padding: 3rem 2rem;
+    padding-inline: clamp(0.5rem, 3vw, 3rem);
   }
-   :global(.swiper-slide) {
-    height: auto;
+}
+
+.navPrev,
+.navNext {
+  flex-shrink: 0;
+  display: none;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  // Green rather than the reviews' gold: this carousel sits on a light background
+  color: $clr-primary;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.3s ease, opacity 0.3s ease;
+
+  @include tablet {
+    display: block;
   }
-   :global(.swiper-scrollbar) {
-    left: 1rem;
-    right: 1rem;
-    width: auto;
-    
-    @include tablet {
-      left: 2rem;
-      right: 2rem;
+
+  @include hover {
+    &:not(:disabled) {
+      color: $clr-accent-text;
     }
   }
-  :global(.swiper-scrollbar-drag) {
-  background: $clr-brown-light;  // handle color (or any color you want)
+
+  &:focus-visible {
+    outline: 2px solid $clr-accent;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
 }
+
+.swiperContainer {
+  width: 100%;
+  max-width: 1300px;
+  // Vertical padding leaves room for the card hover lift and shadow
+  padding: 3rem 1rem 1.5rem;
+
+  @include tablet {
+    padding: 3rem 1rem;
+  }
+
+  :global(.swiper-slide) {
+    height: auto;
+  }
+
+  // Cards start clear so the map shows through, then fill in mostly opaque
+  // on hover (custom properties read by the strain card)
+  .card {
+    --strain-card-bg: #{rgba($clr-cream, 0)};
+    --strain-card-bg-hover: #{rgba($clr-cream, 0.85)};
+  }
+}
+
+// Swiper stretches every slide to the tallest one; pass that height through
+// the reveal wrapper so each card (height: 100%) fills its slide.
+.slideReveal {
+  height: 100%;
+}
+
+// Mobile: dots bottom-left, "View all" bottom-right.
+// Tablet up: dots hidden, "View all" centred under the slider.
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1rem;
+
+  @include tablet {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.bullet {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: 1px solid $clr-primary;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  // Invisible hit area so the small dots are still easy to tap
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -8px -3px;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $clr-accent;
+    outline-offset: 2px;
+  }
+}
+
+.bulletActive {
+  width: 18px;
+  background: $clr-primary;
 }
 
 .viewAll {
   display: flex;
-  justify-content: center;
-  margin-top: 2rem;
 
-  @include tablet {
-    margin-top: 2.5rem;
+  // Trim the large button's side padding on mobile so it fits beside the dots
+  .viewAllButton {
+    @include max-tablet {
+      padding: 0.875rem 1.25rem;
+      font-size: 0.6875rem;
+    }
   }
 }

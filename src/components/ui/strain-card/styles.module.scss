@@ -1,17 +1,49 @@
 @import "@/styles/variables.scss";
 @import "@/styles/mixins.scss";
 
+// The link is the hover target and never moves. If it lifted itself, a cursor
+// in the bottom few pixels would fall off the card, the card would drop back
+// under it, and the hover would flicker on and off.
+//
+// Backgrounds can be set by a parent through custom properties:
+//   --strain-card-bg        resting background
+//   --strain-card-bg-hover  hovered background
 .card {
+  position: relative;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+
+  @include hover {
+    .inner {
+      background: var(--strain-card-bg-hover, var(--strain-card-bg, #{$clr-cream}));
+      transform: translateY(-4px);
+      box-shadow: $shadow-lg;
+
+      &::before {
+        opacity: 0.3;
+      }
+    }
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+// The visible card: lifts on hover
+.inner {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem 1.5rem;
-  background: $clr-cream;
-  border: 1px solid $clr-border-light;
+  background: var(--strain-card-bg, #{$clr-cream});
+  border: 1px solid $clr-accent;
   text-align: center;
-  text-decoration: none;
-  transition: all 0.4s ease;
+  // Background is deliberately left out so it switches instantly on hover;
+  // fading it read as a flicker. The lift and shadow still animate.
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   overflow: hidden;
   min-height: 280px;
   height: 100%;
@@ -28,20 +60,6 @@
     transition: opacity 0.3s ease;
     pointer-events: none;
     z-index: 5;
-  }
-
-  @include hover {
-    border-color: $clr-accent;
-    transform: translateY(-4px);
-    box-shadow: $shadow-lg;
-
-    &::before {
-      opacity: 0.3;
-    }
-
-    img {
-      transform: scale(1.05);
-    }
   }
 
   img {
@@ -75,20 +93,10 @@
   font-size: 0.625rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  padding: 0.375rem 0.75rem;
+  padding: 0.5rem 1.25rem;
   color: $clr-cream;
   margin-bottom: 0.625rem;
-  z-index: 1;
-
-  &.hybrid {
-    background: #4a7c59;
-  }
-  &.sativa {
-    background: #c17f59;
-  }
-  &.indica {
-    background: #5a4a7c;
-  }
+  @include brushstroke-label;
 }
 
 .lineage {
@@ -101,7 +109,7 @@
 
 // Responsive adjustments for smaller screens
 @include max-desktop {
-  .card {
+  .inner {
     padding: 1.5rem 1rem;
 
     img {
@@ -115,7 +123,7 @@
 }
 
 @include max-tablet {
-  .card {
+  .inner {
     min-height: 260px;
   }
 
@@ -152,7 +160,7 @@
   align-items: center;
   padding: 2rem 1.5rem;
   background: $clr-cream;
-  border: 1px solid $clr-border-light;
+  border: 1px solid $clr-accent;
   min-height: 280px;
   height: 100%;
 
