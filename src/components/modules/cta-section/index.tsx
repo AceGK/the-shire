@@ -34,7 +34,7 @@ export default function CtaSection({
         <Reveal delay={300}>
           <div className={styles.buttons}>
             {primaryButton && (
-              <Button href={primaryButton.href} variant="shimmer">
+              <Button href={primaryButton.href} variant="shimmer" size='lg'>
                 {primaryButton.label}
               </Button>
             )}
@@ -42,6 +42,7 @@ export default function CtaSection({
               <Button
                 href={secondaryButton.href}
                 variant={variant === "dark" ? "outlineLight" : "outline"}
+                size='lg'
               >
                 {secondaryButton.label}
               </Button>
