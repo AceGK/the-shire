@@ -86,8 +86,8 @@ const MiddleEarthMap = forwardRef<MiddleEarthMapRef, MiddleEarthMapProps>(functi
     // Fit the map to show the entire image, then zoom to show The Shire region
     map.fitBounds(IMAGE_BOUNDS);
 
-    // Center on The Shire area initially
-    map.setView([2800, 1800], -1);
+    // Start centred on the Shire, between Hobbiton and Bywater
+    map.setView([3170, 1510], -1);
 
     // Custom marker icon
     const markerIcon = L.divIcon({
