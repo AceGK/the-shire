@@ -46,12 +46,46 @@
 }
 
 .nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem 2rem;
+  // Mobile: three links, then two centred beneath them. Six columns with each
+  // link spanning two; the fourth starts one column in, so the last pair sits
+  // in the middle. Links stay their own width, so the hover underline matches.
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
+  gap: 1.25rem 0.5rem;
+  width: 100%;
+  max-width: 22rem;
 
   a {
+    grid-column: span 2;
+  }
+
+  a:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  // Very small screens: one link per line
+  @media (max-width: 359px) {
+    grid-template-columns: 1fr;
+
+    a,
+    a:nth-child(4) {
+      grid-column: auto;
+    }
+  }
+
+  // Tablet up: a single row beside the logo
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2rem;
+    width: auto;
+    max-width: none;
+  }
+
+  a {
+    white-space: nowrap;
     font-family: var(--ff-body);
     font-size: 1rem;
     color: rgba($clr-cream, 0.7);
