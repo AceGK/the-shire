@@ -16,8 +16,10 @@
 
 .text {
   font-family: var(--font-kereru), serif;
-  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-size: clamp(3rem, 6vw, 3.4rem);
   font-weight: 400;
+  // Tight leading for a two-line display quote: 1.03 to 1.17 of the font size
+  line-height: 3.5rem;
   color: $clr-cream;
   margin: 0;
   padding: 0;

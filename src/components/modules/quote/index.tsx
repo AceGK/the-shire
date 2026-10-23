@@ -1,8 +1,10 @@
+import type { ReactNode } from "react";
 import Reveal from "@/components/ui/reveal";
 import styles from "./styles.module.scss";
 
 interface QuoteProps {
-  children: string;
+  /** The quote; text, or text with inline markup such as a no-wrap span */
+  children: ReactNode;
   attribution?: string;
 }
 

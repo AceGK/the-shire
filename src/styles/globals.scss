@@ -566,6 +566,11 @@ nav ul,
   text-align: center;
 }
 
+// Keep a phrase on one line, e.g. a hyphenated word that shouldn't split at the hyphen
+.nowrap {
+  white-space: nowrap;
+}
+
 // Section title - utility class for centered section headings
 .section-title {
   text-align: center;

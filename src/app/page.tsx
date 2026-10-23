@@ -42,7 +42,7 @@ export default function Home() {
 
         <section className="content-grid bg-map-green row">
           <Quote attribution="Bilbo Baggins, Esq.">
-            The Finest Pipe-weed in the Southfarthing
+            The Finest <span className="nowrap">Pipe-weed</span> in the Southfarthing
           </Quote>
         </section>
 
