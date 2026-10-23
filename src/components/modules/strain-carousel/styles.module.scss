@@ -67,9 +67,9 @@
   width: 100%;
   max-width: 1380px;
   padding: 2.5rem 1rem 3.25rem;
-  // Pull the shadow room back out of the layout so spacing around the slider
-  // stays as it was.
-  margin-block: -1.5rem -2.25rem;
+  // Pull the shadow room back out of the layout, so the cards sit exactly the
+  // standard header gap below the section heading.
+  margin-block: -2.5rem -2.25rem;
 
   // Desktop shows whole cards, so pad the sides too. Keep this a few pixels
   // smaller than the 1024px spaceBetween in index.tsx, or subpixel rounding can

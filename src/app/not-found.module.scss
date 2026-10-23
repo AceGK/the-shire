@@ -30,16 +30,12 @@
 }
 
 .pretitle {
-  margin-bottom: 0.75rem;
-  font-family: var(--ff-heading);
-  font-size: 0.875rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  @include eyebrow;
   color: $clr-accent-text;
 }
 
 .title {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-title);
   font-family: var(--ff-kereru);
   font-size: clamp(2rem, 7vw, 3.25rem);
   line-height: 1.15;
@@ -52,7 +48,7 @@
   margin: 0 auto 2.5rem;
   font-family: var(--ff-heading);
   font-size: var(--fs-section-subtitle, 1.25rem);
-  line-height: 1.6;
+  line-height: var(--lh-subtitle);
   text-wrap: balance;
   color: $clr-charcoal-light;
 }

@@ -34,9 +34,20 @@
   --fs-small: clamp(0.8125rem, 1vw, 0.9375rem);
   --fs-caption: 0.75rem;
 
-  // Line Heights
+  // Line Heights. Unitless, so they scale with the text and need no mobile overrides.
   --lh-heading: 1.2;
+  --lh-subtitle: 1.5; // large serif subtitles under headings; body's 1.75 looks loose at that size
   --lh-body: 1.75;
+
+  // Heading rhythm: eyebrow, then title, then subtitle, then the section's content.
+  // Used by the header block, split image, CTA section and 404 page (and the
+  // eyebrow mixin), so every heading group is spaced the same way.
+  --fs-eyebrow: var(--fs-body);
+  --ls-eyebrow: 0.3em;
+  --space-eyebrow: 0.75rem; // eyebrow to title
+  --space-title: 1rem; // title to subtitle
+  --space-subtitle: 1rem; // subtitle to body copy
+  --space-header: clamp(2rem, 1.25rem + 2.5vw, 3rem); // whole heading group to the content below
 
   // Letter Spacing
   --ls-heading: 0.02em;
@@ -285,6 +296,20 @@ nav ul,
 
   @include desktop {
     padding: 9rem 0;
+  }
+}
+
+// For a row straight after a page header: the header's own bottom gap
+// (--space-header) already separates them, so skip the row's top padding.
+.row--flush-top {
+  padding-top: 0;
+
+  @include tablet {
+    padding-top: 0;
+  }
+
+  @include desktop {
+    padding-top: 0;
   }
 }
 

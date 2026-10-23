@@ -11,9 +11,8 @@ export default function About() {
         isPageHeader
         title="About Us"
         description="Cultivating the finest leaf in the Southfarthing since S.R. 1070."
-        noMargin
       />
-      <section className="content-grid row">
+      <section className="content-grid row row--flush-top">
         <SplitImage
           image="/images/hobbit-house-4.jpg"
           alt="Hobbit house"

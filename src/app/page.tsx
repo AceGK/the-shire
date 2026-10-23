@@ -53,7 +53,6 @@ export default function Home() {
               pretitle="Our Collection"
               title="Strains"
               description="Explore Middle-earth's most beloved varieties, each cultivated in the rolling hills of the Shire."
-              noMargin
             />
           </div>
           <StrainCarousel />

@@ -82,6 +82,10 @@ export default function TestPage() {
         description="Every icon and divider in the project. This page returns a 404 in production."
       />
 
+      <p className={styles.note}>
+        See also <a href="/test/spacing">the spacing test page</a>, with every heading combination.
+      </p>
+
       <section className={styles.section}>
         <h2>Interface icons</h2>
         <p className={styles.note}>

@@ -99,6 +99,21 @@ $desktopValue: $breakpoint-lg;
   }
 }
 
+// The small uppercase line above a title ("Our Collection", "Find us").
+// Letter-spacing also trails the last letter, which pushes centred text off
+// centre; the negative end margin cancels it.
+@mixin eyebrow {
+  display: block;
+  font-family: var(--ff-heading);
+  font-size: var(--fs-eyebrow);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  margin-bottom: var(--space-eyebrow);
+  margin-inline-end: calc(-1 * var(--ls-eyebrow));
+}
+
 // High DPI screens
 @mixin retina {
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {

@@ -3,23 +3,25 @@
 
 .header {
   max-width: 800px;
-  margin: 0 auto 3rem;
+  margin: 0 auto var(--space-header);
   text-align: center;
 
   .pretitle {
-    display: block;
-    font-family: var(--ff-heading);
-    font-size: var(--fs-body);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    margin-bottom: 0.75rem;
+    @include eyebrow;
   }
 
   h1,
   h2,
   h3 {
     font-family: var(--ff-kereru);
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-title);
+  }
+
+  // No gap under the title when nothing follows it
+  > :last-child h1,
+  > :last-child h2,
+  > :last-child h3 {
+    margin-bottom: 0;
   }
 
   h1 {
@@ -37,6 +39,7 @@
   p {
     font-family: var(--ff-heading);
     font-size: var(--fs-section-subtitle);
+    line-height: var(--lh-subtitle);
     text-wrap: pretty;
     max-width: 600px;
     margin: 0 auto;

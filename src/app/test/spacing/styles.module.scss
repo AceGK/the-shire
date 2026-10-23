@@ -1,0 +1,160 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.page {
+  position: relative;
+  z-index: 1; // above the fixed map overlay
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: fit-content;
+  margin: 0 auto 1.5rem;
+  padding: 0.5rem 1rem;
+  font-family: var(--ff-body);
+  font-size: 0.875rem;
+  color: $clr-charcoal;
+  background: $clr-paper;
+  border: 1px solid $clr-border-light;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+// Settings table
+.tokens {
+  width: 100%;
+  max-width: 44rem;
+  margin: 0 auto 4rem;
+  font-family: var(--ff-body);
+  font-size: 0.875rem;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: $clr-paper;
+    border: 1px solid $clr-border-light;
+  }
+
+  th,
+  td {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid $clr-border-light;
+  }
+
+  th {
+    font-weight: 400;
+    color: $clr-charcoal;
+  }
+
+  code {
+    font-size: 0.75rem;
+    color: $clr-charcoal-light;
+    overflow-wrap: anywhere;
+  }
+}
+
+.tokensCaption {
+  margin: 0 0 0.5rem;
+  color: $clr-charcoal-light;
+  text-align: center;
+}
+
+.tokenValue {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+
+  .tokens & {
+    text-align: right;
+  }
+}
+
+// Groups of examples
+.group {
+  margin-bottom: 4rem;
+}
+
+.groupTitle {
+  margin-bottom: 1.5rem;
+  font-family: var(--ff-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: $clr-charcoal;
+}
+
+.example {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding: 2.5rem 1.5rem 2rem;
+  border: 1px dashed $clr-border-light;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.exampleDark {
+  border-color: rgba($clr-cream, 0.25);
+}
+
+.exampleLabel {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.75rem;
+  margin: 0;
+  font-family: var(--ff-body);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $clr-charcoal-light;
+
+  .exampleDark & {
+    color: rgba($clr-cream, 0.7);
+  }
+}
+
+.demo {
+  position: relative;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6rem;
+  font-family: var(--ff-body);
+  font-size: 0.8125rem;
+  color: $clr-charcoal-light;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba($clr-accent, 0.08) 0 10px,
+    rgba($clr-accent, 0.16) 10px 20px
+  );
+  border: 1px solid rgba($clr-accent, 0.4);
+  border-radius: 0.5rem;
+}
+
+.placeholderLight {
+  color: rgba($clr-cream, 0.8);
+  border-color: rgba($clr-cream, 0.35);
+}
+
+.prose {
+  max-width: 40rem;
+}
+
+// "Show spacing": tint every text element in the examples. Tints stop at each
+// element's edge, so the bare strips between them are the margins. The heading
+// group's own box is outlined in red, so its gap to the content shows too.
+.page:has(.toggle input:checked) .demo {
+  :is(span, h1, h2, h3, h4, p):not(.exampleLabel) {
+    background-color: rgba(#4a7fb5, 0.18);
+    outline: 1px solid rgba(#4a7fb5, 0.55);
+  }
+
+  header {
+    outline: 1px dashed rgba(#c25b3a, 0.85);
+  }
+}

@@ -11,7 +11,7 @@ export default function AboutThisSite() {
         description="Information about this website, including copyright notices and attribution."
       />
 
-      <section className="content-grid pt-5 pb-11">
+      <section className="content-grid pb-11">
         <Accordion>
           {faqs.map((faq) => (
             <AccordionItem
