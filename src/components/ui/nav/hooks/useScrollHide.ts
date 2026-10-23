@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 
+// Hide the nav on scroll down and bring it back on scroll up. Set to true to turn
+// it back on. While false, the nav always stays visible.
+const SCROLL_HIDE_ENABLED = false;
+
 interface UseScrollHideOptions {
   threshold?: number;
   isHovered?: boolean;
@@ -20,6 +24,8 @@ export function useScrollHide({ threshold = 100, isHovered = false }: UseScrollH
   };
 
   useEffect(() => {
+    if (!SCROLL_HIDE_ENABLED) return;
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
