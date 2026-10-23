@@ -1,0 +1,9 @@
+{
+  "primary": [
+    { "label": "Strains", "href": "/strains" },
+    { "label": "Retailers", "href": "/retailers" },
+    { "label": "About", "href": "/about" },
+    { "label": "Press", "href": "/#press" },
+    { "label": "Reviews", "href": "/#reviews" }
+  ]
+}

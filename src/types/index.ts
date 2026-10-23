@@ -30,6 +30,16 @@ export interface Strain {
   prices: StrainPrices;
 }
 
+// Navigation types (menus in src/lib/navigation.json, shaped like a CMS menu)
+export interface NavLink {
+  label: string;
+  href: string;
+}
+
+export interface Navigation {
+  primary: NavLink[];
+}
+
 // Retailer/Location types
 export interface Location {
   name: string;

@@ -12,19 +12,10 @@ import MobileMenu from './MobileMenu';
 import { useScrollHide, useHeaderHeight, useMobileMenu } from './hooks';
 import styles from './styles.module.scss';
 import Logo from "@/assets/shire-supply-co-logo.svg";
+import navigation from '@/lib/navigation.json';
+import type { Navigation } from '@/types';
 
-interface NavItem {
-  title: string;
-  link: string;
-}
-
-const navItems: NavItem[] = [
-  { title: "Strains", link: "/strains" },
-  { title: "Retailers", link: "/retailers" },
-  { title: "About", link: "/about" },
-  { title: "Press", link: "/#press" },
-  { title: "Reviews", link: "/#reviews" },
-];
+const navItems = (navigation as Navigation).primary;
 
 const PROMO_COOKIE_NAME = 'promo_dismissed';
 const PROMO_COOKIE_HOURS = 1;
@@ -107,12 +98,12 @@ export default function Nav({ promoMessage, initialPromoDismissed = false }: Nav
             <nav className={styles.navLinks}>
               <ul>
                 {navItems.map((item) => (
-                  <li key={item.title} className={styles.navItem}>
+                  <li key={item.href} className={styles.navItem}>
                     <Link
-                      href={item.link}
-                      onClick={(e) => handleNavLinkClick(e, item.link)}
+                      href={item.href}
+                      onClick={(e) => handleNavLinkClick(e, item.href)}
                     >
-                      {item.title}
+                      {item.label}
                     </Link>
                   </li>
                 ))}

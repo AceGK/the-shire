@@ -7,14 +7,11 @@ import Scroll from '@/assets/icons/scroll-old-solid.svg';
 import Dragon from '@/assets/icons/dragon-solid.svg';
 import CrystalBall from '@/assets/icons/crystal-ball-solid.svg';
 import Dungeon from '@/assets/icons/dungeon-solid.svg';
+import navigation from '@/lib/navigation.json';
+import type { Navigation } from '@/types';
 
-const navLinks = [
-  { label: 'About', href: '/about' },
-  { label: 'Strains', href: '/strains' },
-  { label: 'Retailers', href: '/#buy' },
-  { label: 'Press', href: '/#press' },
-  { label: 'Reviews', href: '/#reviews' },
-];
+// Same menu as the header (src/lib/navigation.json)
+const navLinks = (navigation as Navigation).primary;
 
 export default function Footer() {
   return (

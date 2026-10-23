@@ -1,15 +1,11 @@
 import { MouseEvent } from 'react';
 import Link from 'next/link';
 import styles from './styles.module.scss';
-
-interface NavItem {
-  title: string;
-  link: string;
-}
+import type { NavLink } from '@/types';
 
 interface MobileMenuProps {
   isOpen: boolean;
-  navItems: NavItem[];
+  navItems: NavLink[];
   onClose: () => void;
   onNavClick: (e: MouseEvent<HTMLAnchorElement>, href: string) => void;
 }
@@ -37,12 +33,12 @@ export default function MobileMenu({ isOpen, navItems, onClose, onNavClick }: Mo
           </Link>
         </li>
         {navItems.map((item) => (
-          <li key={item.title}>
+          <li key={item.href}>
             <Link
-              href={item.link}
-              onClick={(e) => handleLinkClick(e, item.link)}
+              href={item.href}
+              onClick={(e) => handleLinkClick(e, item.href)}
             >
-              {item.title}
+              {item.label}
             </Link>
           </li>
         ))}
